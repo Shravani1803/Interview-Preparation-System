@@ -1,0 +1,26 @@
+{
+  "name": "interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "frontend": "npm start --prefix front-end",
+  "backend": "npm start --prefix backend",
+  "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shravani1803/Interview-Preparation-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Shravani1803/Interview-Preparation-System/issues"
+  },
+  "homepage": "https://github.com/Shravani1803/Interview-Preparation-System#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

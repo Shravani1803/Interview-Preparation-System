@@ -43,7 +43,7 @@ function Login() {
                 setTimeout(()=>{
                     navigate('/home')
 
-            },1000)}
+            },100)}
             else if(error){
                 const details=error?.details[0].message;
                 handleError(details);
@@ -71,9 +71,9 @@ function Login() {
                     <input onChange={handleChange} type='password' name='password' placeholder='Enter your Password' value={loginInfo.password}/>
 
                 </div>
-                <button type='submit'>Signup</button>
+                <button type='submit'>Login</button>
                 <span>Create account ?
-                    <Link to="/signup">Login</Link>
+                    <Link to="/signup">Signup</Link>
                 </span>
 
             </form>
