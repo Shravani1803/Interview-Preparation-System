@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+  "start": "concurrently \"npm run backend\" \"npm run frontend\"",
   "frontend": "npm start --prefix front-end",
   "backend": "npm start --prefix backend",
   "dev": "concurrently \"npm run backend\" \"npm run frontend\""
