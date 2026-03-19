@@ -9,27 +9,30 @@ require("./Models/db");
 
 const PORT = process.env.PORT || 8080;
 
+// Routes
 const AuthRouter = require("./Routes/AuthRouter");
-const ProductRouter = require("./Routes/ProductRouter");
+const AptitudeRouter = require("./Routes/AptitudeRouter");
+const CodingRouter = require("./Routes/CodingRouter");
+const PerformanceRouter = require("./Routes/PerformanceRouter");
+const AdminRouter = require("./Routes/AdminRouter");
 
 // Test route
 app.get("/ping", (req, res) => {
     res.send("PONG");
 });
 
-
 // Middlewares
 app.use(bodyParser.json());
 app.use(cors());
 
-
 // Routes
 app.use("/auth", AuthRouter);
-app.use('/products',ProductRouter);
-
-
+app.use("/aptitude", AptitudeRouter);
+app.use("/coding", CodingRouter);
+app.use("/api", PerformanceRouter);        // /api/stats  and  /api/analytics
+app.use("/admin", AdminRouter);
 
 // Server start
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
