@@ -10,7 +10,7 @@ yarn-error.log*
 .env
 .env.*
 backend/.env
-frontend/.env
+front-end/.env
 
 # ========================
 # BUILD FILES
