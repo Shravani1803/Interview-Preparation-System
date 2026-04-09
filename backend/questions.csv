@@ -1,0 +1,201 @@
+question,optionA,optionB,optionC,optionD,correctAnswer,category,difficulty,explanation
+What is 10% of 80?,16,12,4,8,8,Quantitative,Medium,10% of 80 = (10/100) × 80 = 8.
+An item is bought for Rs 200 and sold at a profit of 5%. What is the selling price?,200,210,230,220,210,Quantitative,Hard,Selling price = Cost price × (1 + 5/100) = 210.
+A can finish a task in 6 days and B in 3 days. In how many days will they finish it together?,4,2,1,3,2,Quantitative,Medium,Combined rate = 1/6 + 1/3 = (9)/18. Time = 18/9 = 2 days.
+A car travels at 30 km/h for 2 hours. What distance does it cover?,30,120,90,60,60,Quantitative,Medium,Distance = Speed × Time = 30 × 2 = 60 km.
+Rs 50 is divided between A and B in the ratio 2:3. How much does A get?,15,30,20,25,20,Quantitative,Easy,A's share = (2/5) × 50 = 20.
+"The average of 5 numbers is 20. Four numbers are 16, 18, 21, 23. Find the fifth number.",22,26,20,24,22,Quantitative,Hard,Total of 5 numbers = 20 × 5 = 100. Fifth number = 100 - 78 = 22.
+What is 15% of 100?,15,19,23,11,15,Quantitative,Hard,15% of 100 = (15/100) × 100 = 15.
+An item is bought for Rs 225 and sold at a loss of 10%. What is the selling price?,202.5,222.5,212.5,192.5,202.5,Quantitative,Medium,Selling price = Cost price × (1 - 10/100) = 202.5.
+A can finish a task in 8 days and B in 4 days. In how many days will they finish it together?,1.6666666666666665,2.6666666666666665,3.6666666666666665,4.666666666666666,2.6666666666666665,Quantitative,Hard,Combined rate = 1/8 + 1/4 = (12)/32. Time = 32/12 = 2.6666666666666665 days.
+A car travels at 33 km/h for 3 hours. What distance does it cover?,132,66,99,165,99,Quantitative,Easy,Distance = Speed × Time = 33 × 3 = 99 km.
+Rs 77 is divided between A and B in the ratio 3:4. How much does A get?,47,26,40,33,33,Quantitative,Medium,A's share = (3/7) × 77 = 33.
+"The average of 5 numbers is 22. Four numbers are 18, 20, 23, 25. Find the fifth number.",24,22,28,26,24,Quantitative,Hard,Total of 5 numbers = 22 × 5 = 110. Fifth number = 110 - 86 = 24.
+What is 20% of 120?,28,32,20,24,24,Quantitative,Easy,20% of 120 = (20/100) × 120 = 24.
+An item is bought for Rs 250 and sold at a profit of 15%. What is the selling price?,297.5,287.5,307.5,277.5,287.5,Quantitative,Hard,Selling price = Cost price × (1 + 15/100) = 287.5.
+A can finish a task in 10 days and B in 5 days. In how many days will they finish it together?,4.333333333333334,3.3333333333333335,2.3333333333333335,5.333333333333334,3.3333333333333335,Quantitative,Medium,Combined rate = 1/10 + 1/5 = (15)/50. Time = 50/15 = 3.3333333333333335 days.
+A car travels at 36 km/h for 4 hours. What distance does it cover?,180,216,108,144,144,Quantitative,Easy,Distance = Speed × Time = 36 × 4 = 144 km.
+Rs 108 is divided between A and B in the ratio 4:5. How much does A get?,57,48,66,39,48,Quantitative,Easy,A's share = (4/9) × 108 = 48.
+"The average of 5 numbers is 24. Four numbers are 20, 22, 25, 27. Find the fifth number.",24,26,30,28,26,Quantitative,Easy,Total of 5 numbers = 24 × 5 = 120. Fifth number = 120 - 94 = 26.
+What is 25% of 140?,35,43,31,39,35,Quantitative,Medium,25% of 140 = (25/100) × 140 = 35.
+An item is bought for Rs 275 and sold at a loss of 20%. What is the selling price?,240,230,220,210,220,Quantitative,Easy,Selling price = Cost price × (1 - 20/100) = 220.
+A can finish a task in 12 days and B in 6 days. In how many days will they finish it together?,6,4,3,5,4,Quantitative,Medium,Combined rate = 1/12 + 1/6 = (18)/72. Time = 72/18 = 4 days.
+A car travels at 39 km/h for 5 hours. What distance does it cover?,156,234,273,195,195,Quantitative,Hard,Distance = Speed × Time = 39 × 5 = 195 km.
+Rs 143 is divided between A and B in the ratio 5:6. How much does A get?,87,54,65,76,65,Quantitative,Easy,A's share = (5/11) × 143 = 65.
+"The average of 5 numbers is 26. Four numbers are 22, 24, 27, 29. Find the fifth number.",30,32,26,28,28,Quantitative,Medium,Total of 5 numbers = 26 × 5 = 130. Fifth number = 130 - 102 = 28.
+What is 30% of 160?,56,52,44,48,48,Quantitative,Hard,30% of 160 = (30/100) × 160 = 48.
+An item is bought for Rs 300 and sold at a profit of 25%. What is the selling price?,385,375,365,395,375,Quantitative,Hard,Selling price = Cost price × (1 + 25/100) = 375.
+A can finish a task in 14 days and B in 7 days. In how many days will they finish it together?,6.666666666666667,3.666666666666667,4.666666666666667,5.666666666666667,4.666666666666667,Quantitative,Medium,Combined rate = 1/14 + 1/7 = (21)/98. Time = 98/21 = 4.666666666666667 days.
+A car travels at 42 km/h for 2 hours. What distance does it cover?,84,168,126,42,84,Quantitative,Hard,Distance = Speed × Time = 42 × 2 = 84 km.
+Rs 182 is divided between A and B in the ratio 6:7. How much does A get?,97,110,84,71,84,Quantitative,Hard,A's share = (6/13) × 182 = 84.
+"The average of 5 numbers is 28. Four numbers are 24, 26, 29, 31. Find the fifth number.",34,28,30,32,30,Quantitative,Easy,Total of 5 numbers = 28 × 5 = 140. Fifth number = 140 - 110 = 30.
+What is 35% of 180?,63,71,59,67,63,Quantitative,Easy,35% of 180 = (35/100) × 180 = 63.
+An item is bought for Rs 325 and sold at a loss of 30%. What is the selling price?,227.5,247.5,237.5,217.5,227.5,Quantitative,Medium,Selling price = Cost price × (1 - 30/100) = 227.5.
+A can finish a task in 15 days and B in 10 days. In how many days will they finish it together?,7,8,5,6,6,Quantitative,Easy,Combined rate = 1/15 + 1/10 = (25)/150. Time = 150/25 = 6 days.
+A car travels at 45 km/h for 3 hours. What distance does it cover?,225,90,180,135,135,Quantitative,Medium,Distance = Speed × Time = 45 × 3 = 135 km.
+Rs 150 is divided between A and B in the ratio 2:8. How much does A get?,50,40,30,20,30,Quantitative,Hard,A's share = (2/10) × 150 = 30.
+"The average of 5 numbers is 30. Four numbers are 26, 28, 31, 33. Find the fifth number.",32,36,34,30,32,Quantitative,Medium,Total of 5 numbers = 30 × 5 = 150. Fifth number = 150 - 118 = 32.
+What is 40% of 200?,88,76,80,84,80,Quantitative,Hard,40% of 200 = (40/100) × 200 = 80.
+An item is bought for Rs 350 and sold at a profit of 5%. What is the selling price?,367.5,357.5,377.5,387.5,367.5,Quantitative,Hard,Selling price = Cost price × (1 + 5/100) = 367.5.
+A can finish a task in 16 days and B in 8 days. In how many days will they finish it together?,6.333333333333333,7.333333333333333,5.333333333333333,4.333333333333333,5.333333333333333,Quantitative,Medium,Combined rate = 1/16 + 1/8 = (24)/128. Time = 128/24 = 5.333333333333333 days.
+A car travels at 48 km/h for 4 hours. What distance does it cover?,288,192,240,144,192,Quantitative,Medium,Distance = Speed × Time = 48 × 4 = 192 km.
+Rs 96 is divided between A and B in the ratio 3:3. How much does A get?,42,60,48,54,48,Quantitative,Easy,A's share = (3/6) × 96 = 48.
+"The average of 5 numbers is 32. Four numbers are 28, 30, 33, 35. Find the fifth number.",38,34,36,32,34,Quantitative,Hard,Total of 5 numbers = 32 × 5 = 160. Fifth number = 160 - 126 = 34.
+What is 45% of 220?,107,99,95,103,99,Quantitative,Hard,45% of 220 = (45/100) × 220 = 99.
+An item is bought for Rs 375 and sold at a loss of 10%. What is the selling price?,327.5,347.5,357.5,337.5,337.5,Quantitative,Medium,Selling price = Cost price × (1 - 10/100) = 337.5.
+A can finish a task in 18 days and B in 9 days. In how many days will they finish it together?,5,6,8,7,6,Quantitative,Easy,Combined rate = 1/18 + 1/9 = (27)/162. Time = 162/27 = 6 days.
+A car travels at 51 km/h for 5 hours. What distance does it cover?,306,204,357,255,255,Quantitative,Easy,Distance = Speed × Time = 51 × 5 = 255 km.
+Rs 136 is divided between A and B in the ratio 4:4. How much does A get?,60,68,76,84,68,Quantitative,Medium,A's share = (4/8) × 136 = 68.
+"The average of 5 numbers is 34. Four numbers are 30, 32, 35, 37. Find the fifth number.",34,38,40,36,36,Quantitative,Medium,Total of 5 numbers = 34 × 5 = 170. Fifth number = 170 - 134 = 36.
+What is 50% of 240?,124,116,120,128,120,Quantitative,Hard,50% of 240 = (50/100) × 240 = 120.
+An item is bought for Rs 400 and sold at a profit of 15%. What is the selling price?,470,450,480,460,460,Quantitative,Medium,Selling price = Cost price × (1 + 15/100) = 460.
+A can finish a task in 20 days and B in 10 days. In how many days will they finish it together?,7.666666666666667,8.666666666666668,6.666666666666667,5.666666666666667,6.666666666666667,Quantitative,Hard,Combined rate = 1/20 + 1/10 = (30)/200. Time = 200/30 = 6.666666666666667 days.
+A car travels at 54 km/h for 2 hours. What distance does it cover?,108,216,162,54,108,Quantitative,Easy,Distance = Speed × Time = 54 × 2 = 108 km.
+Rs 180 is divided between A and B in the ratio 5:5. How much does A get?,100,110,90,80,90,Quantitative,Medium,A's share = (5/10) × 180 = 90.
+"The average of 5 numbers is 36. Four numbers are 32, 34, 37, 39. Find the fifth number.",38,40,42,36,38,Quantitative,Hard,Total of 5 numbers = 36 × 5 = 180. Fifth number = 180 - 142 = 38.
+What is 55% of 260?,143,147,139,151,143,Quantitative,Medium,55% of 260 = (55/100) × 260 = 143.
+An item is bought for Rs 425 and sold at a loss of 20%. What is the selling price?,340,360,350,330,340,Quantitative,Hard,Selling price = Cost price × (1 - 20/100) = 340.
+A can finish a task in 21 days and B in 14 days. In how many days will they finish it together?,9.4,7.4,10.4,8.4,8.4,Quantitative,Medium,Combined rate = 1/21 + 1/14 = (35)/294. Time = 294/35 = 8.4 days.
+A car travels at 57 km/h for 3 hours. What distance does it cover?,285,171,114,228,171,Quantitative,Easy,Distance = Speed × Time = 57 × 3 = 171 km.
+Rs 228 is divided between A and B in the ratio 6:6. How much does A get?,126,138,102,114,114,Quantitative,Easy,A's share = (6/12) × 228 = 114.
+"The average of 5 numbers is 38. Four numbers are 34, 36, 39, 41. Find the fifth number.",40,42,44,38,40,Quantitative,Medium,Total of 5 numbers = 38 × 5 = 190. Fifth number = 190 - 150 = 40.
+What is 60% of 280?,164,168,172,176,168,Quantitative,Medium,60% of 280 = (60/100) × 280 = 168.
+An item is bought for Rs 450 and sold at a profit of 25%. What is the selling price?,572.5,582.5,552.5,562.5,562.5,Quantitative,Medium,Selling price = Cost price × (1 + 25/100) = 562.5.
+A can finish a task in 24 days and B in 12 days. In how many days will they finish it together?,10,9,7,8,8,Quantitative,Easy,Combined rate = 1/24 + 1/12 = (36)/288. Time = 288/36 = 8 days.
+A car travels at 60 km/h for 4 hours. What distance does it cover?,360,300,180,240,240,Quantitative,Easy,Distance = Speed × Time = 60 × 4 = 240 km.
+Rs 180 is divided between A and B in the ratio 2:7. How much does A get?,49,58,40,31,40,Quantitative,Easy,A's share = (2/9) × 180 = 40.
+"The average of 5 numbers is 40. Four numbers are 36, 38, 41, 43. Find the fifth number.",44,40,46,42,42,Quantitative,Easy,Total of 5 numbers = 40 × 5 = 200. Fifth number = 200 - 158 = 42.
+"Find the next number in the series: 3, 5, 7, 9, ?",13,12,11,9,11,Logical Reasoning,Hard,It is an arithmetic progression with common difference 2.
+"Find the next number in the series: 3, 6, 12, 24, ?",45,51,48,50,48,Logical Reasoning,Medium,Each term is multiplied by 2.
+"Find the next number in the series: 3, 4, 7, 11, 18, ?",29,28,30,32,29,Logical Reasoning,Easy,"From the third term onward, each term follows additive growth; next = 11 + 18 = 29."
+"Find the next number in the series: 6, 11, 16, 21, ?",31,28,21,26,26,Logical Reasoning,Hard,It is an arithmetic progression with common difference 5.
+"Find the next number in the series: 2, 4, 8, 16, ?",32,30,34,33,32,Logical Reasoning,Hard,Each term is multiplied by 2.
+"Find the next number in the series: 1, 3, 4, 7, 11, ?",17,21,19,18,18,Logical Reasoning,Medium,"From the third term onward, each term follows additive growth; next = 7 + 11 = 18."
+"Find the next number in the series: 9, 12, 15, 18, ?",18,23,21,24,21,Logical Reasoning,Easy,It is an arithmetic progression with common difference 3.
+"Find the next number in the series: 5, 10, 20, 40, ?",75,82,85,80,80,Logical Reasoning,Medium,Each term is multiplied by 2.
+"Find the next number in the series: 4, 2, 6, 8, 14, ?",21,22,23,25,22,Logical Reasoning,Hard,"From the third term onward, each term follows additive growth; next = 8 + 14 = 22."
+"Find the next number in the series: 12, 18, 24, 30, ?",38,36,42,30,36,Logical Reasoning,Easy,It is an arithmetic progression with common difference 6.
+"Find the next number in the series: 4, 8, 16, 32, ?",68,66,64,60,64,Logical Reasoning,Hard,Each term is multiplied by 2.
+"Find the next number in the series: 2, 5, 7, 12, 19, ?",32,31,30,34,31,Logical Reasoning,Easy,"From the third term onward, each term follows additive growth; next = 12 + 19 = 31."
+"Find the next number in the series: 15, 19, 23, 27, ?",27,31,33,35,31,Logical Reasoning,Easy,It is an arithmetic progression with common difference 4.
+"If each letter in TEAM is shifted 1 place(s) forward in the alphabet, what is the code?",FBNU,MAET,UFBN,VGCO,UFBN,Logical Reasoning,Hard,Shift every letter of TEAM by 1: UFBN.
+"If each letter in MIND is shifted 2 place(s) forward in the alphabet, what is the code?",DNIM,KPFO,PLQG,OKPF,OKPF,Logical Reasoning,Easy,Shift every letter of MIND by 2: OKPF.
+"If each letter in CODE is shifted 1 place(s) forward in the alphabet, what is the code?",EDOC,DPEF,EQFG,PEFD,DPEF,Logical Reasoning,Easy,Shift every letter of CODE by 1: DPEF.
+"If each letter in LOGIC is shifted 2 place(s) forward in the alphabet, what is the code?",QIKEN,CIGOL,NQIKE,ORJLF,NQIKE,Logical Reasoning,Hard,Shift every letter of LOGIC by 2: NQIKE.
+"If each letter in BRIGHT is shifted 1 place(s) forward in the alphabet, what is the code?",SJHIUC,DTKIJV,CSJHIU,THGIRB,CSJHIU,Logical Reasoning,Medium,Shift every letter of BRIGHT by 1: CSJHIU.
+"If each letter in SKILL is shifted 2 place(s) forward in the alphabet, what is the code?",VNLOO,LLIKS,MKNNU,UMKNN,UMKNN,Logical Reasoning,Easy,Shift every letter of SKILL by 2: UMKNN.
+"If each letter in LEARN is shifted 1 place(s) forward in the alphabet, what is the code?",FBSOM,NRAEL,NGCTP,MFBSO,MFBSO,Logical Reasoning,Easy,Shift every letter of LEARN by 1: MFBSO.
+"If each letter in RATIO is shifted 2 place(s) forward in the alphabet, what is the code?",OITAR,TCVKQ,UDWLR,CVKQT,TCVKQ,Logical Reasoning,Medium,Shift every letter of RATIO by 2: TCVKQ.
+"If each letter in SPEED is shifted 1 place(s) forward in the alphabet, what is the code?",QFFET,TQFFE,URGGF,DEEPS,TQFFE,Logical Reasoning,Hard,Shift every letter of SPEED by 1: TQFFE.
+"If each letter in WORK is shifted 2 place(s) forward in the alphabet, what is the code?",KROW,QTMY,YQTM,ZRUN,YQTM,Logical Reasoning,Easy,Shift every letter of WORK by 2: YQTM.
+"If each letter in PLANT is shifted 1 place(s) forward in the alphabet, what is the code?",TNALP,QMBOU,RNCPV,MBOUQ,QMBOU,Logical Reasoning,Easy,Shift every letter of PLANT by 1: QMBOU.
+"If each letter in FRAME is shifted 2 place(s) forward in the alphabet, what is the code?",EMARF,IUDPH,TCOGH,HTCOG,HTCOG,Logical Reasoning,Medium,Shift every letter of FRAME by 2: HTCOG.
+"If each letter in QUEST is shifted 1 place(s) forward in the alphabet, what is the code?",TSEUQ,RVFTU,VFTUR,SWGUV,RVFTU,Logical Reasoning,Medium,Shift every letter of QUEST by 1: RVFTU.
+"If each letter in SOLVE is shifted 2 place(s) forward in the alphabet, what is the code?",EVLOS,QNXGU,UQNXG,VROYH,UQNXG,Logical Reasoning,Easy,Shift every letter of SOLVE by 2: UQNXG.
+A is the brother of B. B is the daughter of C. How is A related to C?,Brother,Son,Uncle,Father,Son,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
+P is the mother of Q. Q is the sister of R. How is P related to R?,Aunt,Sister,Mother,Grandmother,Mother,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
+R is the father of S and S is the mother of T. How is R related to T?,Uncle,Grandfather,Brother,Father,Grandfather,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
+M is the sister of N. N is the father of O. How is M related to O?,Aunt,Mother,Grandmother,Sister,Aunt,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
+K is the son of L. L is the daughter of M. How is K related to M?,Nephew,Son,Brother,Grandson,Grandson,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
+D is the husband of E. E is the sister of F. How is D related to F?,Brother,Father,Brother-in-law,Cousin,Brother-in-law,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
+T is the daughter of U. U is the son of V. How is T related to V?,Niece,Sister,Granddaughter,Daughter,Granddaughter,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
+X is the brother of Y. Y is the mother of Z. How is X related to Z?,Brother,Grandfather,Father,Uncle,Uncle,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
+A is the mother of B and C is the father of A. How is C related to B?,Uncle,Brother,Grandfather,Father,Grandfather,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
+H is the son of J. J is the sister of K. How is K related to H?,Mother,Sister,Aunt or Uncle,Grandmother,Aunt or Uncle,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
+Q is the wife of R. R is the son of S. How is S related to Q?,Cousin,Brother-in-law,Uncle,Mother-in-law or Father-in-law,Mother-in-law or Father-in-law,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
+L is the brother of M. M is the brother of N. How is L related to N?,Father,Brother,Cousin,Uncle,Brother,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
+B is the daughter of C. C is the daughter of D. How is B related to D?,Granddaughter,Sister,Niece,Daughter,Granddaughter,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
+"A person moves 4 km north, 2 km east, 1 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 3 km in north-south and 2 km in east-west direction, so final direction is North-East."
+"A person moves 5 km north, 3 km east, 2 km south, and 1 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 3 km in north-south and 2 km in east-west direction, so final direction is North-East."
+"A person moves 6 km north, 4 km east, 3 km south, and 2 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 3 km in north-south and 2 km in east-west direction, so final direction is North-East."
+"A person moves 7 km north, 5 km east, 1 km south, and 3 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 6 km in north-south and 2 km in east-west direction, so final direction is North-East."
+"A person moves 8 km north, 6 km east, 2 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Medium,"Net movement is 6 km in north-south and 6 km in east-west direction, so final direction is North-East."
+"A person moves 9 km north, 2 km east, 3 km south, and 1 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 6 km in north-south and 1 km in east-west direction, so final direction is North-East."
+"A person moves 10 km north, 3 km east, 1 km south, and 2 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 9 km in north-south and 1 km in east-west direction, so final direction is North-East."
+"A person moves 11 km north, 4 km east, 2 km south, and 3 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 9 km in north-south and 1 km in east-west direction, so final direction is North-East."
+"A person moves 12 km north, 5 km east, 3 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 9 km in north-south and 5 km in east-west direction, so final direction is North-East."
+"A person moves 13 km north, 6 km east, 1 km south, and 1 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 12 km in north-south and 5 km in east-west direction, so final direction is North-East."
+"A person moves 14 km north, 2 km east, 2 km south, and 2 km west. In which direction is the person from the start point?",North,South,East,West,North,Logical Reasoning,Hard,Net east-west displacement is zero and net movement is towards north.
+"A person moves 15 km north, 3 km east, 3 km south, and 3 km west. In which direction is the person from the start point?",North,South,East,West,North,Logical Reasoning,Easy,Net east-west displacement is zero and net movement is towards north.
+"A person moves 16 km north, 4 km east, 1 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 15 km in north-south and 4 km in east-west direction, so final direction is North-East."
+"Find the next letter pattern: A, C, E, G, ?",I,H,K,J,I,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: B, D, F, H, ?",I,K,J,L,J,Logical Reasoning,Easy,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: C, E, G, I, ?",L,J,M,K,K,Logical Reasoning,Easy,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: D, F, H, J, ?",K,N,L,M,L,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: E, G, I, K, ?",O,M,N,L,M,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: F, H, J, L, ?",M,N,O,P,N,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: G, I, K, M, ?",P,N,Q,O,O,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: H, J, L, N, ?",O,P,R,Q,P,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: I, K, M, O, ?",R,P,Q,S,Q,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: J, L, N, P, ?",T,R,S,Q,R,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: K, M, O, Q, ?",S,R,U,T,S,Logical Reasoning,Easy,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: L, N, P, R, ?",T,S,U,V,T,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
+"Find the next letter pattern: M, O, Q, S, ?",V,W,U,T,U,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
+"Choose the synonym of ""Abundant"".",Rough,Complex,Silent,Plentiful,Plentiful,Verbal Ability,Medium,"""Plentiful"" is closest in meaning to ""Abundant""."
+"Choose the synonym of ""Brief"".",Late,Tiny,Short,Harsh,Short,Verbal Ability,Easy,"""Short"" is closest in meaning to ""Brief""."
+"Choose the synonym of ""Candid"".",Narrow,Frank,Random,Distant,Frank,Verbal Ability,Hard,"""Frank"" is closest in meaning to ""Candid""."
+"Choose the synonym of ""Diligent"".",Complex,Hardworking,Weak,Silent,Hardworking,Verbal Ability,Medium,"""Hardworking"" is closest in meaning to ""Diligent""."
+"Choose the synonym of ""Eager"".",Tiny,Rough,Harsh,Keen,Keen,Verbal Ability,Hard,"""Keen"" is closest in meaning to ""Eager""."
+"Choose the synonym of ""Fragile"".",Distant,Late,Random,Delicate,Delicate,Verbal Ability,Hard,"""Delicate"" is closest in meaning to ""Fragile""."
+"Choose the synonym of ""Genuine"".",Authentic,Complex,Weak,Narrow,Authentic,Verbal Ability,Medium,"""Authentic"" is closest in meaning to ""Genuine""."
+"Choose the synonym of ""Hostile"".",Unfriendly,Rough,Tiny,Silent,Unfriendly,Verbal Ability,Medium,"""Unfriendly"" is closest in meaning to ""Hostile""."
+"Choose the synonym of ""Imitate"".",Distant,Late,Harsh,Mimic,Mimic,Verbal Ability,Easy,"""Mimic"" is closest in meaning to ""Imitate""."
+"Choose the antonym of ""Ancient"".",Tiny,Harsh,Modern,Late,Modern,Verbal Ability,Easy,"""Modern"" is opposite in meaning to ""Ancient""."
+"Choose the antonym of ""Benevolent"".",Random,Distant,Cruel,Narrow,Cruel,Verbal Ability,Hard,"""Cruel"" is opposite in meaning to ""Benevolent""."
+"Choose the antonym of ""Compact"".",Silent,Weak,Complex,Spacious,Spacious,Verbal Ability,Easy,"""Spacious"" is opposite in meaning to ""Compact""."
+"Choose the antonym of ""Deficit"".",Harsh,Tiny,Rough,Surplus,Surplus,Verbal Ability,Hard,"""Surplus"" is opposite in meaning to ""Deficit""."
+"Choose the antonym of ""Expand"".",Late,Contract,Distant,Random,Contract,Verbal Ability,Hard,"""Contract"" is opposite in meaning to ""Expand""."
+"Choose the antonym of ""Flexible"".",Complex,Narrow,Weak,Rigid,Rigid,Verbal Ability,Hard,"""Rigid"" is opposite in meaning to ""Flexible""."
+"Choose the antonym of ""Generous"".",Tiny,Stingy,Silent,Rough,Stingy,Verbal Ability,Hard,"""Stingy"" is opposite in meaning to ""Generous""."
+"Choose the antonym of ""Harmony"".",Distant,Discord,Harsh,Late,Discord,Verbal Ability,Easy,"""Discord"" is opposite in meaning to ""Harmony""."
+"Identify the grammatically correct sentence for: ""She do not like coffee.""",She does not like coffee.,She did not liked coffee.,She does not likes coffee.,She do not likes coffee.,She does not like coffee.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""Each of the players are ready.""",Each of players were ready.,Each players is ready.,Each of the players is ready.,Each of the player are ready.,Each of the players is ready.,Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""He have completed the task.""",He had complete the task.,He having completed the task.,He has completed the task.,He has complete task.,He has completed the task.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""Neither of the answers are correct.""",Neither of answer is correct.,Neither answers are correct.,Neither of the answers is correct.,Neither is answers correct.,Neither of the answers is correct.,Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""The team were playing well.""",The team was playing well.,The teams was playing well.,The team are playing well.,The team being playing well.,The team was playing well.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""I prefer tea than coffee.""",I prefer tea then coffee.,I prefer tea to coffee.,I prefer tea over than coffee.,I preferred tea than coffee.,I prefer tea to coffee.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""She is senior than me.""",She is senior then me.,She is more senior than me.,She was senior than me.,She is senior to me.,She is senior to me.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""One of my friend lives here.""",One of my friends lives here.,One of friend lives here.,One of my friend live here.,One of my friends live here.,One of my friends lives here.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""He is good in mathematics.""",He is good with mathematics.,He is good at mathematics.,He is good for mathematics.,He is good on mathematics.,He is good at mathematics.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""The news are shocking.""",The news were shocking.,The news is shocking.,News are shocking.,The news be shocking.,The news is shocking.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""She has been working since two hours.""",She have been working for two hours.,She had been working since two hours.,She has working for two hours.,She has been working for two hours.,She has been working for two hours.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""No sooner did he arrived than it rained.""",No sooner had he arrive than rain.,No sooner he arrived than it rained.,No sooner did he arrive when it rained.,No sooner did he arrive than it rained.,No sooner did he arrive than it rained.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""He is married with a doctor.""",He is married by a doctor.,He is marry to a doctor.,He is married to a doctor.,He was married with doctor.,He is married to a doctor.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""The furniture in this room are old.""",The furnitures in this room are old.,The furniture in room are old.,The furniture in this room is old.,Furniture in this room were old.,The furniture in this room is old.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""If I was you, I would apologize.""","If I had been you, I will apologize.","If I were you, I would apologize.","If I am you, I would apologize.","If I were you, I will apologized.","If I were you, I would apologize.",Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""She suggested me to apply early.""",She suggested that I apply early.,She suggested to me apply early.,She suggested me applying early.,She suggest that I applied early.,She suggested that I apply early.,Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
+"Identify the grammatically correct sentence for: ""He discussed about the plan.""",He discussed the plan.,He was discussed the plan.,He discussed on the plan.,He discuss the plan.,He discussed the plan.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
+The manager asked us to ______ the report before noon.,submit,delay,ignore,cancel,submit,Verbal Ability,Medium,"""submit"" best completes the sentence meaningfully and grammatically."
+Her explanation was so ______ that everyone understood it.,hollow,confusing,clear,vague,clear,Verbal Ability,Easy,"""clear"" best completes the sentence meaningfully and grammatically."
+The new policy will ______ employee productivity.,reduce,improve,worsen,damage,improve,Verbal Ability,Easy,"""improve"" best completes the sentence meaningfully and grammatically."
+We should ______ all possibilities before deciding.,avoid,reject,consider,dismiss,consider,Verbal Ability,Hard,"""consider"" best completes the sentence meaningfully and grammatically."
+He remained ______ during the interview and answered confidently.,nervous,calm,careless,angry,calm,Verbal Ability,Easy,"""calm"" best completes the sentence meaningfully and grammatically."
+The trainer gave us a ______ overview of the process.,brief,unclear,random,lengthy,brief,Verbal Ability,Medium,"""brief"" best completes the sentence meaningfully and grammatically."
+Please ______ the meeting room by 10 AM.,book,shut,erase,remove,book,Verbal Ability,Medium,"""book"" best completes the sentence meaningfully and grammatically."
+She has a ______ understanding of data structures.,strong,shallow,weak,poor,strong,Verbal Ability,Easy,"""strong"" best completes the sentence meaningfully and grammatically."
+The team must ______ the deadline to satisfy the client.,meet,postpone,miss,break,meet,Verbal Ability,Medium,"""meet"" best completes the sentence meaningfully and grammatically."
+His argument lacked ______ evidence.,limited,minor,sufficient,scarce,sufficient,Verbal Ability,Medium,"""sufficient"" best completes the sentence meaningfully and grammatically."
+The software update aims to ______ security issues.,multiply,create,address,ignore,address,Verbal Ability,Hard,"""address"" best completes the sentence meaningfully and grammatically."
+"To crack placements, students should ______ regularly.",practice,wander,hesitate,quit,practice,Verbal Ability,Medium,"""practice"" best completes the sentence meaningfully and grammatically."
+The speaker made a ______ point about time management.,valid,irrelevant,trivial,invalid,valid,Verbal Ability,Hard,"""valid"" best completes the sentence meaningfully and grammatically."
+She quickly ______ to the changing requirements.,collapsed,resisted,adapted,wandered,adapted,Verbal Ability,Easy,"""adapted"" best completes the sentence meaningfully and grammatically."
+The company plans to ______ its operations next year.,shrink,abandon,expand,freeze,expand,Verbal Ability,Easy,"""expand"" best completes the sentence meaningfully and grammatically."
+A good resume should ______ your key achievements.,highlight,ignore,erase,hide,highlight,Verbal Ability,Medium,"""highlight"" best completes the sentence meaningfully and grammatically."
+He gave a ______ response to the client query.,faint,delayed,prompt,careless,prompt,Verbal Ability,Hard,"""prompt"" best completes the sentence meaningfully and grammatically."
+"Choose the word that means ""to make less severe"".",provoke,mitigate,delay,intensify,mitigate,Verbal Ability,Easy,"""mitigate"" is the most accurate meaning."
+"Choose the word that means ""careful use of money"".",frugality,wastefulness,greed,luxury,frugality,Verbal Ability,Easy,"""frugality"" is the most accurate meaning."
+"Choose the word that means ""very enthusiastic"".",indifferent,hesitant,zealous,dull,zealous,Verbal Ability,Medium,"""zealous"" is the most accurate meaning."
+"Choose the word that means ""able to recover quickly"".",rigid,fragile,resilient,timid,resilient,Verbal Ability,Easy,"""resilient"" is the most accurate meaning."
+"Choose the word that means ""obvious and clear"".",hidden,explicit,vague,uncertain,explicit,Verbal Ability,Medium,"""explicit"" is the most accurate meaning."
+"Choose the word that means ""speak briefly and clearly"".",confused,silent,verbose,concise,concise,Verbal Ability,Easy,"""concise"" is the most accurate meaning."
+"Choose the word that means ""difficult to understand"".",plain,obscure,simple,obvious,obscure,Verbal Ability,Medium,"""obscure"" is the most accurate meaning."
+"Choose the word that means ""friendly and pleasant"".",arrogant,hostile,stern,amiable,amiable,Verbal Ability,Hard,"""amiable"" is the most accurate meaning."
+"Choose the word that means ""greatly successful"".",average,minor,triumphant,defeated,triumphant,Verbal Ability,Hard,"""triumphant"" is the most accurate meaning."
+"Choose the word that means ""lasting for a short time"".",stable,permanent,temporary,endless,temporary,Verbal Ability,Easy,"""temporary"" is the most accurate meaning."
+"Choose the word that means ""careless in duties"".",negligent,careful,diligent,meticulous,negligent,Verbal Ability,Medium,"""negligent"" is the most accurate meaning."
+"Choose the word that means ""to combine into one"".",integrate,divide,separate,scatter,integrate,Verbal Ability,Easy,"""integrate"" is the most accurate meaning."
+"Choose the word that means ""to examine in detail"".",analyze,guess,skip,ignore,analyze,Verbal Ability,Medium,"""analyze"" is the most accurate meaning."
+"Choose the word that means ""to formally approve"".",ratify,reject,oppose,delay,ratify,Verbal Ability,Easy,"""ratify"" is the most accurate meaning."
+"Choose the word that means ""showing good judgment"".",reckless,impulsive,rash,prudent,prudent,Verbal Ability,Medium,"""prudent"" is the most accurate meaning."
+"Choose the word that means ""to stop something from happening"".",encourage,prevent,permit,allow,prevent,Verbal Ability,Hard,"""prevent"" is the most accurate meaning."
+"Choose the synonym of ""Essential"".",Optional,Rare,Late,Necessary,Necessary,Verbal Ability,Hard,"""Necessary"" is closest in meaning to ""Essential""."

@@ -1,0 +1,45 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const QuizAttemptSchema = new Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users',
+        required: true
+    },
+    answers: {
+        type: Map,
+        of: String,
+        required: true
+    },
+    score: {
+        type: Number,
+        required: true
+    },
+    accuracy: {
+        type: Number,
+        required: true
+    },
+    category: {
+        type: String,
+        enum: ['Quantitative', 'Logical', 'Verbal'],
+        required: true
+    },
+    difficulty: {
+        type: String,
+        enum: ['Easy', 'Medium', 'Hard'],
+        required: true
+    },
+    questionIds: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'aptitudequestions',
+        default: []
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
+const QuizAttemptModel = mongoose.model('quizattempts', QuizAttemptSchema);
+module.exports = QuizAttemptModel;

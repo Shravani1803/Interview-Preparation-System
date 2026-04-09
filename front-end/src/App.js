@@ -5,6 +5,9 @@ import Signup from './pages/Signup';
 import Home from './pages/Home';
 import { useState } from 'react';
 import RefreshHandler from './RefreshHandler';
+import QuizSetup from './pages/quiz/QuizSetup';
+import QuizPage from './pages/quiz/QuizPage';
+import ResultPage from './pages/quiz/ResultPage';
  
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -21,8 +24,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<PrivateRoute element={<Home />} />} />
-        {/* These routes will be added one by one as we build each page */}
-        {/* <Route path="/aptitude" element={<PrivateRoute element={<Aptitude />} />} /> */}
+        <Route path="/aptitude" element={<PrivateRoute element={<QuizSetup />} />} />
+        <Route path="/aptitude/quiz" element={<PrivateRoute element={<QuizPage />} />} />
+        <Route path="/aptitude/result" element={<PrivateRoute element={<ResultPage />} />} />
         {/* <Route path="/coding" element={<PrivateRoute element={<Coding />} />} /> */}
         {/* <Route path="/performance" element={<PrivateRoute element={<Performance />} />} /> */}
         {/* <Route path="/admin" element={<PrivateRoute element={<Admin />} />} /> */}

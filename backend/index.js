@@ -30,6 +30,7 @@ app.use("/auth", AuthRouter);
 app.use("/aptitude", AptitudeRouter);
 app.use("/coding", CodingRouter);
 app.use("/api", PerformanceRouter);        // /api/stats  and  /api/analytics
+app.use("/api", AptitudeRouter);
 app.use("/admin", AdminRouter);
 
 // Server start

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { handleError, handleSuccess } from '../utils';
+import { handleSuccess } from '../utils';
 import { ToastContainer } from 'react-toastify';
 import './Dashboard.css';
 

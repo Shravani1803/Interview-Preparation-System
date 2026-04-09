@@ -1,0 +1,256 @@
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.quiz-page-shell {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.quiz-page-card {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  display: grid;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.quiz-progress-wrap {
+  width: 100%;
+  display: grid;
+  gap: 8px;
+}
+
+.quiz-progress-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.quiz-progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: #6b7280;
+  transition: width 0.2s ease;
+}
+
+.quiz-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.quiz-page-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.quiz-page-header p {
+  margin: 4px 0 0;
+  color: #6b7280;
+}
+
+.quiz-count-info {
+  margin: 6px 0 0;
+  color: #4b5563;
+  font-size: 0.88rem;
+}
+
+.quiz-availability-note {
+  margin: 4px 0 0;
+  color: #b45309;
+  font-size: 0.88rem;
+}
+
+.quiz-timer {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 600;
+  background: #ffffff;
+}
+
+.quiz-timer-safe,
+.quiz-timer-warning,
+.quiz-timer-danger {
+  color: #111827;
+}
+
+.quiz-error-text {
+  margin: 0;
+  color: #b91c1c;
+}
+
+.quiz-question-section {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.quiz-question-section h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.quiz-options-list {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.quiz-option-item {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 10px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.quiz-option-item span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.quiz-option-item.selected,
+.quiz-option-item:has(input:checked) {
+  border-color: #9ca3af;
+  background: #f3f4f6;
+}
+
+.quiz-palette {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 8px;
+}
+
+.quiz-palette-item {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 8px 0;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.quiz-palette-item.answered {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.quiz-palette-item.active {
+  background: #374151;
+  border-color: #374151;
+  color: #ffffff;
+}
+
+.quiz-controls {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.quiz-control-button {
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.quiz-control-button.primary {
+  background: #374151;
+  color: #ffffff;
+  border-color: #374151;
+}
+
+.quiz-control-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .quiz-page-shell {
+    padding: 12px;
+  }
+
+  .quiz-page-card {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .quiz-page-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .quiz-page-header {
+    flex-direction: column;
+  }
+
+  .quiz-page-header > * {
+    width: 100%;
+  }
+
+  .quiz-timer {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .quiz-page-header p,
+  .quiz-count-info,
+  .quiz-availability-note,
+  .quiz-progress-meta,
+  .quiz-question-section h2,
+  .quiz-option-item,
+  .quiz-control-button {
+    font-size: 0.92rem;
+  }
+
+  .quiz-controls {
+    flex-direction: column;
+  }
+
+  .quiz-control-button {
+    width: 100%;
+  }
+}
