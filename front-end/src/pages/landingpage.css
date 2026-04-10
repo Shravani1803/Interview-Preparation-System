@@ -1,0 +1,125 @@
+/* Landing page */
+.landing {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+}
+
+/* Buttons */
+.nav-buttons button {
+  margin-left: 12px;
+}
+
+.btn-primary {
+  background-color: #111827;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #111827;
+  color: #111827;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Button effects */
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline:hover {
+  background-color: #111827;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.hero p {
+  margin-top: 18px;
+  color: #475569;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Hero buttons */
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.big {
+  padding: 12px 26px;
+  font-size: 16px;
+  margin: 6px;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.card {
+  background: white;
+  padding: 25px;
+  width: 260px;
+  border-radius: 10px;
+  text-align: center;
+
+  transition: transform 0.25s ease;
+}
+
+/* Card hover effect (classy, no heavy shadow) */
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.card p {
+  color: #475569;
+  font-size: 14px;
+}
