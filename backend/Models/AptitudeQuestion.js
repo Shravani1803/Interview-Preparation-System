@@ -31,7 +31,7 @@ const AptitudeQuestionSchema = new Schema({
     },
     category: {
         type: String,
-        enum: ['Quantitative', 'Logical', 'Verbal'],
+        enum: ['Quantitative', 'Logical', 'Verbal', 'C++', 'Java', 'Python'],
         required: true
     },
     difficulty: {

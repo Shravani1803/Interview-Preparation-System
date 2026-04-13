@@ -17,6 +17,9 @@ const normalizeCategory = (value = '') => {
   if (normalized === 'quantitative aptitude' || normalized === 'quantitative') return 'Quantitative';
   if (normalized === 'logical reasoning' || normalized === 'logical') return 'Logical';
   if (normalized === 'verbal ability' || normalized === 'verbal') return 'Verbal';
+  if (normalized === 'c++' || normalized === 'c plus plus' || normalized === 'cpp') return 'C++';
+  if (normalized === 'java') return 'Java';
+  if (normalized === 'python') return 'Python';
   return '';
 };
 

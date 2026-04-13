@@ -21,6 +21,9 @@ const normalizeCategory = (value = '') => {
     if (normalized === 'quantitative aptitude' || normalized === 'quantitative') return 'Quantitative';
     if (normalized === 'logical reasoning' || normalized === 'logical') return 'Logical';
     if (normalized === 'verbal ability' || normalized === 'verbal') return 'Verbal';
+    if (normalized === 'c++' || normalized === 'c plus plus' || normalized === 'cpp') return 'C++';
+    if (normalized === 'java') return 'Java';
+    if (normalized === 'python') return 'Python';
     return String(value).trim();
 };
 
@@ -46,6 +49,18 @@ const buildCategoryRegex = (value = '') => {
 
     if (normalized === 'Verbal') {
         return /^(Verbal|Verbal Ability)$/i;
+    }
+
+    if (normalized === 'C++') {
+        return /^(C\+\+|CPP|C Plus Plus)$/i;
+    }
+
+    if (normalized === 'Java') {
+        return /^Java$/i;
+    }
+
+    if (normalized === 'Python') {
+        return /^Python$/i;
     }
 
     return new RegExp(`^${escapeRegex(normalized)}$`, 'i');
@@ -190,16 +205,25 @@ const filterCsvQuestions = (questions, category, difficulty) => {
     });
 };
 
+const buildCaseInsensitiveFieldFilter = (value = '') => {
+    const normalized = String(value).trim();
+    if (!normalized) return null;
+
+    return {
+        $regex: `^${escapeRegex(normalized)}$`,
+        $options: 'i',
+    };
+};
+
 const buildFilter = ({ category, difficulty }) => {
     const filter = {};
 
     if (category) {
-        filter.category = buildCategoryRegex(category);
+        filter.category = buildCaseInsensitiveFieldFilter(category);
     }
 
     if (difficulty) {
-        const normalizedDifficulty = normalizeDifficulty(difficulty);
-        filter.difficulty = new RegExp(`^${escapeRegex(normalizedDifficulty)}$`, 'i');
+        filter.difficulty = buildCaseInsensitiveFieldFilter(difficulty);
     }
 
     return filter;
@@ -207,19 +231,32 @@ const buildFilter = ({ category, difficulty }) => {
 
 const getQuestionsCount = async (req, res) => {
     try {
-        const { category = '', difficulty = '' } = req.query;
+        const category = req.query.category;
+        const difficulty = req.query.difficulty;
 
-        const normalizedCategory = normalizeCategory(category);
-        const normalizedDifficulty = normalizeDifficulty(difficulty);
-        const filter = buildFilter({ category: normalizedCategory, difficulty: normalizedDifficulty });
+        const filter = buildFilter({ category, difficulty });
 
-        console.log('Count request values:', normalizedCategory, normalizedDifficulty);
+        console.log('Count request values:', category, difficulty);
 
-        const dbCount = await AptitudeQuestion.countDocuments(filter);
+        const dbQuestionDocs = await AptitudeQuestion.find(filter, { question: 1, _id: 0 }).lean();
         const { list } = await loadCsvQuestions();
-        const csvFiltered = filterCsvQuestions(list, normalizedCategory, normalizedDifficulty);
+        const csvFiltered = filterCsvQuestions(list, category, difficulty);
+
+        const uniqueQuestionSet = new Set();
+
+        dbQuestionDocs.forEach((item) => {
+            const key = String(item.question || '').trim().toLowerCase();
+            if (key) uniqueQuestionSet.add(key);
+        });
+
+        csvFiltered.forEach((item) => {
+            const key = String(item.question || '').trim().toLowerCase();
+            if (key) uniqueQuestionSet.add(key);
+        });
+
+        const dbCount = dbQuestionDocs.length;
         const csvCount = csvFiltered.length;
-        const finalCount = Math.max(dbCount, csvCount);
+        const finalCount = uniqueQuestionSet.size;
 
         console.log('Count result from DB:', dbCount, 'CSV:', csvCount, 'Final:', finalCount);
 
@@ -237,30 +274,29 @@ const getQuestionsCount = async (req, res) => {
 const getQuestions = async (req, res) => {
     try {
         console.log('Requested:', req.query);
-        const { category, difficulty } = req.query;
-        const limit = Number(req.query.limit) || 15;
+        const category = req.query.category;
+        const difficulty = req.query.difficulty;
+        const limit = Number.parseInt(req.query.limit, 10) || 15;
 
         const parsedLimit = limit;
         if (Number.isNaN(parsedLimit) || parsedLimit <= 0 || parsedLimit > 100) {
             return res.status(400).json({ success: false, message: 'Limit must be between 1 and 100' });
         }
 
-        const normalizedCategory = normalizeCategory(category || '');
-        const normalizedDifficulty = normalizeDifficulty(difficulty || '');
-        const filter = buildFilter({ category: normalizedCategory, difficulty: normalizedDifficulty });
+        const filter = buildFilter({ category, difficulty });
 
-        console.log('Query values:', normalizedCategory, normalizedDifficulty);
+        console.log('Query values:', category, difficulty);
 
         const dbCount = await AptitudeQuestion.countDocuments(filter);
         const { list } = await loadCsvQuestions();
-        const filteredCsv = filterCsvQuestions(list, normalizedCategory, normalizedDifficulty);
+        const filteredCsv = filterCsvQuestions(list, category, difficulty);
         const csvCount = filteredCsv.length;
 
-        const dbCandidateSize = dbCount > 0 ? Math.min(Math.max(parsedLimit * 3, parsedLimit), dbCount) : 0;
-        const dbCandidates = dbCandidateSize > 0
+        const dbSampleSize = dbCount > 0 ? Math.min(parsedLimit, dbCount) : 0;
+        const dbCandidates = dbSampleSize > 0
             ? await AptitudeQuestion.aggregate([
                 { $match: filter },
-                { $sample: { size: dbCandidateSize } },
+                { $sample: { size: dbSampleSize } },
                 {
                     $project: {
                         question: 1,
@@ -296,7 +332,20 @@ const getQuestions = async (req, res) => {
             questions = [...dbQuestions, ...csvQuestions];
         }
 
-        const totalAvailable = Math.max(dbCount, csvCount);
+        const dbQuestionDocs = await AptitudeQuestion.find(filter, { question: 1, _id: 0 }).lean();
+        const uniqueQuestionSet = new Set();
+
+        dbQuestionDocs.forEach((item) => {
+            const key = String(item.question || '').trim().toLowerCase();
+            if (key) uniqueQuestionSet.add(key);
+        });
+
+        filteredCsv.forEach((item) => {
+            const key = String(item.question || '').trim().toLowerCase();
+            if (key) uniqueQuestionSet.add(key);
+        });
+
+        const totalAvailable = uniqueQuestionSet.size;
         const finalLimit = Math.min(parsedLimit, totalAvailable);
         const source = dbQuestions.length > 0 && questions.length > dbQuestions.length
             ? 'db+csv'

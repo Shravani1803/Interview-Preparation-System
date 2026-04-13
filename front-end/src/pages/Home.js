@@ -76,12 +76,12 @@ function Home() {
         {
             id: 'coding',
             icon: '💻',
-            title: 'Coding Practice',
-            description: 'Solve real DSA problems evaluated against test cases. Sharpen your algorithmic thinking.',
+            title: 'Coding MCQs',
+            description: 'Practice programming concepts, output-based questions, and logic building using MCQs.',
             badge: 'DSA · Algorithms',
             accent: '#10b981',
             accentBg: '#ecfdf5',
-            path: '/coding',
+            path: '/coding-quiz',
             stat: `${stats.codingAttempts} solved`,
         },
         {
@@ -119,7 +119,7 @@ function Home() {
                     {[
                         { icon: '▣', label: 'Dashboard',   path: '/home',        active: true  },
                         { icon: '🧠', label: 'Aptitude',    path: '/aptitude',    active: false },
-                        { icon: '💻', label: 'Coding',      path: '/coding',      active: false },
+                        { icon: '💻', label: 'Coding MCQs', path: '/coding-quiz', active: false },
                         { icon: '📊', label: 'Performance', path: '/performance', active: false },
                     ].map((item) => (
                         <button
@@ -168,7 +168,7 @@ function Home() {
                         </p>
                         <div className="db-welcome-actions">
                             <button className="db-btn-primary" onClick={() => navigate('/aptitude')}>Start Quiz →</button>
-                            <button className="db-btn-outline" onClick={() => navigate('/coding')}>Practice Coding</button>
+                            <button className="db-btn-outline" onClick={() => navigate('/coding-quiz')}>Practice Coding</button>
                             <button className="db-btn-outline" onClick={() => navigate('/performance')}>View Report</button>
                         </div>
                     </div>

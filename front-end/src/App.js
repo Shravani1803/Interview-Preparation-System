@@ -9,6 +9,9 @@ import RefreshHandler from './RefreshHandler';
 import QuizSetup from './pages/quiz/QuizSetup';
 import QuizPage from './pages/quiz/QuizPage';
 import ResultPage from './pages/quiz/ResultPage';
+import CodingQuizSetup from './pages/quiz/CodingQuizSetup';
+import CodingQuizPage from './pages/quiz/CodingQuizPage';
+import CodingResultPage from './pages/quiz/CodingResultPage';
  
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,7 +32,9 @@ function App() {
         <Route path="/aptitude" element={<PrivateRoute element={<QuizSetup />} />} />
         <Route path="/aptitude/quiz" element={<PrivateRoute element={<QuizPage />} />} />
         <Route path="/aptitude/result" element={<PrivateRoute element={<ResultPage />} />} />
-        {/* <Route path="/coding" element={<PrivateRoute element={<Coding />} />} /> */}
+        <Route path="/coding-quiz" element={<PrivateRoute element={<CodingQuizSetup />} />} />
+        <Route path="/coding-quiz/quiz" element={<PrivateRoute element={<CodingQuizPage />} />} />
+        <Route path="/coding-quiz/result" element={<PrivateRoute element={<CodingResultPage />} />} />
         {/* <Route path="/performance" element={<PrivateRoute element={<Performance />} />} /> */}
         {/* <Route path="/admin" element={<PrivateRoute element={<Admin />} />} /> */}
       </Routes>

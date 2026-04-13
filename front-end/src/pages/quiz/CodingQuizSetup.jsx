@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './QuizSetup.css';
 
-function QuizSetup() {
+function CodingQuizSetup() {
   const navigate = useNavigate();
-  const [category, setCategory] = useState('Quantitative');
+  const [category, setCategory] = useState('C++');
   const [difficulty, setDifficulty] = useState('Easy');
   const [limit, setLimit] = useState(15);
   const [loading, setLoading] = useState(false);
@@ -78,23 +78,14 @@ function QuizSetup() {
       setHasFetched(false);
       setError('');
 
-      console.log('Frontend request params:', {
-        category,
-        difficulty,
-        limit: parsedLimit,
-      });
-      console.log('Selected limit:', parsedLimit);
-
       const requestUrl = `/api/questions?category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}&limit=${parsedLimit}`;
       const response = await axios.get(requestUrl);
 
       const fetchedQuestions = response.data?.questions || [];
-
       const totalAvailable = Number(response.data?.totalAvailable || 0);
       const actualCount = Number(response.data?.actualCount || fetchedQuestions.length);
       const requestedCount = Number(response.data?.requestedLimit || parsedLimit);
 
-      console.log('Frontend questions received:', fetchedQuestions.length);
       setHasFetched(true);
 
       if (fetchedQuestions.length === 0) {
@@ -102,7 +93,7 @@ function QuizSetup() {
         return;
       }
 
-      navigate('/aptitude/quiz', {
+      navigate('/coding-quiz/quiz', {
         state: {
           category,
           difficulty,
@@ -114,7 +105,7 @@ function QuizSetup() {
       });
     } catch (requestError) {
       setHasFetched(true);
-      setError(requestError.response?.data?.message || 'Unable to start quiz.');
+      setError(requestError.response?.data?.message || 'Unable to start coding quiz.');
     } finally {
       setLoading(false);
     }
@@ -124,14 +115,16 @@ function QuizSetup() {
     <div className="quiz-setup-shell">
       <div className="quiz-setup-card">
         <div className="quiz-setup-header">
-          <span className="quiz-setup-icon" aria-hidden="true">🧠</span>
+          <span className="quiz-setup-icon" aria-hidden="true">💻</span>
           <div>
-            <h1 className="quiz-setup-title">Aptitude Quiz Setup</h1>
-            <p className="quiz-setup-subtitle">Select quiz preferences and begin your timed test.</p>
+            <h1 className="quiz-setup-title">Coding MCQs Setup</h1>
+            <p className="quiz-setup-subtitle">Select quiz preferences and begin your timed coding MCQs test.</p>
           </div>
         </div>
 
         <form className="quiz-setup-form" onSubmit={handleStartQuiz}>
+          <p className="quiz-setup-hint availability">Mode: Coding</p>
+
           <div className="quiz-setup-group">
             <label htmlFor="category">Category</label>
             <select
@@ -142,9 +135,9 @@ function QuizSetup() {
                 resetFetchState();
               }}
             >
-              <option value="Quantitative">Quantitative</option>
-              <option value="Logical">Logical</option>
-              <option value="Verbal">Verbal</option>
+              <option value="C++">C++</option>
+              <option value="Java">Java</option>
+              <option value="Python">Python</option>
             </select>
           </div>
 
@@ -190,7 +183,7 @@ function QuizSetup() {
             <span className="quiz-setup-hint">Choose between 1 and {maxSelectable} questions</span>
             <span className="quiz-setup-hint availability">
               {countLoading
-                ? 'Checking available questions in CSV...'
+                ? 'Checking available coding questions...'
                 : `Available for selected filters: ${availableCount} questions`}
             </span>
           </div>
@@ -198,7 +191,7 @@ function QuizSetup() {
           {loading && (
             <div className="quiz-setup-loading" aria-live="polite">
               <span className="quiz-spinner" aria-hidden="true"></span>
-              <span>Loading questions...</span>
+              <span>Loading coding questions...</span>
             </div>
           )}
           {hasFetched && error && <p className="quiz-setup-error" role="alert">{error}</p>}
@@ -216,4 +209,4 @@ function QuizSetup() {
   );
 }
 
-export default QuizSetup;
+export default CodingQuizSetup;

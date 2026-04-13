@@ -199,3 +199,60 @@ He gave a ______ response to the client query.,faint,delayed,prompt,careless,pro
 "Choose the word that means ""showing good judgment"".",reckless,impulsive,rash,prudent,prudent,Verbal Ability,Medium,"""prudent"" is the most accurate meaning."
 "Choose the word that means ""to stop something from happening"".",encourage,prevent,permit,allow,prevent,Verbal Ability,Hard,"""prevent"" is the most accurate meaning."
 "Choose the synonym of ""Essential"".",Optional,Rare,Late,Necessary,Necessary,Verbal Ability,Hard,"""Necessary"" is closest in meaning to ""Essential""."
+What is the output of: cout << 5 + 2 * 3;,11,21,16,13,11,C++,Easy,Multiplication has higher precedence so 2*3=6 then 5+6=11
+Which data type is used to store decimal numbers in C++?,int,float,char,bool,float,C++,Easy,float is used for decimal values
+What is the output of: int x=5; cout << x++;,5,6,Error,0,5,C++,Easy,Post increment prints value first then increments
+Which operator is used for scope resolution in C++?,.,->,::,#,::,C++,Easy,Scope resolution operator is ::
+What is the output of: cout << (10/3);,3,3.33,4,Error,3,C++,Easy,Integer division gives 3
+What is the output of: System.out.println(5 + 2 * 3);,11,21,16,13,11,Java,Easy,Operator precedence applies multiplication first
+Which keyword is used to inherit a class in Java?,this,super,extends,implements,extends,Java,Easy,extends is used for inheritance
+What is the output of: int x=10; System.out.println(x++);,10,11,Error,0,10,Java,Easy,Post increment prints first then increments
+Which data type is used for true/false in Java?,int,boolean,char,float,boolean,Java,Easy,boolean stores true or false
+What is the size of int in Java?,2 bytes,4 bytes,8 bytes,Depends,4 bytes,Java,Easy,int is always 4 bytes in Java
+What is the output of: print(5 + 2 * 3),11,21,16,13,11,Python,Easy,Multiplication first then addition
+Which data type is used for decimal values in Python?,int,float,str,bool,float,Python,Easy,float stores decimal numbers
+What is the output of: x=5; print(x); x+=1,5,6,Error,None,5,Python,Easy,x is printed before increment
+Which symbol is used for comments in Python?,//,/*,#,<!--,#,Python,Easy,# is used for comments
+What is the output of: print(10//3),3,3.33,4,Error,3,Python,Easy,// gives floor division
+What is the output of: cout << (3 > 2);,true,1,false,0,1,C++,Medium,True is printed as 1 in C++
+Which loop runs at least once in C++?,for,while,do-while,none,do-while,C++,Medium,do-while executes once before checking condition
+Which function is entry point in Java?,start(),main(),run(),init(),main,Java,Medium,Execution starts from main method
+What is the output of: System.out.println("Hello" + 5);,Hello5,Hello 5,Error,5Hello,Hello5,Java,Medium,String concatenation occurs
+What is the default value of int in Java?,0,null,undefined,1,0,Java,Medium,Default value of int is 0
+What is the output of: print(type(5)),int,<class 'int'>,number,float,<class 'int'>,Python,Medium,type() shows class type
+Which keyword is used to define function in Python?,function,def,fun,define,def,Python,Medium,def is used to define functions
+What is the output of: print(bool(0)),True,False,Error,None,False,Python,Medium,0 is considered False
+Which operator is used for logical AND in Python?,&&,&,and,AND,and,Python,Medium,and is logical AND
+What is the output of: cout << (5==5);,1,0,true,false,1,C++,Medium,True is printed as 1
+Which concept allows multiple methods with same name in Java?,Overloading,Overriding,Inheritance,Encapsulation,Overloading,Java,Medium,Method overloading allows same name
+What is the output of: System.out.println(10%3);,1,3,0,Error,1,Java,Medium,10 mod 3 is 1
+What is the output of: print(2**3),6,8,9,5,8,Python,Medium,** is exponent operator
+Which keyword is used to create object in Java?,new,create,object,class,new,Java,Easy,new is used to create object
+Which header file is required for cout in C++?,iostream,stdio.h,conio.h,math.h,iostream,C++,Easy,iostream is required for cout
+What is output of cout << (7 % 4);,1,2,3,4,3,C++,Easy,Modulo gives remainder 3.
+Which keyword exits a loop in C++?,skip,stop,break,exit,break,C++,Easy,break exits nearest loop.
+What is output of cout << (2 + 3 * 4);,20,14,24,18,14,C++,Easy,Multiplication happens before addition.
+What is output of cout << (9 / 2);,4.5,5,4,Error,4,C++,Medium,Integer division truncates decimal part.
+Which STL container allows key value pairs?,vector,list,map,queue,map,C++,Medium,map stores key value pairs.
+What is output of bool x = false; cout << !x;,0,1,false,true,1,C++,Medium,Logical NOT of false is true printed as 1.
+What is output of cout << (sizeof(char));,0,1,2,4,1,C++,Hard,Size of char is 1 byte.
+Which statement about virtual function is true?,It cannot be inherited,It enables runtime polymorphism,It is only for templates,It makes function static,It enables runtime polymorphism,C++,Hard,Virtual dispatch enables runtime polymorphism.
+What happens when deleting derived object via base pointer without virtual destructor?,Always safe,Compile error,Undefined behavior risk,Object leaks are impossible,Undefined behavior risk,C++,Hard,Base destructor should be virtual for polymorphic delete.
+What is output of System.out.println(8 % 3);,2,1,3,0,2,Java,Easy,Modulo returns remainder 2.
+Which keyword is used to stop loop in Java?,end,break,stop,return,break,Java,Easy,break exits nearest loop.
+What is output of System.out.println(2 + 3 * 4);,20,14,24,18,14,Java,Easy,Multiplication has higher precedence.
+What is output of System.out.println(9 / 2);,4.5,5,4,Error,4,Java,Medium,Integer division returns 4.
+Which collection does not allow duplicate elements?,ArrayList,LinkedList,HashSet,Vector,HashSet,Java,Medium,Set implementations reject duplicates.
+What is default value of boolean field in Java?,true,false,null,undefined,false,Java,Medium,Default boolean field value is false.
+Can Java have multiple inheritance of classes?,Yes always,No classes cannot,Only with static classes,Only in Java 8,No classes cannot,Java,Hard,Java supports multiple inheritance via interfaces only.
+Which exception is unchecked in Java?,IOException,SQLException,ArithmeticException,ClassNotFoundException,ArithmeticException,Java,Hard,Runtime exceptions are unchecked.
+What is output of String s = null; System.out.println(s == null);,true,false,Error,0,true,Java,Hard,Null comparison with == is valid and true.
+What is output of print(8 % 3),2,1,3,0,2,Python,Easy,Modulo gives remainder 2.
+Which keyword exits loop in Python?,break,exit,stop,return,break,Python,Easy,break exits nearest loop.
+What is output of print(2 + 3 * 4),20,14,24,18,14,Python,Easy,Multiplication before addition.
+What is output of print(9 // 2),4.5,5,4,Error,4,Python,Medium,Floor division of integers gives 4.
+Which structure stores unique elements in Python?,list,tuple,set,dict,set,set keeps unique values only.
+What is output of print(bool([])),True,False,None,Error,False,Python,Medium,Empty list evaluates to False.
+What is output of print(0.1 + 0.2 == 0.3),True,False,Error,None,False,Python,Hard,Floating point precision makes comparison false.
+What is output of print(type({}).__name__),list,dict,set,tuple,dict,Python,Hard,Empty braces create dictionary.
+What is output of print([1,2,3][3])?,3,None,IndexError,0,IndexError,Python,Hard,Index 3 is out of range for length 3.
