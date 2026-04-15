@@ -29,7 +29,7 @@ function LandingPage() {
       {/* Features */}
       <div className="features">
         <div className="card">
-          <h3>📊 Performance Analysis</h3>
+          <h3>📄 ResumeAnalysis</h3>
           <p>Track your progress and identify weak areas instantly.</p>
         </div>
         <div className="card">

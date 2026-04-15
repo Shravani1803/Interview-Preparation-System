@@ -102,20 +102,20 @@ function Home() {
             stat: `${stats.codingSolved} solved`,
         },
         {
-            id: 'performance',
-            icon: '📊',
-            title: 'Performance Report',
-            description: 'Track your score trends, accuracy graphs and get a detailed breakdown of your progress.',
+            id: 'resume',
+            icon: '📄',
+            title: 'Resume Analysis',
+            description: 'Analyze your resume, check ATS score and find missing skills.',
             badge: 'Analytics',
             accent: '#f59e0b',
             accentBg: '#fffbeb',
-            path: '/performance',
-            stat: `${stats.accuracy}% avg`,
+            path: '/resume-analysis',
+            stat: 'Improve Resume',
         },
     ];
 
     const tips = [
-        { icon: '📅', text: 'Practise at least 5 aptitude questions daily to build consistency.' },
+        { icon: '📅', text: 'Practice atleast 5 aptitude questions daily to build consistency.' },
         { icon: '⏱️', text: 'Always analyse time complexity before writing your final solution.' },
         { icon: '🔍', text: 'Review wrong answers carefully — they reveal your weak areas.' },
         { icon: '✨', text: 'Write clean, readable code. Interviewers value clarity over cleverness.' },
@@ -137,7 +137,7 @@ function Home() {
                         { icon: '▣', label: 'Dashboard',   path: '/home',        active: true  },
                         { icon: '🧠', label: 'Aptitude',    path: '/aptitude',    active: false },
                         { icon: '💻', label: 'Coding MCQs', path: '/coding-quiz', active: false },
-                        { icon: '📊', label: 'Performance', path: '/performance', active: false },
+                        { icon: '📊', label: 'Resume Analysis', path: '/resume-analysis', active: false },
                     ].map((item) => (
                         <button
                             key={item.label}
@@ -186,7 +186,7 @@ function Home() {
                         <div className="db-welcome-actions">
                             <button className="db-btn-primary" onClick={() => navigate('/aptitude')}>Start Quiz →</button>
                             <button className="db-btn-outline" onClick={() => navigate('/coding-quiz')}>Practice Coding</button>
-                            <button className="db-btn-outline" onClick={() => navigate('/performance')}>View Report</button>
+                            <button className="db-btn-outline" onClick={() => navigate('/resume-analysis')}>View Report</button>
                         </div>
                     </div>
                     <div className="db-welcome-deco" aria-hidden="true">

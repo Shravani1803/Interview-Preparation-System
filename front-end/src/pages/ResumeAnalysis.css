@@ -1,0 +1,96 @@
+.ra-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.ra-inner {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* TITLE */
+.ra-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+/* CARD */
+.ra-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: 0.2s;
+}
+
+.ra-card:hover {
+  transform: translateY(-3px);
+}
+
+/* INPUT */
+.ra-card input,
+.ra-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+/* BUTTON */
+.ra-card button {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* BAR */
+.ra-bar {
+  height: 12px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.ra-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #2563eb);
+}
+
+/* STATUS */
+.ra-status {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* TAGS */
+.ra-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ra-tags span {
+  background: #fef2f2;
+  color:green;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* LIST */
+.ra-card ul {
+  padding-left: 18px;
+}

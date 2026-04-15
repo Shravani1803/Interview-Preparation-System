@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
+import ResumeAnalysis from "./pages/ResumeAnalysis";
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import LandingPage from './pages/LandingPage';
@@ -35,6 +36,7 @@ function App() {
         <Route path="/coding-quiz" element={<PrivateRoute element={<CodingQuizSetup />} />} />
         <Route path="/coding-quiz/quiz" element={<PrivateRoute element={<CodingQuizPage />} />} />
         <Route path="/coding-quiz/result" element={<PrivateRoute element={<CodingQuizResultPage />} />} />
+        <Route path="/resume-analysis" element={<PrivateRoute element={<ResumeAnalysis />} />} />
         {/* <Route path="/performance" element={<PrivateRoute element={<Performance />} />} /> */}
         {/* <Route path="/admin" element={<PrivateRoute element={<Admin />} />} /> */}
       </Routes>
