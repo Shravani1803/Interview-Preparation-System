@@ -59,12 +59,12 @@ What is the output: s1='ABC'; s2=new String('ABC'); s1==s2;,false,true,Error,ABC
 What does 'intern()' do?,Moves to String Pool,Char array convert,Deletes,Finds length,Moves to String Pool,Java,Hard,Intern returns the canonical version from the pool.
 How many objects created: String s = new String('Hello');,2,1,0,3,2,Java,Hard,One in the constant pool and one on the heap.
 What is a marker interface?,Interface with no methods,Many methods,Private,Abstract,Interface with no methods,Java,Hard,Markers like Serializable tag classes for special processing.
-How do you create a list in Python?,[1, 2, 3],(1, 2, 3),{1, 2, 3},<1, 2, 3>,[1, 2, 3],Python,Easy,Square brackets define a mutable list in Python.
+How do you create a list in Python?,[1, 2, 3],(1, 2, 3),{1, 2
 Which function gets list length?,len(),size(),count(),length(),len(),Python,Easy,len() is the standard way to check sequence size.
 What is the output: print(2 ** 3);,8,6,5,9,8,Python,Easy,** is the power operator in Python.
 How do you start a comment in Python?,#,//,/*,--,#,Python,Easy,Hash symbols are used for single-line comments.
 Which keyword defines a function?,def,func,function,define,def,Python,Easy,Functions are defined using the def keyword.
-Which is a tuple in Python?,(1, 2),[1, 2],{1, 2},"1, 2",(1, 2),Python,Easy,Tuples are immutable sequences in parentheses.
+Which is a tuple in Python?,(1, 2),[1, 2],{1, 2},"1, 2",(1
 How do you take user input?,input(),get(),scan(),read(),input(),Python,Easy,input() reads data from the user as a string.
 What is the output: print('Hi' * 3);,HiHiHi,Hi3,Error,Hi Hi Hi,HiHiHi,Python,Easy,String multiplication repeats the string content.
 Which operator is floor division?,//,/,%,**,//,Python,Easy,Floor division returns the integer part of the quotient.
@@ -72,7 +72,7 @@ Is Python case sensitive?,Yes,No,Depends on OS,Only vars,Yes,Python,Easy,Variabl
 What is the output: print(type(1 / 2));,float,int,double,decimal,float,Python,Medium,Division in Python 3.x always produces a float result.
 What does 'self' represent?,Current instance,Parent class,Static method,Global,Current instance,Python,Medium,Self refers to the specific instance of the class.
 How do you add to the end of a list?,append(),add(),insert(),extend(),append(),Python,Medium,Append adds one object to the end of the list.
-What is the output: [1, 2] + [3, 4];,[1, 2, 3, 4],[4, 6],Error,Nested List,[1, 2, 3, 4],Python,Medium,The + operator concatenates two lists.
+What is the output: [1, 2] + [3, 4];,[1, 2, 3, 4],[4, 6]
 Which is immutable in Python?,tuple,list,dict,set,tuple,Python,Medium,Tuples cannot be modified after they are created.
 How do you handle exceptions?,try...except,try...catch,do...catch,throw,try...except,Python,Medium,Python uses try/except blocks for error handling.
 What is the result: 'python'[1:4]?,yth,pyt,ytho,pytho,yth,Python,Medium,Slicing includes start but excludes the end index.
@@ -88,153 +88,64 @@ What is the output: print(22 // 3 + 22 % 3);,8,7,9,10,8,Python,Hard,7 + 1 equals
 How do you create a generator?,Using yield,Using return,Using lambda,Using global,Using yield,Python,Hard,Yield makes a function return a generator object.
 What is the 'global' keyword for?,Modify global variables,Access local,Speed up,Safety,Modify global variables,Python,Hard,Allows local functions to update global scope variables.
 What is the output: type(lambda x: x);,function,lambda,int,None,function,Python,Hard,Lambdas are objects of the 'function' class.
-What is a 'docstring'?,Documentation string,Format type,Encryption,List of strings,Documentation string,Python,Hard,Strings used to document modules, classes, or functions.question,optionA,optionB,optionC,optionD,correctAnswer,category,difficulty,explanation
-What is the output of: cout << (10 / 4);,2,2.5,3,Error,2,C++,Easy,Integer division in C++ truncates the decimal part.
-Which operator is used for scope resolution in C++?,::,.,->,:,::,C++,Easy,The :: operator is used to access global variables or class members.
-Which header file is required for cin and cout?,iostream,stdio.h,conio.h,iomanip,iostream,C++,Easy,iostream defines the standard input/output streams.
-Which keyword exits the current loop immediately?,break,exit,stop,continue,break,C++,Easy,The break statement terminates the loop execution.
-What is the default access modifier for members of a class?,private,public,protected,internal,private,C++,Easy,In C++ classes default to private; structs default to public.
-Which of these is used for a single line comment?,//,/* */,#,--,//,C++,Easy,Two forward slashes denote a single-line comment.
-Which data type is used to store decimal numbers?,float,int,char,bool,float,C++,Easy,Float and double are used for floating-point numbers.
-What is the size of a char in most C++ compilers?,1 byte,2 bytes,4 bytes,8 bytes,1 byte,C++,Easy,A standard char is typically 8 bits or 1 byte.
-Which function is the entry point of every C++ program?,main(),start(),init(),system(),main(),C++,Easy,Execution begins at the main function.
-How do you declare a constant variable in C++?,const,final,static,fixed,const,C++,Easy,The const keyword prevents modification of the variable.
-What is the output of: int x=5; cout << x++ + ++x;,12,11,10,13,12,C++,Medium,x++ uses 5 (becomes 6) then ++x becomes 7. 5+7=12.
-What does 'this' pointer point to?,Current object,Parent class,Global scope,Base class,Current object,C++,Medium,The 'this' pointer points to the instance calling the member function.
-Which feature is used to achieve Runtime Polymorphism?,Virtual Functions,Overloading,Templates,Friendship,Virtual Functions,C++,Medium,Virtual functions allow dynamic dispatch at runtime.
-What is the result of 7 % 4 in C++?,3,1,1.75,0,3,C++,Medium,The modulo operator returns the remainder of the division.
-What is a pointer that points to no valid memory?,Null Pointer,Dangling Pointer,Wild Pointer,Void Pointer,Null Pointer,C++,Medium,A null pointer is explicitly assigned to 0 or NULL.
-What is the output of: int a=10; int *p=&a; cout << (*p)++;,10,11,Address,Error,10,C++,Medium,Post-increment returns the value first then increments it.
-Which OOP feature is shown by function overloading?,Polymorphism,Encapsulation,Inheritance,Abstraction,Polymorphism,C++,Medium,Overloading is a form of compile-time polymorphism.
-What happens if private members are accessed outside?,Compiler Error,Runtime Error,Crash,Linker Error,Compiler Error,C++,Medium,Private members are strictly class-internal.
-Which keyword is used to allocate memory dynamically?,new,malloc,alloc,create,new,C++,Medium,The 'new' operator allocates memory on the heap in C++.
-A class that cannot be instantiated is called?,Abstract Class,Final Class,Static Class,Virtual Class,Abstract Class,C++,Medium,Abstract classes contain at least one pure virtual function.
-What is the size of an empty class in C++?,1 byte,0 bytes,4 bytes,Depends,1 byte,C++,Hard,C++ gives empty classes a size of 1 to ensure unique addresses.
-What is the output: int x=1; if(x--) cout<<True; else cout<<False;,True,False,Error,Nothing,True,C++,Hard,x-- evaluates to 1 (True) then becomes 0.
-Which is true about destructors?,Cannot be overloaded,Can be private,Can have params,Must be virtual,Cannot be overloaded,C++,Hard,A class can only have one destructor with no parameters.
-What is 'Slicing' in C++?,Derived to base assign,Array partition,String cut,Memory frag,Derived to base assign,C++,Hard,Object slicing occurs when a derived object is assigned to base by value.
-What is the output: cout << (true ? 5 : 'A');,5,65,A,Error,5,C++,Hard,The ternary operator promotes types; int is dominant over char.
-What is a virtual destructor used for?,Deleting derived objects,Speeding up code,Allocation,Preventing inheritance,Deleting derived objects,C++,Hard,Ensures derived destructors are called via base pointer.
-What does the 'mutable' keyword do?,Modify const members,Change int to float,Make static,Auto-update,Modify const members,C++,Hard,Mutable allows a member to be changed even in a const object.
-What is the output: int a=5; int b=a << 2; cout << b;,20,10,7,2,20,C++,Hard,Left shift by 2 multiplies the value by 4.
-What is a friend function?,Non-member private access,Member global access,Static,Protected,Non-member private access,C++,Hard,Friend functions can access private/protected members.
-What is the Diamond Problem related to?,Multiple Inheritance,Pointers,Recursion,Templates,Multiple Inheritance,C++,Hard,Occurs when a class inherits from two classes with a common base.
-Which keyword inherits a class in Java?,extends,implements,inherits,base,extends,Java,Easy,Java uses 'extends' for class inheritance.
-What is the default value of an int in a class?,0,null,undefined,1,0,Java,Easy,Instance variables of type int default to 0.
-Which data type stores true or false?,boolean,bool,bit,int,boolean,Java,Easy,The boolean type in Java only accepts true or false.
-What is the root class of all Java classes?,Object,System,Main,Base,Object,Java,Easy,Every class in Java implicitly extends java.lang.Object.
-How do you start a thread in Java?,start(),run(),execute(),init(),start(),Java,Easy,Calling start() registers the thread with the scheduler.
-Which package is imported by default?,java.lang,java.util,java.io,java.net,java.lang,Java,Easy,The java.lang package is automatically available.
-What is the size of double in Java?,8 bytes,4 bytes,2 bytes,16 bytes,8 bytes,Java,Easy,Java's double is a 64-bit IEEE 754 float.
-Which operator creates an object in Java?,new,create,alloc,make,new,Java,Easy,The 'new' operator initializes the memory for a new instance.
-Which is not a primitive data type?,String,int,double,char,String,Java,Easy,String is a class reference type in Java.
-Which method prints text and a newline?,println(),print(),write(),log(),println(),Java,Easy,println() appends a line separator.
-What is the output: 10 + 20 + Java;,30Java,1020Java,Java30,Error,30Java,Java,Medium,Numbers are added before being concatenated to the string.
-Can we overload the main method in Java?,Yes,No,Only static,Only private,Yes,Java,Medium,You can overload it but JVM only calls the standard signature.
-Which keyword prevents inheritance?,final,static,abstract,private,final,Java,Medium,A final class cannot be extended by any other class.
-What is the purpose of 'super'?,Access parent members,Access child,Exit loop,Create object,Access parent members,Java,Medium,Super refers to the immediate parent class members.
-Which collection allows unique elements only?,Set,List,Vector,ArrayList,Set,Java,Medium,Sets do not permit duplicate entries.
-What happens during Garbage Collection?,Unused objects deleted,CPU cleaned,Syntax check,Type change,Unused objects deleted,Java,Medium,GC reclaims heap memory from unreachable objects.
-Which exception is thrown for bad array index?,ArrayIndexOutOfBounds,IndexError,StackOverflow,NullPointer,ArrayIndexOutOfBounds,Java,Medium,Thrown when an index is negative or out of range.
-What is an interface in Java?,Blueprint of a class,Type of class,Variable,Loop,Blueprint of a class,Java,Medium,Interfaces define behavior that classes must implement.
-What is the output: Math.floor(3.6);,3.0,4.0,3,4,3.0,Java,Medium,Math.floor returns the largest integer <= the argument.
-What is a constructor?,Spec method to init objects,Delete objects,Variable type,Loop controller,Spec method to init objects,Java,Medium,Constructors initialize newly created objects.
-What is the output: null instanceof Object;,false,true,Error,NPE,false,Java,Hard,instanceof always returns false for a null reference.
-Which is true about String in Java?,Immutable,Mutable,Inherits List,Primitive,Immutable,Java,Hard,Strings cannot be modified after creation.
-What is the use of 'volatile'?,Thread visibility,Memory optimization,No inheritance,Fast execution,Thread visibility,Java,Hard,Ensures changes to a variable are visible to all threads.
-What is 'Type Erasure' in Java?,Generics removal,Deleting vars,Auto casting,GC,Generics removal,Java,Hard,Ensures compatibility with older non-generic Java versions.
-What is the output: 1.0/0.0;,Infinity,NaN,ArithmeticException,Error,Infinity,Java,Hard,Float division by zero results in Infinity in Java.
-Which of these is a functional interface?,Runnable,ArrayList,String,System,Runnable,Java,Hard,A functional interface has exactly one abstract method.
-What is the output: s1='ABC'; s2=new String('ABC'); s1==s2;,false,true,Error,ABC,false,Java,Hard,== compares references; s2 is a new object on the heap.
-What does 'intern()' do?,Moves to String Pool,Char array convert,Deletes,Finds length,Moves to String Pool,Java,Hard,Intern returns the canonical version from the pool.
-How many objects created: String s = new String('Hello');,2,1,0,3,2,Java,Hard,One in the constant pool and one on the heap.
-What is a marker interface?,Interface with no methods,Many methods,Private,Abstract,Interface with no methods,Java,Hard,Markers like Serializable tag classes for special processing.
-How do you create a list in Python?,[1, 2, 3],(1, 2, 3),{1, 2, 3},<1, 2, 3>,[1, 2, 3],Python,Easy,Square brackets define a mutable list in Python.
-Which function gets list length?,len(),size(),count(),length(),len(),Python,Easy,len() is the standard way to check sequence size.
-What is the output: print(2 ** 3);,8,6,5,9,8,Python,Easy,** is the power operator in Python.
-How do you start a comment in Python?,#,//,/*,--,#,Python,Easy,Hash symbols are used for single-line comments.
-Which keyword defines a function?,def,func,function,define,def,Python,Easy,Functions are defined using the def keyword.
-Which is a tuple in Python?,(1, 2),[1, 2],{1, 2},"1, 2",(1, 2),Python,Easy,Tuples are immutable sequences in parentheses.
-How do you take user input?,input(),get(),scan(),read(),input(),Python,Easy,input() reads data from the user as a string.
-What is the output: print('Hi' * 3);,HiHiHi,Hi3,Error,Hi Hi Hi,HiHiHi,Python,Easy,String multiplication repeats the string content.
-Which operator is floor division?,//,/,%,**,//,Python,Easy,Floor division returns the integer part of the quotient.
-Is Python case sensitive?,Yes,No,Depends on OS,Only vars,Yes,Python,Easy,Variable names like 'X' and 'x' are distinct.
-What is the output: print(type(1 / 2));,float,int,double,decimal,float,Python,Medium,Division in Python 3.x always produces a float result.
-What does 'self' represent?,Current instance,Parent class,Static method,Global,Current instance,Python,Medium,Self refers to the specific instance of the class.
-How do you add to the end of a list?,append(),add(),insert(),extend(),append(),Python,Medium,Append adds one object to the end of the list.
-What is the output: [1, 2] + [3, 4];,[1, 2, 3, 4],[4, 6],Error,Nested List,[1, 2, 3, 4],Python,Medium,The + operator concatenates two lists.
-Which is immutable in Python?,tuple,list,dict,set,tuple,Python,Medium,Tuples cannot be modified after they are created.
-How do you handle exceptions?,try...except,try...catch,do...catch,throw,try...except,Python,Medium,Python uses try/except blocks for error handling.
-What is the result: 'python'[1:4]?,yth,pyt,ytho,pytho,yth,Python,Medium,Slicing includes start but excludes the end index.
-What is a dictionary in Python?,Key-value pairs,Ordered sequence,List of nums,Set,Key-value pairs,Python,Medium,Dictionaries map unique keys to values.
-Which keyword imports a module?,import,include,using,require,import,Python,Medium,Import brings external modules into the local namespace.
-What is the output: print(bool([]));,False,True,Error,None,False,Python,Medium,Empty collections are considered falsy in Python.
-What is the output: print(id(5) == id(5));,True,False,Error,None,True,Python,Hard,Python caches small integers resulting in shared IDs.
-What is a decorator in Python?,Modifies another function,UI element,Class type,Var type,Modifies another function,Python,Hard,Decorators wrap functions to add functionality.
-What is the output: print(0.1 + 0.2 == 0.3);,False,True,Error,0.3,False,Python,Hard,Binary floating point issues make this slightly false.
-What is 'List Comprehension'?,Concise list creation,Sorting,List of strings,Memory mgmt,Concise list creation,Python,Hard,Short syntax for creating lists from iterables.
-What is the output: print(22 // 3 + 22 % 3);,8,7,9,10,8,Python,Hard,7 + 1 equals 8.
-How do you create a generator?,Using yield,Using return,Using lambda,Using global,Using yield,Python,Hard,Yield makes a function return a generator object.
-What is the 'global' keyword for?,Modify global variables,Access local,Speed up,Safety,Modify global variables,Python,Hard,Allows local functions to update global scope variables.
-What is the output: type(lambda x: x);,function,lambda,int,None,function,Python,Hard,Lambdas are objects of the 'function' class.
-What is a 'docstring'?,Documentation string,Format type,Encryption,List of strings,Documentation string,Python,Hard,Strings used to document modules, classes, or functions.
-"What is the output of: cout << (5 ^ 3);",6,8,2,15,6,C++,Easy,"Bitwise XOR of 5 (101) and 3 (011) results in 6 (110)."
-"Which keyword is used to handle exceptions in C++?",catch,except,throwable,error,catch,C++,Easy,"The 'catch' block is used to handle exceptions thrown by a 'try' block."
-"What is the output of: cout << (sizeof(int) >= sizeof(char));",1,0,true,false,1,C++,Easy,"C++ standards guarantee that int is at least as large as char; cout prints 1 for true."
-"Which of these is used to define a macro in C++?",#define,#macro,$define,@macro,#define,C++,Easy,"The #define preprocessor directive is used for creating macros."
-"What is the output of: int x = 10; float y = 3; cout << x / y;",3,3.33333,3.0,Error,3.33333,C++,Medium,"In an expression with int and float, the int is promoted to float for decimal division."
-"Which STL container stores elements in a key-value pair format?",vector,list,map,stack,map,C++,Medium,"The 'map' container stores unique keys mapped to specific values."
-"What is the output of: int a=5, b=10; a=a+b; b=a-b; a=a-b; cout<<a<<b;",105,510,1510,55,105,C++,Medium,"This logic swaps two numbers without a third variable; a becomes 10 and b becomes 5."
-"Which of the following is true about static member functions?",Can access non-static members,Cannot be called without object,Can only access static members,Are inherited as private,Can only access static members,C++,Medium,"Static functions do not have a 'this' pointer and can only access other static data/functions."
-"What is the output of: int x=1; cout << (x << 3);",4,8,1,3,8,C++,Hard,"Left shifting 1 by 3 bits is equivalent to multiplying by 2^3 (8)."
-"What happens if a function returns a reference to a local variable?",Compiler Error,Undefined Behavior,Segmentation Fault,Nothing,Undefined Behavior,C++,Hard,"Local variables are destroyed when the function exits, leaving the reference dangling."
-"Which keyword is used to access an interface method in Java?",access,implements,extends,import,implements,Java,Easy,"A class uses 'implements' to inherit the abstract methods of an interface."
-"What is the output of: System.out.println(5 == 5.0);",true,false,Error,None,true,Java,Easy,"Java performs numeric promotion, making the values equal."
-"Which method is used to find the length of a string in Java?",length(),size(),len(),count(),length(),Java,Easy,"The length() method of the String class returns the number of characters."
-"What is the default value of a boolean variable in Java?",true,false,0,null,false,Java,Easy,"Instance boolean variables are initialized to false by default."
-"What is the output of: System.out.println(\"10\" + 20 + 30);",60,102030,1050,Error,102030,Java,Medium,"Since the first operand is a string, the + operator acts as string concatenation."
-"Which of these is used for multi-threading in Java?",Runnable interface,Thread class,Both A and B,Process class,Both A and B,Java,Medium,"Threads can be created by extending the Thread class or implementing Runnable."
-"What is the purpose of 'finally' block in Java?",To handle errors,To execute code always,To stop threads,To define constants,To execute code always,Java,Medium,"The finally block executes regardless of whether an exception was thrown or caught."
-"Which collection class allows null as a key?",TreeMap,HashSet,HashMap,Hashtable,HashMap,Java,Medium,"HashMap allows one null key, whereas Hashtable and TreeMap do not."
+What is a 'docstring'?,Documentation string,Format type,Encryption,List of strings,Documentation string,Python,Hard,Strings used to document modules
+What is the output of: cout << (5 ^ 3);,6,8,2,15,6,C++,Easy,Bitwise XOR of 5 (101) and 3 (011) results in 6 (110).
+Which keyword is used to handle exceptions in C++?,catch,except,throwable,error,catch,C++,Easy,The 'catch' block is used to handle exceptions thrown by a 'try' block.
+What is the output of: cout << (sizeof(int) >= sizeof(char));,1,0,true,false,1,C++,Easy,C++ standards guarantee that int is at least as large as char; cout prints 1 for true.
+Which of these is used to define a macro in C++?,#define,#macro,$define,@macro,#define,C++,Easy,The #define preprocessor directive is used for creating macros.
+What is the output of: int x = 10; float y = 3; cout << x / y;,3,3.33333,3.0,Error,3.33333,C++,Medium,"In an expression with int and float, the int is promoted to float for decimal division."
+Which STL container stores elements in a key-value pair format?,vector,list,map,stack,map,C++,Medium,The 'map' container stores unique keys mapped to specific values.
+"What is the output of: int a=5, b=10; a=a+b; b=a-b; a=a-b; cout<<a<<b;",105,510,1510,55,105,C++,Medium,This logic swaps two numbers without a third variable; a becomes 10 and b becomes 5.
+Which of the following is true about static member functions?,Can access non-static members,Cannot be called without object,Can only access static members,Are inherited as private,Can only access static members,C++,Medium,Static functions do not have a 'this' pointer and can only access other static data/functions.
+What is the output of: int x=1; cout << (x << 3);,4,8,1,3,8,C++,Hard,Left shifting 1 by 3 bits is equivalent to multiplying by 2^3 (8).
+What happens if a function returns a reference to a local variable?,Compiler Error,Undefined Behavior,Segmentation Fault,Nothing,Undefined Behavior,C++,Hard,"Local variables are destroyed when the function exits, leaving the reference dangling."
+Which keyword is used to access an interface method in Java?,access,implements,extends,import,implements,Java,Easy,A class uses 'implements' to inherit the abstract methods of an interface.
+What is the output of: System.out.println(5 == 5.0);,true,false,Error,None,true,Java,Easy,"Java performs numeric promotion, making the values equal."
+Which method is used to find the length of a string in Java?,length(),size(),len(),count(),length(),Java,Easy,The length() method of the String class returns the number of characters.
+What is the default value of a boolean variable in Java?,true,false,0,null,false,Java,Easy,Instance boolean variables are initialized to false by default.
+"What is the output of: System.out.println(\""10\"" + 20 + 30);",60,102030,1050,Error,102030,Java,Medium,"Since the first operand is a string, the + operator acts as string concatenation."
+Which of these is used for multi-threading in Java?,Runnable interface,Thread class,Both A and B,Process class,Both A and B,Java,Medium,Threads can be created by extending the Thread class or implementing Runnable.
+What is the purpose of 'finally' block in Java?,To handle errors,To execute code always,To stop threads,To define constants,To execute code always,Java,Medium,The finally block executes regardless of whether an exception was thrown or caught.
+Which collection class allows null as a key?,TreeMap,HashSet,HashMap,Hashtable,HashMap,Java,Medium,"HashMap allows one null key, whereas Hashtable and TreeMap do not."
 "What is the output of: System.out.println(Math.min(Double.MIN_VALUE, 0.0));",0.0,Double.MIN_VALUE,-Infinity,Error,0.0,Java,Hard,"Double.MIN_VALUE is the smallest positive constant, which is greater than 0.0."
-"What is a 'Shallow Copy' in Java?",Copying values,Copying references,Deep memory copy,Bitwise copy,Copying references,Java,Hard,"A shallow copy copies the reference to the object, not the actual object data."
-"What is the output of: print(\"abc\".upper());",ABC,abc,Abc,Error,ABC,Python,Easy,"The upper() method converts all characters in a string to uppercase."
-"Which operator is used for 'not equal to' in Python?",<>,!=,/=,not,!=,Python,Easy,"The != operator checks if the values of two operands are not equal."
-"How do you start a while loop in Python?",while x < 10:,while (x < 10),while x < 10 do,loop while x < 10,while x < 10:,Python,Easy,"Python syntax requires a colon at the end of the loop header."
-"Which of these is not a keyword in Python?",yield,raise,global,eval,eval,Python,Easy,"eval() is a built-in function, not a reserved keyword."
-"What is the output of: print([i for i in range(3)]);",[0, 1, 2],[1, 2, 3],[0, 1, 2, 3],Error,[0, 1, 2],Python,Medium,"Range(3) generates numbers 0, 1, and 2."
-"How do you remove an element from a dictionary?",remove(),delete,pop(),discard(),pop(),Python,Medium,"The pop() method removes the specified key and returns the value."
-"What is the result of: bool(\"False\")",True,False,Error,None,True,Python,Medium,"Any non-empty string in Python evaluates to True in a boolean context."
-"Which module in Python is used for regular expressions?",regex,re,regexp,pattern,re,Python,Medium,"The 're' module provides support for regular expressions."
-"What is the output of: print(type(1/1));",int,float,double,decimal,float,Python,Hard,"In Python 3, the division operator (/) always returns a floating-point number."
-"What is 'Pickling' in Python?",Deleting files,Object serialization,Compression,Sorting,Object serialization,Python,Hard,"Pickling is the process of converting a Python object into a byte stream."
-"What is the output of: print(type(1 / 2));",int,float,double,decimal,float,Python,Easy,"In Python 3; the / operator always performs float division."
-"What is the output of: print('abc' + 1);",abc1,Error,abc,None,Error,Python,Easy,"Python does not allow implicit concatenation of strings and integers."
-"What is the output of: a=[1,2]; b=a; b.append(3); print(a);",[1,2],[1,2,3],Error,[3],[1,2,3],Python,Medium,"Lists are mutable. 'b=a' creates a reference; so modifying 'b' affects 'a'."
-"What is the result of: print(bool('False'));",True,False,Error,None,True,Python,Medium,"Any non-empty string evaluates to True when converted to a boolean."
-"What is the output of: print(2**3**2);",64,512,18,Error,512,Python,Hard,"Exponentiation (**) is right-associative; so it evaluates 3**2 first; then 2**9."
-"Which method is used to remove the last element from a list?",remove(),delete(),pop(),discard(),pop(),Python,Easy,"The pop() method removes and returns the last item of a list by default."
+What is a 'Shallow Copy' in Java?,Copying values,Copying references,Deep memory copy,Bitwise copy,Copying references,Java,Hard,"A shallow copy copies the reference to the object, not the actual object data."
+"What is the output of: print(\""abc\"".upper());",ABC,abc,Abc,Error,ABC,Python,Easy,The upper() method converts all characters in a string to uppercase.
+Which operator is used for 'not equal to' in Python?,<>,!=,/=,not,!=,Python,Easy,The != operator checks if the values of two operands are not equal.
+How do you start a while loop in Python?,while x < 10:,while (x < 10),while x < 10 do,loop while x < 10,while x < 10:,Python,Easy,Python syntax requires a colon at the end of the loop header.
+Which of these is not a keyword in Python?,yield,raise,global,eval,eval,Python,Easy,"eval() is a built-in function, not a reserved keyword."
+What is the output of: print([i for i in range(3)]);,[0, 1, 2],[1, 2, 3],[0, 1
+How do you remove an element from a dictionary?,remove(),delete,pop(),discard(),pop(),Python,Medium,The pop() method removes the specified key and returns the value.
+"What is the result of: bool(\""False\"")",True,False,Error,None,True,Python,Medium,Any non-empty string in Python evaluates to True in a boolean context.
+Which module in Python is used for regular expressions?,regex,re,regexp,pattern,re,Python,Medium,The 're' module provides support for regular expressions.
+What is the output of: print(type(1/1));,int,float,double,decimal,float,Python,Hard,"In Python 3, the division operator (/) always returns a floating-point number."
+What is 'Pickling' in Python?,Deleting files,Object serialization,Compression,Sorting,Object serialization,Python,Hard,Pickling is the process of converting a Python object into a byte stream.
+What is the output of: print(type(1 / 2));,int,float,double,decimal,float,Python,Easy,In Python 3; the / operator always performs float division.
+What is the output of: print('abc' + 1);,abc1,Error,abc,None,Error,Python,Easy,Python does not allow implicit concatenation of strings and integers.
+"What is the output of: a=[1,2]; b=a; b.append(3); print(a);",[1,2],[1,2,3],Error,[3],[1
+What is the result of: print(bool('False'));,True,False,Error,None,True,Python,Medium,Any non-empty string evaluates to True when converted to a boolean.
+What is the output of: print(2**3**2);,64,512,18,Error,512,Python,Hard,Exponentiation (**) is right-associative; so it evaluates 3**2 first; then 2**9.
+Which method is used to remove the last element from a list?,remove(),delete(),pop(),discard(),pop(),Python,Easy,The pop() method removes and returns the last item of a list by default.
 "What is the output of: print(len({1, 2, 2, 3}));",4,3,2,Error,3,Python,Medium,"Sets contain only unique elements; so {1, 2, 2, 3} becomes {1, 2, 3}."
-"What is the output of: print('Hello'[::-1]);",Hello,olleH,H,Error,olleH,Python,Medium,"The slice [::-1] is a common idiom to reverse a string in Python."
-"Which of the following is an immutable data type in Python?",list,dictionary,set,tuple,tuple,Python,Easy,"Tuples are immutable sequences; meaning they cannot be changed after creation."
-"What is the output of: def f(a, b=[]): b.append(a); return b; print(f(1), f(2));",[1] [2],[1] [1, 2],[1, 2] [1, 2],Error,[1, 2] [1, 2],Python,Hard,"Default arguments like 'b=[]' are evaluated once and shared across calls."
-"What is the output of: String s = 'Java'; s.concat('11'); System.out.println(s);",Java,Java11,Error,null,Java,Java,Medium,"Strings are immutable. s.concat returns a new string but doesn't change the original 's'."
-"What is the output of: System.out.println(10 + 20 + '30' + 40);",303040,10203040,100,Error,303040,Java,Medium,"10+20=30; then it concatenates with '30' (3030); then concatenates 40 (303040)."
-"Which of these is not a valid access modifier in Java?",private,protected,internal,public,internal,Java,Easy,"Java access modifiers are public; private; protected; and default (no keyword)."
-"What is the output of: int x=10; System.out.println(x >> 1);",20,10,5,2,5,Java,Easy,"The signed right shift operator (>>) divides the number by 2^n."
-"Can a constructor be marked as 'final' in Java?",Yes,No,Only if private,Only in abstract classes,No,Java,Hard,"Constructors cannot be final; static; or abstract because they are not inherited."
-"What is the output of: try { return 1; } finally { return 2; }",1,2,Error,Nothing,2,Java,Hard,"The finally block always executes and its return value overrides the try block's return."
-"Which collection class does not allow duplicate elements?",ArrayList,LinkedList,HashSet,Vector,HashSet,Java,Easy,"The Set interface (implemented by HashSet) does not permit duplicate elements."
-"What is the output of: Integer a=127, b=127; System.out.println(a==b);",true,false,Error,null,true,Java,Hard,"Java caches Integer objects from -128 to 127; so a and b point to the same object."
-"Which keyword is used to call the parent class constructor?",parent,this,super,base,super,Java,Easy,"The 'super()' call is used to invoke the constructor of the immediate parent class."
-"What is the result of: 1.0 / 0.0 in Java?",ArithmeticException,Infinity,NaN,0.0,Infinity,Java,Medium,"Floating-point division by zero in Java results in Infinity; not an exception."
-"What is the output of: int a=5; int b=++a + a++; cout << b << a;",127,137,126,117,127,C++,Medium,"++a makes a=6; then a++ uses 6 (making b=12) and then a becomes 7."
-"Which of the following is the correct way to declare a pure virtual function?",virtual void f()=0;,virtual void f(){};,void f()=0;,virtual void f();,virtual void f()=0;,C++,Medium,"A pure virtual function is declared by assigning 0 to a virtual function declaration."
-"What is the output of: int arr[]={10,20,30}; int *p=arr; cout << *(p+1);",10,20,30,Error,20,C++,Easy,"p points to arr[0]. p+1 points to the next integer in the array; which is 20."
-"What is the output of: cout << (sizeof('A') == sizeof(char));",1,0,true,false,1,C++,Hard,"In C++; a character literal has the type char; so their sizes are identical (usually 1)."
-"Which keyword is used to deallocate memory allocated by 'new'?",delete,free,remove,destruct,delete,C++,Easy,"The 'delete' operator is used to free memory on the heap allocated via 'new'."
-"What is the output of: int x=10; if(x=5) cout<<'True'; else cout<<'False';",True,False,Error,5,True,C++,Medium,"The assignment (x=5) evaluates to 5; which is non-zero (True) in a condition."
-"Which of the following cannot be inherited?",Friend functions,Constructors,Private members,All of the above,All of the above,C++,Hard,"Constructors; friend functions; and private members are not inherited by derived classes."
-"What is the output of: cout << (1 << 3);",3,4,8,1,8,C++,Medium,"Left shift (1 << 3) is equivalent to 1 * 2^3; which is 8."
-"What is the output of: void f(int x=5, int y); f(10);",10,5,Error,15,Error,C++,Hard,"Default arguments must be placed at the end of the parameter list."
-"Which storage class has the global scope and lives for the entire program?",static,extern,register,auto,extern,C++,Medium,"The 'extern' keyword is used to declare a variable that has external linkage and global scope."
+What is the output of: print('Hello'[::-1]);,Hello,olleH,H,Error,olleH,Python,Medium,The slice [::-1] is a common idiom to reverse a string in Python.
+Which of the following is an immutable data type in Python?,list,dictionary,set,tuple,tuple,Python,Easy,Tuples are immutable sequences; meaning they cannot be changed after creation.
+"What is the output of: def f(a, b=[]): b.append(a); return b; print(f(1), f(2));",[1] [2],[1] [1, 2],[1, 2] [1, 2],Error,[1
+What is the output of: String s = 'Java'; s.concat('11'); System.out.println(s);,Java,Java11,Error,null,Java,Java,Medium,Strings are immutable. s.concat returns a new string but doesn't change the original 's'.
+What is the output of: System.out.println(10 + 20 + '30' + 40);,303040,10203040,100,Error,303040,Java,Medium,10+20=30; then it concatenates with '30' (3030); then concatenates 40 (303040).
+Which of these is not a valid access modifier in Java?,private,protected,internal,public,internal,Java,Easy,Java access modifiers are public; private; protected; and default (no keyword).
+What is the output of: int x=10; System.out.println(x >> 1);,20,10,5,2,5,Java,Easy,The signed right shift operator (>>) divides the number by 2^n.
+Can a constructor be marked as 'final' in Java?,Yes,No,Only if private,Only in abstract classes,No,Java,Hard,Constructors cannot be final; static; or abstract because they are not inherited.
+What is the output of: try { return 1; } finally { return 2; },1,2,Error,Nothing,2,Java,Hard,The finally block always executes and its return value overrides the try block's return.
+Which collection class does not allow duplicate elements?,ArrayList,LinkedList,HashSet,Vector,HashSet,Java,Easy,The Set interface (implemented by HashSet) does not permit duplicate elements.
+"What is the output of: Integer a=127, b=127; System.out.println(a==b);",true,false,Error,null,true,Java,Hard,Java caches Integer objects from -128 to 127; so a and b point to the same object.
+Which keyword is used to call the parent class constructor?,parent,this,super,base,super,Java,Easy,The 'super()' call is used to invoke the constructor of the immediate parent class.
+What is the result of: 1.0 / 0.0 in Java?,ArithmeticException,Infinity,NaN,0.0,Infinity,Java,Medium,Floating-point division by zero in Java results in Infinity; not an exception.
+What is the output of: int a=5; int b=++a + a++; cout << b << a;,127,137,126,117,127,C++,Medium,++a makes a=6; then a++ uses 6 (making b=12) and then a becomes 7.
+Which of the following is the correct way to declare a pure virtual function?,virtual void f()=0;,virtual void f(){};,void f()=0;,virtual void f();,virtual void f()=0;,C++,Medium,A pure virtual function is declared by assigning 0 to a virtual function declaration.
+"What is the output of: int arr[]={10,20,30}; int *p=arr; cout << *(p+1);",10,20,30,Error,20,C++,Easy,p points to arr[0]. p+1 points to the next integer in the array; which is 20.
+What is the output of: cout << (sizeof('A') == sizeof(char));,1,0,true,false,1,C++,Hard,In C++; a character literal has the type char; so their sizes are identical (usually 1).
+Which keyword is used to deallocate memory allocated by 'new'?,delete,free,remove,destruct,delete,C++,Easy,The 'delete' operator is used to free memory on the heap allocated via 'new'.
+What is the output of: int x=10; if(x=5) cout<<'True'; else cout<<'False';,True,False,Error,5,True,C++,Medium,The assignment (x=5) evaluates to 5; which is non-zero (True) in a condition.
+Which of the following cannot be inherited?,Friend functions,Constructors,Private members,All of the above,All of the above,C++,Hard,Constructors; friend functions; and private members are not inherited by derived classes.
+What is the output of: cout << (1 << 3);,3,4,8,1,8,C++,Medium,Left shift (1 << 3) is equivalent to 1 * 2^3; which is 8.
+"What is the output of: void f(int x=5, int y); f(10);",10,5,Error,15,Error,C++,Hard,Default arguments must be placed at the end of the parameter list.
+Which storage class has the global scope and lives for the entire program?,static,extern,register,auto,extern,C++,Medium,The 'extern' keyword is used to declare a variable that has external linkage and global scope.

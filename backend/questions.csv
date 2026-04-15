@@ -1,23 +1,23 @@
 question,optionA,optionB,optionC,optionD,correctAnswer,category,difficulty,explanation
-If a train travels at 60 km/hr, how many meters does it cover in 15 seconds?,250 m,150 m,200 m,300 m,250 m,Quantitative,Easy,Speed in m/s = 60 * 5/18 = 16.66. Distance = 16.66 * 15 = 250 m.
-A shopkeeper sells an item for 600 at a profit of 20%. Find the cost price.,500,480,520,550,500,Cost Price = (100/120) * 600 = 500.,Quantitative,Easy,CP = (100 / (100 + Profit%)) * SP
+If a train travels at 60 km/hr, how many meters does it cover in 15 seconds?,250 m,150 m,200 m,300 m,250 m,Quantitative,Easy
+A shopkeeper sells an item for 600 at a profit of 20%. Find the cost price.,500,480,520,550,500,Cost Price = (100/120) * 600 = 500.,Quantitative,Easy
 What is 15% of 40% of 2000?,120,60,80,100,120,Quantitative,Easy,0.15 * 0.40 * 2000 = 120.
 Find the missing number in the series: 4; 9; 16; 25; ?; 49,36,32,40,45,36,Logical,Easy,The series consists of squares of consecutive numbers: 2^2; 3^2; 4^2; 5^2; 6^2.
-Pointing to a man, a woman said; He is the only son of my mother's mother. How is the woman related to the man?,Niece,Sister,Mother,Aunt,Niece,Logical,Easy,Woman's mother's mother is her grandmother. Her grandmother's only son is her maternal uncle.
-In a certain code, COMPUTER is written as RFUVQNPC. How is MEDICINE written?,EOJDJEFM,EOJDEJFM,MFEJDJOE,MFEDJDOE,EOJDJEFM,Logical,Easy,Reverse the word and shift each letter by +1.
+Pointing to a man, a woman said; He is the only son of my mother's mother. How is the woman related to the man?,Niece,Sister,Mother,Aunt,Niece,Logical,Easy
+In a certain code, COMPUTER is written as RFUVQNPC. How is MEDICINE written?,EOJDJEFM,EOJDEJFM,MFEJDJOE,MFEDJDOE,EOJDJEFM,Logical,Easy
 Choose the synonym of the word CANDID,Frank,Greedy,Dishonest,Secretive,Frank,Verbal,Easy,Candid means truthful and straightforward.
 Select the antonym of the word ABANDON,Retain,Leave,Quit,Forsake,Retain,Verbal,Easy,Abandon means to leave; Retain means to keep.
 Identify the error in the sentence: He have been working here since 2010.,He have,been working,here since,No error,He have,Verbal,Easy,He is a singular subject and requires 'has' instead of 'have'.
 A and B can do a piece of work in 12 days and 16 days respectively. In how many days can they complete it together?,6.85 days,7 days,8.2 days,9 days,6.85 days,Quantitative,Medium,Work rate = (1/12 + 1/16) = 7/48. Days = 48/7 approx 6.85.
-A man can row 15 km/hr in still water. If the speed of the stream is 3 km/hr, find his speed downstream.,18 km/hr,12 km/hr,15 km/hr,21 km/hr,18 km/hr,Quantitative,Medium,Downstream speed = Speed in still water + Speed of stream = 15 + 3.
-The ratio of the ages of A and B is 3:4. Five years ago, the ratio was 2:3. Find their present ages.,15 and 20,12 and 16,18 and 24,21 and 28,15 and 20,Quantitative,Medium,(3x-5)/(4x-5) = 2/3 gives x=5. Ages are 3*5 and 4*5.
+A man can row 15 km/hr in still water. If the speed of the stream is 3 km/hr, find his speed downstream.,18 km/hr,12 km/hr,15 km/hr,21 km/hr,18 km/hr,Quantitative,Medium
+The ratio of the ages of A and B is 3:4. Five years ago, the ratio was 2:3. Find their present ages.,15 and 20,12 and 16,18 and 24,21 and 28,15 and 20,Quantitative,Medium
 Find the simple interest on 5000 at 10% per annum for 3 years.,1500,1000,1200,1800,1500,Quantitative,Medium,SI = (P*R*T)/100 = (5000*10*3)/100 = 1500.
-If A is 20% more than B, by what percent is B less than A?,16.66%,20%,25%,15%,16.66%,Quantitative,Medium,Reduction = (20 / (100+20)) * 100 = 16.66%.
-In a row of 40 students, R is 11th from the right. What is his position from the left?,30,31,29,32,30,Logical,Medium,Left position = (Total - Right position) + 1 = (40 - 11) + 1.
-If South-East becomes North, and North-East becomes West, what will West become?,South-East,North-West,South-West,North-East,South-East,Logical,Medium,The directions are rotated 135 degrees anti-clockwise.
+If A is 20% more than B, by what percent is B less than A?,16.66%,20%,25%,15%,16.66%,Quantitative,Medium
+In a row of 40 students, R is 11th from the right. What is his position from the left?,30,31,29,32,30,Logical,Medium
+If South-East becomes North, and North-East becomes West, what will West become?,South-East,North-West,South-West,North-East,South-East,Logical
 Find the odd one out: 27; 64; 125; 144; 216,144,27,125,216,144,Logical,Medium,All others are perfect cubes: 3^3; 4^3; 5^3; 6^3. 144 is 12^2.
 Statements: All mangoes are golden. Some golden things are apples. Conclusion: Some mangoes are apples.,False,True,Maybe,Insufficient data,False,Logical,Medium,The middle term 'golden' is not distributed in either premise.
-If 1st January 2001 was a Monday, what day was 1st January 2002?,Tuesday,Monday,Wednesday,Sunday,Tuesday,Logical,Medium,A non-leap year has 365 days, which is 52 weeks and 1 odd day.
+If 1st January 2001 was a Monday, what day was 1st January 2002?,Tuesday,Monday,Wednesday,Sunday,Tuesday,Logical,Medium
 Choose the correct spelling,Occurrence,Occurence,Occurance,Ocurrence,Occurrence,Verbal,Medium,Occurrence is spelled with double 'c' and double 'r'.
 Choose the most appropriate word to fill in the blank: The police _____ the building to find the thief.,searched,looked,watched,stared,searched,Verbal,Medium,Searched implies a thorough investigation of a place.
 Change the voice: The mason is building the wall.,The wall is being built by the mason,The wall was built by the mason,The wall is built by the mason,The wall was being built by the mason,The wall is being built by the mason,Verbal,Medium,Present continuous passive is 'is/am/are + being + V3'.
@@ -59,7 +59,6 @@ Select the pair that best expresses a relationship similar to LIGHT:BLIND,Speech
 Choose the synonym of ABANDON,Forsake,Keep,Cherish,Adopt,Forsake,Verbal,Easy,Abandon and Forsake both mean to give up or leave.
 Identify the error: She don't like to go to the park.,She don't,like to go,to the park,No error,She don't,Verbal,Easy,Singular 'She' requires 'doesn't' (does not) rather than 'don't'.
 Fill in the blank: The sun _____ in the east.,rises,rise,rising,rose,rises,Verbal,Easy,Universal truths are expressed in the simple present tense.
-Choose the correct spelling,Accommodate,Acomodate,Accomodate,Acommodate,Accommodate,Verbal,Medium,Accommodate has double 'c' and double 'm'.
 Antonym of NOBLE,Ignoble,Grand,Aristocratic,Honorable,Ignoble,Verbal,Medium,Noble refers to high moral character; Ignoble means low or base.
 Change to Passive Voice: She is playing the guitar.,The guitar is being played by her,The guitar was played by her,The guitar is played by her,The guitar has been played by her,The guitar is being played by her,Verbal,Medium,Present continuous passive: is/am/are + being + V3.
 Choose the best word: He was _____ for his crime.,punished,rewarded,praised,ignored,punished,Verbal,Medium,Contextually; a crime results in punishment.
@@ -100,35 +99,34 @@ Sentence Correction: Each of the students have submitted their work.,Each of the
 Antonym of the word VAGUE,Clear,Blurry,Uncertain,Doubtful,Clear,Verbal,Medium,Vague means not clear; so Clear is the antonym.
 Synonym of the word VIGILANT,Watchful,Careless,Sleepy,Unaware,Watchful,Verbal,Hard,Vigilant means keeping careful watch for possible danger.
 "If 12 men can complete a work in 20 days, how many days will 15 men take to complete the same work?",16 days,18 days,15 days,22 days,16 days,Quantitative,Easy,"Using M1D1 = M2D2: 12 * 20 = 15 * D2. Therefore, D2 = 240 / 15 = 16 days."
-"A person crosses a 600m long street in 5 minutes. What is his speed in km/hr?",7.2,3.6,8.4,10,7.2,Quantitative,Easy,"Speed = 600m / 300s = 2 m/s. To convert to km/hr: 2 * (18/5) = 7.2 km/hr."
-"What is the average of first five multiples of 7?",21,14,28,35,21,Quantitative,Easy,"Sum = 7+14+21+28+35 = 105. Average = 105 / 5 = 21."
+What is the average of first five multiples of 7?,21,14,28,35,21,Quantitative,Easy,Sum = 7+14+21+28+35 = 105. Average = 105 / 5 = 21.
 "Find the missing number in the series: 1, 4, 9, 16, 25, ?",36,49,30,42,36,Logical,Easy,"The series is squares of consecutive natural numbers: 1^2, 2^2, 3^2, 4^2, 5^2, 6^2."
 "Pointing to a photograph, a man said, 'I have no brother or sister but that man's father is my father's son.' Whose photograph was it?",His son,His father,His nephew,His own,His son,Logical,Medium,"'My father's son' with no siblings is the man himself. So, the man in the photo's father is 'Me'."
 "In a certain code, 'ROAD' is written as 'URDG'. How is 'SWAN' written in that code?",VZDQ,UXDQ,VZC8,VZCQ,VZDQ,Logical,Medium,"Each letter is shifted by +3 positions in the alphabet (R+3=U, O+3=R, etc.)."
-"Choose the synonym for 'FRUGAL'.",Economical,Extravagant,Generous,Wasteful,Economical,Verbal,Easy,"Frugal means being cautious with money or resources; economical is the closest synonym."
-"Select the correct antonym for 'ENORMOUS'.",Tiny,Huge,Massive,Grand,Tiny,Verbal,Easy,"Enormous means very large; tiny means very small."
-"Identify the error: 'Neither of the two candidates are fit for the position.'",are fit,Neither of,two candidates,No error,are fit,Verbal,Medium,"'Neither' is a singular distributor and must be followed by the singular verb 'is'."
-"A sum of money at simple interest doubles itself in 8 years. In how many years will it become four times itself?",24 years,16 years,32 years,20 years,24 years,Quantitative,Hard,"Interest for 8 years = P. To become 4P, total interest needed is 3P. Time = 8 * 3 = 24 years."
-"Find the probability of getting a sum of 9 from two throws of a dice.",1/9,1/6,1/12,5/36,1/9,Quantitative,Hard,"Favorable outcomes: (3,6), (4,5), (5,4), (6,3) = 4. Total = 36. Probability = 4/36 = 1/9."
-"A train 140m long is running at 60 km/hr. In how much time will it pass a platform 260m long?",24 sec,20 sec,28 sec,30 sec,24 sec,Quantitative,Hard,"Total distance = 140+260 = 400m. Speed = 60 * 5/18 = 16.67 m/s. Time = 400 / 16.67 = 24 sec."
-"If '+' means 'divided by', '-' means 'multiplied by', 'x' means 'plus', what is the value of: 10 + 2 - 5 x 3?",28,13,15,20,28,Logical,Medium,"Substituting symbols: (10 / 2) * 5 + 3 = 5 * 5 + 3 = 28."
-"Six people A, B, C, D, E, F are sitting in a circle facing the center. B is between F and C. A is between E and D. F is to the left of D. Who is between A and F?",D,E,B,C,D,Logical,Hard,"Arranging in a circle based on constraints leads to the sequence E-A-D-F-B-C."
-"Choose the correctly spelled word.",Accommodation,Acomodation,Accomodation,Acommodation,Accommodation,Verbal,Medium,"Accommodation is spelled with double 'c' and double 'm'."
-"The ratio of the speeds of two trains is 7:8. If the second train runs 400 km in 5 hours, what is the speed of the first train?",70 km/hr,75 km/hr,80 km/hr,85 km/hr,70 km/hr,Quantitative,Easy,"Speed of 2nd train = 400/5 = 80 km/hr. Speed of 1st train = (7/8) * 80 = 70 km/hr."
-"A person buys a toy for 50 and sells it for 75. What is the profit percentage?",25%,50%,75%,100%,50%,Quantitative,Easy,"Profit = 75 - 50 = 25. Profit % = (25/50) * 100 = 50%."
-"What is the average of the first 10 prime numbers?",12.9,11.5,15.2,13.1,12.9,Quantitative,Medium,"Sum of first 10 primes (2,3,5,7,11,13,17,19,23,29) is 129. Average = 129/10 = 12.9."
+Choose the synonym for 'FRUGAL'.,Economical,Extravagant,Generous,Wasteful,Economical,Verbal,Easy,Frugal means being cautious with money or resources; economical is the closest synonym.
+Select the correct antonym for 'ENORMOUS'.,Tiny,Huge,Massive,Grand,Tiny,Verbal,Easy,Enormous means very large; tiny means very small.
+Identify the error: 'Neither of the two candidates are fit for the position.',are fit,Neither of,two candidates,No error,are fit,Verbal,Medium,'Neither' is a singular distributor and must be followed by the singular verb 'is'.
+A sum of money at simple interest doubles itself in 8 years. In how many years will it become four times itself?,24 years,16 years,32 years,20 years,24 years,Quantitative,Hard,"Interest for 8 years = P. To become 4P, total interest needed is 3P. Time = 8 * 3 = 24 years."
+Find the probability of getting a sum of 9 from two throws of a dice.,1/9,1/6,1/12,5/36,1/9,Quantitative,Hard,"Favorable outcomes: (3,6), (4,5), (5,4), (6,3) = 4. Total = 36. Probability = 4/36 = 1/9."
+A train 140m long is running at 60 km/hr. In how much time will it pass a platform 260m long?,24 sec,20 sec,28 sec,30 sec,24 sec,Quantitative,Hard,Total distance = 140+260 = 400m. Speed = 60 * 5/18 = 16.67 m/s. Time = 400 / 16.67 = 24 sec.
+"If '+' means 'divided by', '-' means 'multiplied by', 'x' means 'plus', what is the value of: 10 + 2 - 5 x 3?",28,13,15,20,28,Logical,Medium,Substituting symbols: (10 / 2) * 5 + 3 = 5 * 5 + 3 = 28.
+"Six people A, B, C, D, E, F are sitting in a circle facing the center. B is between F and C. A is between E and D. F is to the left of D. Who is between A and F?",D,E,B,C,D,Logical,Hard,Arranging in a circle based on constraints leads to the sequence E-A-D-F-B-C.
+Choose the correctly spelled word.,Accommodation,Acomodation,Accomodation,Acommodation,Accommodation,Verbal,Medium,Accommodation is spelled with double 'c' and double 'm'.
+"The ratio of the speeds of two trains is 7:8. If the second train runs 400 km in 5 hours, what is the speed of the first train?",70 km/hr,75 km/hr,80 km/hr,85 km/hr,70 km/hr,Quantitative,Easy,Speed of 2nd train = 400/5 = 80 km/hr. Speed of 1st train = (7/8) * 80 = 70 km/hr.
+A person buys a toy for 50 and sells it for 75. What is the profit percentage?,25%,50%,75%,100%,50%,Quantitative,Easy,Profit = 75 - 50 = 25. Profit % = (25/50) * 100 = 50%.
+What is the average of the first 10 prime numbers?,12.9,11.5,15.2,13.1,12.9,Quantitative,Medium,"Sum of first 10 primes (2,3,5,7,11,13,17,19,23,29) is 129. Average = 129/10 = 12.9."
 "A and B can together finish a work in 30 days. They worked together for 20 days and then B left. After another 20 days, A finished the remaining work. In how many days can A alone finish the job?",50 days,60 days,40 days,70 days,60 days,Quantitative,Hard,"In 20 days, 2/3 work is done. 1/3 work is done by A in 20 days. Full work by A = 20 * 3 = 60 days."
-"Find the probability that a leap year has 53 Sundays.",2/7,1/7,3/7,5/7,2/7,Quantitative,Hard,"A leap year has 366 days (52 weeks and 2 days). For 53 Sundays, one of those 2 days must be Sunday. (Sat,Sun) or (Sun,Mon) are 2 out of 7 possibilities."
+Find the probability that a leap year has 53 Sundays.,2/7,1/7,3/7,5/7,2/7,Quantitative,Hard,"A leap year has 366 days (52 weeks and 2 days). For 53 Sundays, one of those 2 days must be Sunday. (Sat,Sun) or (Sun,Mon) are 2 out of 7 possibilities."
 "Find the missing number: 2, 6, 12, 20, 30, ?",40,42,44,46,42,Logical,Easy,"The series is n^2 + n: 1^2+1=2, 2^2+2=6, 3^2+3=12, 4^2+4=20, 5^2+5=30, 6^2+6=42."
 "If 1st March 1997 was a Saturday, what day was 1st March 2000?",Tuesday,Wednesday,Monday,Sunday,Wednesday,Logical,Medium,"1997 to 2000 is 3 years. One leap year (2000) but March is after Feb. Odd days: 1997(1), 1998(1), 1999(1), 2000(1 for Jan/Feb). Total 4 odd days. Sat + 4 = Wednesday."
-"Pointing to a lady, a man said, 'The son of her only brother is the brother of my wife.' How is the lady related to that man?",Mother's sister,Grandmother,Sister of father-in-law,Mother-in-law,Sister of father-in-law,Logical,Hard,"The son of the lady's brother is the man's brother-in-law. So the lady's brother is the man's father-in-law. The lady is the sister of his father-in-law."
+"Pointing to a lady, a man said, 'The son of her only brother is the brother of my wife.' How is the lady related to that man?",Mother's sister,Grandmother,Sister of father-in-law,Mother-in-law,Sister of father-in-law,Logical,Hard,The son of the lady's brother is the man's brother-in-law. So the lady's brother is the man's father-in-law. The lady is the sister of his father-in-law.
 "If 'MERCURY' is coded as 'NGSDVTB', how is 'VENUS' coded?",WFPVT,WFOUT,XGOVT,WFOTV,WFPVT,Logical,Medium,"Pattern: Alternate letters shift by +1 and +2. V+1=W, E+1=F, N+2=P, U+1=V, S+1=T."
-"Choose the word which is most nearly the same in meaning to 'RESILIENT'.",Flexible,Stubborn,Brittle,Lazy,Flexible,Verbal,Easy,"Resilient means able to withstand or recover quickly from difficult conditions; flexible is the closest synonym."
-"Find the correctly spelled word.",Questionnaire,Questionaire,Questionnairee,Questionair,Questionnaire,Verbal,Medium,"Questionnaire is spelled with double 'n' and double 'r'."
-"Select the correct antonym for 'ABUNDANT'.",Scarce,Plentiful,Rich,Heavy,Scarce,Verbal,Easy,"Abundant means existing in large quantities; scarce means in short supply."
-"Identify the error: 'Neither the teacher nor the students was present in the class.'",was present,the students,Neither the,in the class,was present,Verbal,Medium,"When subjects are joined by 'nor', the verb agrees with the closer subject. 'Students' is plural, so it should be 'were present'."
-"Change the voice: 'Who wrote this book?'",By whom was this book written?,Who was this book written by?,By who this book was written?,This book was written by who?,By whom was this book written?,Verbal,Medium,"Active 'Who + V2' changes to Passive 'By whom + was/were + Object + V3'."
-"Fill in the blank: The meeting was _____ due to heavy rain.",called off,called out,called in,called over,called off,Verbal,Easy,"'Called off' is a phrasal verb meaning to cancel something."
+Choose the word which is most nearly the same in meaning to 'RESILIENT'.,Flexible,Stubborn,Brittle,Lazy,Flexible,Verbal,Easy,Resilient means able to withstand or recover quickly from difficult conditions; flexible is the closest synonym.
+Find the correctly spelled word.,Questionnaire,Questionaire,Questionnairee,Questionair,Questionnaire,Verbal,Medium,Questionnaire is spelled with double 'n' and double 'r'.
+Select the correct antonym for 'ABUNDANT'.,Scarce,Plentiful,Rich,Heavy,Scarce,Verbal,Easy,Abundant means existing in large quantities; scarce means in short supply.
+Identify the error: 'Neither the teacher nor the students was present in the class.',was present,the students,Neither the,in the class,was present,Verbal,Medium,"When subjects are joined by 'nor', the verb agrees with the closer subject. 'Students' is plural, so it should be 'were present'."
+Change the voice: 'Who wrote this book?',By whom was this book written?,Who was this book written by?,By who this book was written?,This book was written by who?,By whom was this book written?,Verbal,Medium,Active 'Who + V2' changes to Passive 'By whom + was/were + Object + V3'.
+Fill in the blank: The meeting was _____ due to heavy rain.,called off,called out,called in,called over,called off,Verbal,Easy,'Called off' is a phrasal verb meaning to cancel something.
 A sum of money doubles itself in 10 years at simple interest. What is the rate of interest per annum?,10%,5%,12%,15%,10%,Quantitative,Easy,Rate = (100 * (n-1)) / t = (100 * 1) / 10 = 10%.
 If the cost price of 15 tables is equal to the selling price of 20 tables; find the loss percentage.,25%,20%,30%,15%,25%,Quantitative,Easy,Loss% = ((CP-SP)/SP) * 100 = (5/20) * 100 = 25%.
 Find the average of all prime numbers between 30 and 50.,39.8,41,42.5,38,39.8,Quantitative,Medium,Primes are 31; 37; 41; 43; 47. Average = 199 / 5 = 39.8.
@@ -147,10 +145,8 @@ Find the day of the week on 26th January 1950.,Thursday,Friday,Wednesday,Monday,
 Choose the synonym of 'ABRIDGE',Shorten,Extend,Bridge,Release,Shorten,Verbal,Easy,Abridge means to shorten a piece of writing without losing the sense.
 Select the antonym of 'ARTIFICIAL',Natural,Plastic,Fake,Synthetic,Natural,Verbal,Easy,Artificial means man-made; its opposite is natural.
 Identify the error: He did not wrote the letter yesterday.,wrote,did not,the letter,yesterday,wrote,Verbal,Easy,After 'did'; the base form of the verb 'write' should be used; not 'wrote'.
-Choose the correctly spelled word.,Maintenance,Maintainance,Maintenence,Maintenence,Maintenance,Verbal,Medium,Maintenance is the correct spelling.
 Antonym of 'VAGUE',Clear,Blurry,Faint,Doubtful,Clear,Verbal,Medium,Vague means uncertain or unclear; clear is the direct opposite.
 Meaning of idiom: 'To cry wolf',To give false alarm,To shout loudly,To be very brave,To hunt animals,To give false alarm,Verbal,Medium,To cry wolf means to raise a false alarm repeatedly.
 Change the voice: The police caught the thief.,The thief was caught by the police,The thief is caught by the police,The thief has been caught by the police,The thief was being caught by the police,The thief was caught by the police,Verbal,Medium,Past simple passive is 'was/were + V3'.
-Choose the word which is least like others.,Tulip,Rose,Bud,Daisy,Bud,Verbal,Medium,Tulip; Rose; and Daisy are specific flowers; whereas Bud is a stage of a flower.
 Synonym of 'CANDID',Frank,Deceptive,Arrogant,Quiet,Frank,Verbal,Hard,Candid means truthful and straightforward; frank is the best synonym.
 Select the correct sentence.,He has been ill since Monday,He is ill from Monday,He has been ill from Monday,He is ill since Monday,He has been ill since Monday,Verbal,Hard,'Since' is used for a point of time in perfect tenses.
