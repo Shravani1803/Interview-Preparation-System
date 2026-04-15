@@ -11,7 +11,7 @@ import QuizPage from './pages/quiz/QuizPage';
 import ResultPage from './pages/quiz/ResultPage';
 import CodingQuizSetup from './pages/quiz/CodingQuizSetup';
 import CodingQuizPage from './pages/quiz/CodingQuizPage';
-import CodingResultPage from './pages/quiz/CodingResultPage';
+import CodingQuizResultPage from './pages/quiz/CodingQuizResultPage';
  
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,7 +34,7 @@ function App() {
         <Route path="/aptitude/result" element={<PrivateRoute element={<ResultPage />} />} />
         <Route path="/coding-quiz" element={<PrivateRoute element={<CodingQuizSetup />} />} />
         <Route path="/coding-quiz/quiz" element={<PrivateRoute element={<CodingQuizPage />} />} />
-        <Route path="/coding-quiz/result" element={<PrivateRoute element={<CodingResultPage />} />} />
+        <Route path="/coding-quiz/result" element={<PrivateRoute element={<CodingQuizResultPage />} />} />
         {/* <Route path="/performance" element={<PrivateRoute element={<Performance />} />} /> */}
         {/* <Route path="/admin" element={<PrivateRoute element={<Admin />} />} /> */}
       </Routes>

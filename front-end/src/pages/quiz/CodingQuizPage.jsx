@@ -11,6 +11,7 @@ function CodingQuizPage() {
   const location = useLocation();
 
   const { category, difficulty, questions, requestedCount = 15, totalAvailable = 0 } = location.state || {};
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [timeLeft, setTimeLeft] = useState(TOTAL_QUIZ_SECONDS);
@@ -18,13 +19,23 @@ function CodingQuizPage() {
   const [error, setError] = useState('');
   const hasAutoSubmittedRef = useRef(false);
 
+  // Safety redirect
   useEffect(() => {
     if (!Array.isArray(questions) || questions.length === 0) {
       navigate('/coding-quiz');
     }
   }, [questions, navigate]);
 
-  const questionList = useMemo(() => (Array.isArray(questions) ? questions : []), [questions]);
+  /** * FIX: Group CSV fields into 'options' array so they display in the UI */
+  const questionList = useMemo(() => {
+    if (!Array.isArray(questions)) return [];
+    return questions.map(q => ({
+      ...q,
+      // Maps optionA, optionB, etc., into a single options array
+      options: q.options || [q.optionA, q.optionB, q.optionC, q.optionD].filter(Boolean)
+    }));
+  }, [questions]);
+
   const currentQuestion = questionList[currentQuestionIndex];
 
   const completionPercent = useMemo(() => {
@@ -33,20 +44,8 @@ function CodingQuizPage() {
   }, [currentQuestionIndex, questionList.length]);
 
   const answeredCount = useMemo(() => {
-    return Object.keys(selectedAnswers).filter((questionId) => selectedAnswers[questionId]).length;
+    return Object.keys(selectedAnswers).filter(id => selectedAnswers[id]).length;
   }, [selectedAnswers]);
-
-  const formattedTime = useMemo(() => {
-    const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-    const seconds = String(Math.max(timeLeft % 60, 0)).padStart(2, '0');
-    return `${minutes}:${seconds}`;
-  }, [timeLeft]);
-
-  const timerStateClass = useMemo(() => {
-    if (timeLeft <= 120) return 'quiz-timer-danger';
-    if (timeLeft <= 300) return 'quiz-timer-warning';
-    return 'quiz-timer-safe';
-  }, [timeLeft]);
 
   const showAvailabilityNotice = useMemo(() => {
     if (!requestedCount || questionList.length === 0) return false;
@@ -55,155 +54,110 @@ function CodingQuizPage() {
 
   const submitQuiz = useCallback(async () => {
     if (isSubmitting || questionList.length === 0) return;
-
     try {
       setIsSubmitting(true);
-      setError('');
-
       const token = localStorage.getItem('token');
-      const questionIds = questionList.map((question) => question._id);
-      const payload = {
+      const userAnswers = questionList.map(q => ({
+        questionId: q._id,
+        selectedOption: selectedAnswers[q._id] || null,
+      }));
+
+      const response = await axios.post(`${API_BASE_URL}/api/quiz/submit`, {
+        module: 'coding',
+        answers: userAnswers,
         category,
         difficulty,
-        questionIds,
-        answers: selectedAnswers,
-      };
+        totalQuestions: questionList.length,
+      }, { headers: { Authorization: `Bearer ${token}` } });
 
-      const response = await axios.post(`${API_BASE_URL}/api/quiz/submit`, payload, {
-        headers: {
-          Authorization: token,
-        },
-      });
-
-      navigate('/coding-quiz/result', {
-        state: {
-          ...response.data,
-        },
-      });
-    } catch (requestError) {
-      setError(requestError.response?.data?.message || 'Unable to submit quiz.');
+      navigate('/coding-quiz/result', { state: { ...response.data } });
+    } catch (err) {
+      setError('Error submitting quiz');
       setIsSubmitting(false);
-      hasAutoSubmittedRef.current = false;
     }
   }, [category, difficulty, isSubmitting, navigate, questionList, selectedAnswers]);
 
+  // Timer effect
   useEffect(() => {
-    if (questionList.length === 0 || isSubmitting) return;
-
     if (timeLeft <= 0 && !hasAutoSubmittedRef.current) {
       hasAutoSubmittedRef.current = true;
       submitQuiz();
       return;
     }
+    const timer = setInterval(() => setTimeLeft(prev => prev - 1), 1000);
+    return () => clearInterval(timer);
+  }, [timeLeft, submitQuiz]);
 
-    const intervalId = setInterval(() => {
-      setTimeLeft((previousValue) => previousValue - 1);
-    }, 1000);
-
-    return () => clearInterval(intervalId);
-  }, [timeLeft, questionList.length, isSubmitting, submitQuiz]);
-
-  useEffect(() => {
-    const preventDefault = (event) => event.preventDefault();
-    window.addEventListener('copy', preventDefault);
-    window.addEventListener('cut', preventDefault);
-    window.addEventListener('paste', preventDefault);
-
-    return () => {
-      window.removeEventListener('copy', preventDefault);
-      window.removeEventListener('cut', preventDefault);
-      window.removeEventListener('paste', preventDefault);
-    };
-  }, []);
-
-  const handleOptionSelect = (questionId, selectedOptionValue) => {
-    setSelectedAnswers((previousAnswers) => ({
-      ...previousAnswers,
-      [questionId]: selectedOptionValue,
-    }));
+  const handleOptionSelect = (id, value) => {
+    setSelectedAnswers(prev => ({ ...prev, [id]: value }));
   };
 
-  if (questionList.length === 0) {
-    return null;
-  }
+  if (!currentQuestion) return null;
 
   return (
     <div className="quiz-page-shell">
       <div className="quiz-page-card">
-        <div className="quiz-progress-wrap" aria-label="Quiz Progress">
+        <div className="quiz-progress-wrap">
           <div className="quiz-progress-meta">
             <span>{completionPercent}% completed</span>
-            <span>
-              {answeredCount} / {questionList.length} answered
-            </span>
+            <span>{answeredCount}/{questionList.length} answered</span>
           </div>
           <div className="quiz-progress-track">
-            <div className="quiz-progress-fill" style={{ width: `${completionPercent}%` }}></div>
+            <div className="quiz-progress-fill" style={{ width: `${completionPercent}%` }} />
           </div>
         </div>
 
         <header className="quiz-page-header">
           <div>
-            <h1>Coding MCQs</h1>
-            <p>
-              Mode: Coding | Question {currentQuestionIndex + 1} of {questionList.length}
-            </p>
-            <p className="quiz-count-info">Showing {questionList.length} questions</p>
+            <h1>{category} - {difficulty}</h1>
+            <p>Question {currentQuestionIndex + 1} of {questionList.length}</p>
             {showAvailabilityNotice && (
               <p className="quiz-availability-note">
                 Only {totalAvailable || questionList.length} questions available for selected filters
               </p>
             )}
           </div>
-          <div className={`quiz-timer ${timerStateClass}`}>{formattedTime}</div>
+          <div className="quiz-timer">
+            {String(Math.floor(timeLeft / 60)).padStart(2, '0')}:{String(timeLeft % 60).padStart(2, '0')}
+          </div>
         </header>
 
         {error && <p className="quiz-error-text">{error}</p>}
 
         <section className="quiz-question-section">
           <h2>{currentQuestion.question}</h2>
-
           <div className="quiz-options-list">
-            {currentQuestion.options.map((option, optionIndex) => (
-              <label
-                key={`${currentQuestion._id}-${optionIndex}`}
-                className={`quiz-option-item ${selectedAnswers[currentQuestion._id] === option ? 'selected' : ''}`}
-              >
+            {currentQuestion.options.map((opt, i) => (
+              <label key={i} className={`quiz-option-item ${selectedAnswers[currentQuestion._id] === opt ? 'selected' : ''}`}>
                 <input
                   type="radio"
                   name={currentQuestion._id}
-                  value={option}
-                  checked={selectedAnswers[currentQuestion._id] === option}
-                  onChange={() => handleOptionSelect(currentQuestion._id, option)}
+                  checked={selectedAnswers[currentQuestion._id] === opt}
+                  onChange={() => handleOptionSelect(currentQuestion._id, opt)}
                 />
-                <span>{option}</span>
+                <span>{opt}</span>
               </label>
             ))}
           </div>
         </section>
 
-        <aside className="quiz-palette" aria-label="Question Palette">
-          {questionList.map((question, index) => {
-            const isActive = index === currentQuestionIndex;
-            const isAnswered = Boolean(selectedAnswers[question._id]);
-            return (
-              <button
-                key={question._id}
-                type="button"
-                className={`quiz-palette-item ${isActive ? 'active' : ''} ${isAnswered ? 'answered' : ''}`}
-                onClick={() => setCurrentQuestionIndex(index)}
-              >
-                {index + 1}
-              </button>
-            );
-          })}
+        <aside className="quiz-palette">
+          {questionList.map((q, i) => (
+            <button
+              key={q._id}
+              className={`quiz-palette-item ${i === currentQuestionIndex ? 'active' : ''} ${selectedAnswers[q._id] ? 'answered' : ''}`}
+              onClick={() => setCurrentQuestionIndex(i)}
+            >
+              {i + 1}
+            </button>
+          ))}
         </aside>
 
         <div className="quiz-controls">
           <button
             type="button"
             className="quiz-control-button secondary"
-            onClick={() => setCurrentQuestionIndex((previous) => Math.max(previous - 1, 0))}
+            onClick={() => setCurrentQuestionIndex((i) => Math.max(i - 1, 0))}
             disabled={currentQuestionIndex === 0 || isSubmitting}
           >
             ← Previous
@@ -211,15 +165,20 @@ function CodingQuizPage() {
 
           <button
             type="button"
+            className="quiz-control-button primary"
+            onClick={submitQuiz}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Submitting...' : 'Submit Quiz'}
+          </button>
+
+          <button
+            type="button"
             className="quiz-control-button secondary"
-            onClick={() => setCurrentQuestionIndex((previous) => Math.min(previous + 1, questionList.length - 1))}
+            onClick={() => setCurrentQuestionIndex((i) => Math.min(i + 1, questionList.length - 1))}
             disabled={currentQuestionIndex === questionList.length - 1 || isSubmitting}
           >
             Next →
-          </button>
-
-          <button type="button" className="quiz-control-button primary" onClick={submitQuiz} disabled={isSubmitting}>
-            {isSubmitting ? 'Submitting...' : 'Submit Quiz'}
           </button>
         </div>
       </div>

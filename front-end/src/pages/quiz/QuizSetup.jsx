@@ -26,7 +26,7 @@ function QuizSetup() {
       try {
         setCountLoading(true);
         setError('');
-        const countUrl = `/api/questions/count?category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}`;
+        const countUrl = `/api/questions/count?module=aptitude&category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}`;
         const response = await axios.get(countUrl);
 
         if (ignore) return;
@@ -41,7 +41,7 @@ function QuizSetup() {
         if (ignore) return;
 
         try {
-          const fallbackUrl = `/api/questions?category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}&limit=1`;
+          const fallbackUrl = `/api/questions?module=aptitude&category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}&limit=1`;
           const fallbackResponse = await axios.get(fallbackUrl);
 
           if (ignore) return;
@@ -85,19 +85,23 @@ function QuizSetup() {
       });
       console.log('Selected limit:', parsedLimit);
 
-      const requestUrl = `/api/questions?category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}&limit=${parsedLimit}`;
+      const requestUrl = `/api/questions?module=aptitude&category=${encodeURIComponent(category)}&difficulty=${encodeURIComponent(difficulty)}&limit=${parsedLimit}`;
       const response = await axios.get(requestUrl);
 
       const fetchedQuestions = response.data?.questions || [];
+      const uniqueQuestions = Array.from(
+        new Map(fetchedQuestions.map((question) => [String(question?.question || ''), question])).values()
+      ).filter((question) => question?.question);
+      console.log('Fetched questions:', response.data);
 
       const totalAvailable = Number(response.data?.totalAvailable || 0);
-      const actualCount = Number(response.data?.actualCount || fetchedQuestions.length);
+      const actualCount = Number(response.data?.actualCount || uniqueQuestions.length);
       const requestedCount = Number(response.data?.requestedLimit || parsedLimit);
 
-      console.log('Frontend questions received:', fetchedQuestions.length);
+      console.log('Frontend questions received:', uniqueQuestions.length);
       setHasFetched(true);
 
-      if (fetchedQuestions.length === 0) {
+      if (uniqueQuestions.length === 0) {
         setError('No questions found for selected filters.');
         return;
       }
@@ -106,7 +110,7 @@ function QuizSetup() {
         state: {
           category,
           difficulty,
-          questions: fetchedQuestions,
+          questions: uniqueQuestions,
           requestedCount,
           actualCount,
           totalAvailable,

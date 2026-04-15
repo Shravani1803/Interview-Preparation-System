@@ -6,11 +6,32 @@ require('dotenv').config();
 require('../Models/db');
 
 const AptitudeQuestion = require('../Models/AptitudeQuestion');
+const csvFilePaths = [
+  path.join(__dirname, '..', 'questions.csv'),
+  path.join(__dirname, '..', 'coding_questions.csv')
+];
 
-const csvFilePath = path.join(__dirname, '..', 'questions.csv');
+const FILE_MODULE_MAP = {
+  'questions.csv': 'aptitude',
+  'coding_questions.csv': 'coding',
+};
+
+const APTITUDE_CATEGORIES = new Set(['Quantitative', 'Logical', 'Verbal']);
+const CODING_CATEGORIES = new Set(['C++', 'Java', 'Python']);
 
 const normalizeValue = (value) => (value || '').trim();
+const normalizeTitleCase = (value = '') => {
+  const trimmed = normalizeValue(value);
+  if (!trimmed) return '';
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1).toLowerCase();
+};
 const normalizeQuestionKey = (value = '') => normalizeValue(value).toLowerCase().replace(/\s+/g, ' ');
+const normalizeQuestion = (value = '') => normalizeValue(value).toLowerCase().replace(/\s+/g, ' ');
+
+const resolveModuleFromPath = (filePath = '') => {
+  const fileName = path.basename(filePath);
+  return FILE_MODULE_MAP[fileName] || null;
+};
 
 const normalizeCategory = (value = '') => {
   const normalized = normalizeValue(value).toLowerCase();
@@ -24,14 +45,19 @@ const normalizeCategory = (value = '') => {
 };
 
 const normalizeDifficulty = (value = '') => {
-  const normalized = normalizeValue(value).toLowerCase();
-  if (normalized === 'easy') return 'Easy';
-  if (normalized === 'medium') return 'Medium';
-  if (normalized === 'hard') return 'Hard';
+  const normalized = normalizeTitleCase(value);
+  if (normalized === 'Easy') return 'Easy';
+  if (normalized === 'Medium') return 'Medium';
+  if (normalized === 'Hard') return 'Hard';
   return '';
 };
 
-const parseRow = (row) => {
+const inferModuleFromCategory = (category = '') => {
+  if (CODING_CATEGORIES.has(category)) return 'coding';
+  return 'aptitude';
+};
+
+const parseRow = (row, module) => {
   const values = Object.values(row).map((value) => normalizeValue(value));
   if (values.length < 9) return null;
 
@@ -49,11 +75,20 @@ const parseRow = (row) => {
     return null;
   }
 
+  const isValidCategory = module === 'coding'
+    ? CODING_CATEGORIES.has(category)
+    : APTITUDE_CATEGORIES.has(category);
+
+  if (!isValidCategory) {
+    return null;
+  }
+
   if (![optionA, optionB, optionC, optionD].includes(correctAnswer)) {
     return null;
   }
 
   return {
+    module,
     question,
     questionKey: normalizeQuestionKey(question),
     options: [optionA, optionB, optionC, optionD],
@@ -68,28 +103,35 @@ const runImport = async () => {
   try {
     const parsedQuestions = [];
 
-    await new Promise((resolve, reject) => {
-      fs.createReadStream(csvFilePath)
-        .pipe(csv())
-        .on('data', (row) => {
-          const parsedRow = parseRow(row);
-          if (parsedRow) parsedQuestions.push(parsedRow);
-        })
-        .on('end', resolve)
-        .on('error', reject);
-    });
+    for (const csvFilePath of csvFilePaths) {
+      const module = resolveModuleFromPath(csvFilePath);
+      if (!module) continue;
+
+      await new Promise((resolve, reject) => {
+        fs.createReadStream(csvFilePath)
+          .pipe(csv())
+          .on('data', (row) => {
+            const parsedRow = parseRow(row, module);
+            if (parsedRow) parsedQuestions.push(parsedRow);
+          })
+          .on('end', resolve)
+          .on('error', reject);
+      });
+    }
 
     if (parsedQuestions.length === 0) {
       console.log('No valid questions found in CSV.');
       process.exit(0);
     }
 
-    const existing = await AptitudeQuestion.find({}, { _id: 1, question: 1, createdAt: 1 }).sort({ createdAt: 1, _id: 1 }).lean();
+    const existing = await AptitudeQuestion.find({}, { _id: 1, question: 1, category: 1, module: 1, createdAt: 1 }).sort({ createdAt: 1, _id: 1 }).lean();
     const existingMap = new Map();
     const duplicateIds = [];
 
     for (const item of existing) {
-      const key = normalizeQuestionKey(item.question);
+      const questionKey = normalizeQuestionKey(item.question);
+      const module = item.module || inferModuleFromCategory(item.category);
+      const key = `${module}::${questionKey}`;
       if (!key) continue;
 
       if (existingMap.has(key)) {
@@ -103,12 +145,17 @@ const runImport = async () => {
       await AptitudeQuestion.deleteMany({ _id: { $in: duplicateIds } });
     }
 
-    const refreshDocs = await AptitudeQuestion.find({}, { _id: 1, question: 1 }).lean();
+    const refreshDocs = await AptitudeQuestion.find({}, { _id: 1, question: 1, category: 1, module: 1 }).lean();
     if (refreshDocs.length > 0) {
       const keyBackfillOps = refreshDocs.map((item) => ({
         updateOne: {
           filter: { _id: item._id },
-          update: { $set: { questionKey: normalizeQuestionKey(item.question) } },
+          update: {
+            $set: {
+              questionKey: normalizeQuestionKey(item.question),
+              module: item.module || inferModuleFromCategory(item.category),
+            },
+          },
         },
       }));
       await AptitudeQuestion.bulkWrite(keyBackfillOps, { ordered: false });
@@ -116,20 +163,27 @@ const runImport = async () => {
 
     await AptitudeQuestion.syncIndexes();
 
-    const csvUniqueMap = new Map();
+    const uniqueMap = new Map();
     for (const item of parsedQuestions) {
-      if (!item.questionKey) continue;
-      if (!csvUniqueMap.has(item.questionKey)) {
-        csvUniqueMap.set(item.questionKey, item);
+      const normalizedQuestion = normalizeQuestion(item.question);
+      if (!normalizedQuestion) continue;
+
+      const mapKey = `${item.module}::${normalizedQuestion}`;
+      if (!uniqueMap.has(mapKey)) {
+        uniqueMap.set(mapKey, {
+          ...item,
+          questionKey: normalizedQuestion,
+        });
       }
     }
 
-    const questions = [...csvUniqueMap.values()];
+    const questions = [...uniqueMap.values()];
     const upsertOps = questions.map((item) => ({
       updateOne: {
-        filter: { questionKey: item.questionKey },
+        filter: { module: item.module, questionKey: item.questionKey },
         update: {
-          $setOnInsert: {
+          $set: {
+            module: item.module,
             question: item.question,
             questionKey: item.questionKey,
             options: item.options,
@@ -147,8 +201,14 @@ const runImport = async () => {
       await AptitudeQuestion.bulkWrite(upsertOps, { ordered: false });
     }
 
+    const moduleCounts = questions.reduce((acc, item) => {
+      acc[item.module] = (acc[item.module] || 0) + 1;
+      return acc;
+    }, {});
+
     console.log(`Removed duplicate DB docs: ${duplicateIds.length}`);
     console.log(`Unique CSV questions processed: ${questions.length}`);
+    console.log('Processed by module:', moduleCounts);
     console.log('Questions import sync completed successfully.');
     process.exit(0);
   } catch (error) {

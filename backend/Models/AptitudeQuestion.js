@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 const normalizeQuestionKey = (value = '') => String(value).trim().toLowerCase().replace(/\s+/g, ' ');
 
 const AptitudeQuestionSchema = new Schema({
+    module: {
+        type: String,
+        enum: ['aptitude', 'coding'],
+        required: true
+    },
     question: {
         type: String,
         required: true,
@@ -12,7 +17,6 @@ const AptitudeQuestionSchema = new Schema({
     questionKey: {
         type: String,
         required: true,
-        unique: true,
         index: true
     },
     options: {
@@ -53,6 +57,8 @@ AptitudeQuestionSchema.pre('validate', function (next) {
     this.questionKey = normalizeQuestionKey(this.question);
     next();
 });
+
+AptitudeQuestionSchema.index({ module: 1, questionKey: 1 }, { unique: true });
 
 const AptitudeQuestionModel = mongoose.model('aptitudequestions', AptitudeQuestionSchema);
 module.exports = AptitudeQuestionModel;

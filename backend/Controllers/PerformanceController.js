@@ -1,4 +1,9 @@
 const Performance = require('../Models/Performance');
+const QuizAttempt = require('../Models/QuizAttempt');
+
+const CODING_CATEGORIES = new Set(['C++', 'Java', 'Python']);
+const RECENT_ATTEMPT_LIMIT = 15;
+const ANALYTICS_HISTORY_LIMIT = 15;
 
 // GET dashboard summary stats for logged-in user
 const getStats = async (req, res) => {
@@ -46,7 +51,7 @@ const getAnalytics = async (req, res) => {
         // Last 10 aptitude quiz scores for trend
         const aptitudeHistory = await Performance.find({ userId, type: 'aptitude' })
             .sort({ createdAt: -1 })
-            .limit(10)
+            .limit(ANALYTICS_HISTORY_LIMIT)
             .select('quizScore quizTotal category difficulty timeTaken createdAt');
 
         const scoreTrend = aptitudeHistory.reverse().map(r => ({
@@ -58,7 +63,7 @@ const getAnalytics = async (req, res) => {
         // Coding stats
         const codingHistory = await Performance.find({ userId, type: 'coding' })
             .sort({ createdAt: -1 })
-            .limit(10)
+            .limit(ANALYTICS_HISTORY_LIMIT)
             .populate('codingQuestionId', 'title difficulty')
             .select('codingStatus codingQuestionId createdAt');
 
@@ -88,6 +93,71 @@ const getAnalytics = async (req, res) => {
     }
 };
 
+// GET aggregated progress metrics for logged-in user
+const getProgress = async (req, res) => {
+    try {
+        const userId = req.user._id;
+        const attempts = await QuizAttempt.find({ userId })
+            .sort({ createdAt: -1 })
+            .limit(RECENT_ATTEMPT_LIMIT);
+
+        const totalQuizzes = attempts.length;
+        const totalQuestions = attempts.reduce((sum, attempt) => {
+            const attemptTotal = Number(attempt.totalQuestions);
+            if (Number.isFinite(attemptTotal) && attemptTotal > 0) return sum + attemptTotal;
+
+            const fallbackAnswers = attempt?.answers instanceof Map ? attempt.answers.size : 0;
+            if (fallbackAnswers > 0) return sum + fallbackAnswers;
+
+            const fallbackIds = Array.isArray(attempt.questionIds) ? attempt.questionIds.length : 0;
+            return sum + fallbackIds;
+        }, 0);
+
+        const totalCorrect = attempts.reduce((sum, attempt) => {
+            const correct = Number(attempt.correctAnswers);
+            if (Number.isFinite(correct) && correct >= 0) return sum + correct;
+
+            const fallbackScore = Number(attempt.score);
+            return sum + (Number.isFinite(fallbackScore) && fallbackScore >= 0 ? fallbackScore : 0);
+        }, 0);
+
+        const accuracy = totalQuestions > 0
+            ? Math.round((totalCorrect / totalQuestions) * 100)
+            : 0;
+
+        const codingAttempts = attempts.filter((attempt) => {
+            if (attempt.module === 'coding') return true;
+            return CODING_CATEGORIES.has(String(attempt.category || '').trim());
+        });
+        const codingSolved = codingAttempts.length;
+        const totalCodingQuestions = codingAttempts.reduce((sum, attempt) => {
+            const attemptTotal = Number(attempt.totalQuestions);
+            if (Number.isFinite(attemptTotal) && attemptTotal > 0) return sum + attemptTotal;
+
+            const fallbackAnswers = attempt?.answers instanceof Map ? attempt.answers.size : 0;
+            if (fallbackAnswers > 0) return sum + fallbackAnswers;
+
+            const fallbackIds = Array.isArray(attempt.questionIds) ? attempt.questionIds.length : 0;
+            return sum + fallbackIds;
+        }, 0);
+
+        const streak = calculateAttemptStreak(attempts);
+
+        res.status(200).json({
+            success: true,
+            totalQuizzes,
+            totalQuestions,
+            totalCorrect,
+            accuracy,
+            codingSolved,
+            totalCodingQuestions,
+            streak,
+        });
+    } catch (err) {
+        res.status(500).json({ success: false, message: 'Error fetching progress', error: err.message });
+    }
+};
+
 // Helper: count consecutive days with attempts
 async function calculateStreak(userId) {
     const records = await Performance.find({ userId }).sort({ createdAt: -1 });
@@ -108,4 +178,23 @@ async function calculateStreak(userId) {
     return streak;
 }
 
-module.exports = { getStats, getAnalytics };
+function calculateAttemptStreak(attempts = []) {
+    if (!attempts.length) return 0;
+
+    let streak = 0;
+    const checkDate = new Date();
+    checkDate.setHours(0, 0, 0, 0);
+
+    const dateSet = new Set(
+        attempts.map((attempt) => new Date(attempt.createdAt).toDateString())
+    );
+
+    while (dateSet.has(checkDate.toDateString())) {
+        streak += 1;
+        checkDate.setDate(checkDate.getDate() - 1);
+    }
+
+    return streak;
+}
+
+module.exports = { getStats, getAnalytics, getProgress };

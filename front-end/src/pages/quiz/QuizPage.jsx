@@ -63,6 +63,7 @@ function QuizPage() {
       const token = localStorage.getItem('token');
       const questionIds = questionList.map((question) => question._id);
       const payload = {
+        module: 'aptitude',
         category,
         difficulty,
         questionIds,

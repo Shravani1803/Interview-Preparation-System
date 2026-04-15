@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { handleSuccess } from '../utils';
 import { ToastContainer } from 'react-toastify';
 import './Dashboard.css';
+
+const API_BASE_URL = 'http://localhost:8080';
 
 function Home() {
     const navigate = useNavigate();
     const [loggedInUser, setLoggedInUser] = useState('');
     const [currentTime, setCurrentTime] = useState(new Date());
     const [stats, setStats] = useState({
-        aptitudeAttempts: 0,
-        codingAttempts: 0,
-        avgScore: 0,
+        totalQuizzes: 0,
+        codingSolved: 0,
+        accuracy: 0,
+        totalCorrect: 0,
+        totalQuestions: 0,
+        totalCodingQuestions: 0,
         streak: 0
     });
 
@@ -28,17 +34,28 @@ function Home() {
         const fetchStats = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const res = await fetch('http://localhost:8080/api/stats', {
-                    headers: { 'Authorization': token }
+                const res = await axios.get(`${API_BASE_URL}/api/progress`, {
+                    headers: { Authorization: `Bearer ${token}` },
                 });
-                if (res.ok) {
-                    const data = await res.json();
-                    setStats(data);
-                }
+                const data = res?.data || {};
+
+                setStats({
+                    totalQuizzes: data.totalQuizzes || 0,
+                    codingSolved: data.codingSolved || 0,
+                    accuracy: data.accuracy || 0,
+                    totalCorrect: data.totalCorrect || 0,
+                    totalQuestions: data.totalQuestions || 0,
+                    totalCodingQuestions: data.totalCodingQuestions || 0,
+                    streak: data.streak || 0,
+                });
             } catch (err) {}
         };
         fetchStats();
     }, []);
+
+    const codingSolvedPct = stats.totalCodingQuestions > 0
+        ? Math.min(Math.round(((stats.codingSolved || 0) / stats.totalCodingQuestions) * 100), 100)
+        : 0;
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -55,10 +72,10 @@ function Home() {
     };
 
     const statCards = [
-        { label: 'Quizzes Taken',    value: stats.aptitudeAttempts, icon: '📝', color: '#3b82f6', bg: '#eff6ff' },
-        { label: 'Problems Solved',  value: stats.codingAttempts,   icon: '✅', color: '#10b981', bg: '#ecfdf5' },
-        { label: 'Avg Score',        value: `${stats.avgScore}%`,   icon: '🎯', color: '#f59e0b', bg: '#fffbeb' },
-        { label: 'Day Streak',       value: stats.streak,           icon: '🔥', color: '#ef4444', bg: '#fef2f2' },
+        { label: 'Quizzes Taken',    value: stats.totalQuizzes,      icon: '📝', color: '#3b82f6', bg: '#eff6ff' },
+        { label: 'Problems Solved',  value: stats.codingSolved,      icon: '✅', color: '#10b981', bg: '#ecfdf5' },
+        { label: 'Avg Score',        value: `${stats.accuracy}%`,    icon: '🎯', color: '#f59e0b', bg: '#fffbeb' },
+        { label: 'Day Streak',       value: stats.streak,            icon: '🔥', color: '#ef4444', bg: '#fef2f2' },
     ];
 
     const modules = [
@@ -71,7 +88,7 @@ function Home() {
             accent: '#3b82f6',
             accentBg: '#eff6ff',
             path: '/aptitude',
-            stat: `${stats.aptitudeAttempts} attempts`,
+            stat: `${stats.totalQuizzes} attempts`,
         },
         {
             id: 'coding',
@@ -82,7 +99,7 @@ function Home() {
             accent: '#10b981',
             accentBg: '#ecfdf5',
             path: '/coding-quiz',
-            stat: `${stats.codingAttempts} solved`,
+            stat: `${stats.codingSolved} solved`,
         },
         {
             id: 'performance',
@@ -93,7 +110,7 @@ function Home() {
             accent: '#f59e0b',
             accentBg: '#fffbeb',
             path: '/performance',
-            stat: `${stats.avgScore}% avg`,
+            stat: `${stats.accuracy}% avg`,
         },
     ];
 
@@ -236,8 +253,8 @@ function Home() {
                     <section className="db-progress-card">
                         <h3 className="db-section-title" style={{ marginBottom: '20px' }}>Overall Progress</h3>
                         {[
-                            { label: 'Aptitude Accuracy', pct: stats.avgScore || 0,  color: '#3b82f6' },
-                            { label: 'Coding Solved',     pct: Math.min(stats.codingAttempts * 5, 100), color: '#10b981' },
+                            { label: 'Aptitude Accuracy', pct: stats.accuracy || 0,  color: '#3b82f6' },
+                            { label: 'Coding Solved',     pct: codingSolvedPct, color: '#10b981' },
                             { label: 'Day Streak Goal',   pct: Math.min(stats.streak * 10, 100),         color: '#f59e0b' },
                         ].map((item, i) => (
                             <div className="db-prog-row" key={i}>

@@ -16,13 +16,26 @@ const QuizAttemptSchema = new Schema({
         type: Number,
         required: true
     },
+    module: {
+        type: String,
+        enum: ['aptitude', 'coding'],
+        default: 'aptitude'
+    },
+    totalQuestions: {
+        type: Number,
+        default: 0
+    },
+    correctAnswers: {
+        type: Number,
+        default: 0
+    },
     accuracy: {
         type: Number,
         required: true
     },
     category: {
         type: String,
-        enum: ['Quantitative', 'Logical', 'Verbal'],
+        enum: ['Quantitative', 'Logical', 'Verbal', 'C++', 'Java', 'Python'],
         required: true
     },
     difficulty: {

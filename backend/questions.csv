@@ -1,258 +1,156 @@
 question,optionA,optionB,optionC,optionD,correctAnswer,category,difficulty,explanation
-What is 10% of 80?,16,12,4,8,8,Quantitative,Medium,10% of 80 = (10/100) × 80 = 8.
-An item is bought for Rs 200 and sold at a profit of 5%. What is the selling price?,200,210,230,220,210,Quantitative,Hard,Selling price = Cost price × (1 + 5/100) = 210.
-A can finish a task in 6 days and B in 3 days. In how many days will they finish it together?,4,2,1,3,2,Quantitative,Medium,Combined rate = 1/6 + 1/3 = (9)/18. Time = 18/9 = 2 days.
-A car travels at 30 km/h for 2 hours. What distance does it cover?,30,120,90,60,60,Quantitative,Medium,Distance = Speed × Time = 30 × 2 = 60 km.
-Rs 50 is divided between A and B in the ratio 2:3. How much does A get?,15,30,20,25,20,Quantitative,Easy,A's share = (2/5) × 50 = 20.
-"The average of 5 numbers is 20. Four numbers are 16, 18, 21, 23. Find the fifth number.",22,26,20,24,22,Quantitative,Hard,Total of 5 numbers = 20 × 5 = 100. Fifth number = 100 - 78 = 22.
-What is 15% of 100?,15,19,23,11,15,Quantitative,Hard,15% of 100 = (15/100) × 100 = 15.
-An item is bought for Rs 225 and sold at a loss of 10%. What is the selling price?,202.5,222.5,212.5,192.5,202.5,Quantitative,Medium,Selling price = Cost price × (1 - 10/100) = 202.5.
-A can finish a task in 8 days and B in 4 days. In how many days will they finish it together?,1.6666666666666665,2.6666666666666665,3.6666666666666665,4.666666666666666,2.6666666666666665,Quantitative,Hard,Combined rate = 1/8 + 1/4 = (12)/32. Time = 32/12 = 2.6666666666666665 days.
-A car travels at 33 km/h for 3 hours. What distance does it cover?,132,66,99,165,99,Quantitative,Easy,Distance = Speed × Time = 33 × 3 = 99 km.
-Rs 77 is divided between A and B in the ratio 3:4. How much does A get?,47,26,40,33,33,Quantitative,Medium,A's share = (3/7) × 77 = 33.
-"The average of 5 numbers is 22. Four numbers are 18, 20, 23, 25. Find the fifth number.",24,22,28,26,24,Quantitative,Hard,Total of 5 numbers = 22 × 5 = 110. Fifth number = 110 - 86 = 24.
-What is 20% of 120?,28,32,20,24,24,Quantitative,Easy,20% of 120 = (20/100) × 120 = 24.
-An item is bought for Rs 250 and sold at a profit of 15%. What is the selling price?,297.5,287.5,307.5,277.5,287.5,Quantitative,Hard,Selling price = Cost price × (1 + 15/100) = 287.5.
-A can finish a task in 10 days and B in 5 days. In how many days will they finish it together?,4.333333333333334,3.3333333333333335,2.3333333333333335,5.333333333333334,3.3333333333333335,Quantitative,Medium,Combined rate = 1/10 + 1/5 = (15)/50. Time = 50/15 = 3.3333333333333335 days.
-A car travels at 36 km/h for 4 hours. What distance does it cover?,180,216,108,144,144,Quantitative,Easy,Distance = Speed × Time = 36 × 4 = 144 km.
-Rs 108 is divided between A and B in the ratio 4:5. How much does A get?,57,48,66,39,48,Quantitative,Easy,A's share = (4/9) × 108 = 48.
-"The average of 5 numbers is 24. Four numbers are 20, 22, 25, 27. Find the fifth number.",24,26,30,28,26,Quantitative,Easy,Total of 5 numbers = 24 × 5 = 120. Fifth number = 120 - 94 = 26.
-What is 25% of 140?,35,43,31,39,35,Quantitative,Medium,25% of 140 = (25/100) × 140 = 35.
-An item is bought for Rs 275 and sold at a loss of 20%. What is the selling price?,240,230,220,210,220,Quantitative,Easy,Selling price = Cost price × (1 - 20/100) = 220.
-A can finish a task in 12 days and B in 6 days. In how many days will they finish it together?,6,4,3,5,4,Quantitative,Medium,Combined rate = 1/12 + 1/6 = (18)/72. Time = 72/18 = 4 days.
-A car travels at 39 km/h for 5 hours. What distance does it cover?,156,234,273,195,195,Quantitative,Hard,Distance = Speed × Time = 39 × 5 = 195 km.
-Rs 143 is divided between A and B in the ratio 5:6. How much does A get?,87,54,65,76,65,Quantitative,Easy,A's share = (5/11) × 143 = 65.
-"The average of 5 numbers is 26. Four numbers are 22, 24, 27, 29. Find the fifth number.",30,32,26,28,28,Quantitative,Medium,Total of 5 numbers = 26 × 5 = 130. Fifth number = 130 - 102 = 28.
-What is 30% of 160?,56,52,44,48,48,Quantitative,Hard,30% of 160 = (30/100) × 160 = 48.
-An item is bought for Rs 300 and sold at a profit of 25%. What is the selling price?,385,375,365,395,375,Quantitative,Hard,Selling price = Cost price × (1 + 25/100) = 375.
-A can finish a task in 14 days and B in 7 days. In how many days will they finish it together?,6.666666666666667,3.666666666666667,4.666666666666667,5.666666666666667,4.666666666666667,Quantitative,Medium,Combined rate = 1/14 + 1/7 = (21)/98. Time = 98/21 = 4.666666666666667 days.
-A car travels at 42 km/h for 2 hours. What distance does it cover?,84,168,126,42,84,Quantitative,Hard,Distance = Speed × Time = 42 × 2 = 84 km.
-Rs 182 is divided between A and B in the ratio 6:7. How much does A get?,97,110,84,71,84,Quantitative,Hard,A's share = (6/13) × 182 = 84.
-"The average of 5 numbers is 28. Four numbers are 24, 26, 29, 31. Find the fifth number.",34,28,30,32,30,Quantitative,Easy,Total of 5 numbers = 28 × 5 = 140. Fifth number = 140 - 110 = 30.
-What is 35% of 180?,63,71,59,67,63,Quantitative,Easy,35% of 180 = (35/100) × 180 = 63.
-An item is bought for Rs 325 and sold at a loss of 30%. What is the selling price?,227.5,247.5,237.5,217.5,227.5,Quantitative,Medium,Selling price = Cost price × (1 - 30/100) = 227.5.
-A can finish a task in 15 days and B in 10 days. In how many days will they finish it together?,7,8,5,6,6,Quantitative,Easy,Combined rate = 1/15 + 1/10 = (25)/150. Time = 150/25 = 6 days.
-A car travels at 45 km/h for 3 hours. What distance does it cover?,225,90,180,135,135,Quantitative,Medium,Distance = Speed × Time = 45 × 3 = 135 km.
-Rs 150 is divided between A and B in the ratio 2:8. How much does A get?,50,40,30,20,30,Quantitative,Hard,A's share = (2/10) × 150 = 30.
-"The average of 5 numbers is 30. Four numbers are 26, 28, 31, 33. Find the fifth number.",32,36,34,30,32,Quantitative,Medium,Total of 5 numbers = 30 × 5 = 150. Fifth number = 150 - 118 = 32.
-What is 40% of 200?,88,76,80,84,80,Quantitative,Hard,40% of 200 = (40/100) × 200 = 80.
-An item is bought for Rs 350 and sold at a profit of 5%. What is the selling price?,367.5,357.5,377.5,387.5,367.5,Quantitative,Hard,Selling price = Cost price × (1 + 5/100) = 367.5.
-A can finish a task in 16 days and B in 8 days. In how many days will they finish it together?,6.333333333333333,7.333333333333333,5.333333333333333,4.333333333333333,5.333333333333333,Quantitative,Medium,Combined rate = 1/16 + 1/8 = (24)/128. Time = 128/24 = 5.333333333333333 days.
-A car travels at 48 km/h for 4 hours. What distance does it cover?,288,192,240,144,192,Quantitative,Medium,Distance = Speed × Time = 48 × 4 = 192 km.
-Rs 96 is divided between A and B in the ratio 3:3. How much does A get?,42,60,48,54,48,Quantitative,Easy,A's share = (3/6) × 96 = 48.
-"The average of 5 numbers is 32. Four numbers are 28, 30, 33, 35. Find the fifth number.",38,34,36,32,34,Quantitative,Hard,Total of 5 numbers = 32 × 5 = 160. Fifth number = 160 - 126 = 34.
-What is 45% of 220?,107,99,95,103,99,Quantitative,Hard,45% of 220 = (45/100) × 220 = 99.
-An item is bought for Rs 375 and sold at a loss of 10%. What is the selling price?,327.5,347.5,357.5,337.5,337.5,Quantitative,Medium,Selling price = Cost price × (1 - 10/100) = 337.5.
-A can finish a task in 18 days and B in 9 days. In how many days will they finish it together?,5,6,8,7,6,Quantitative,Easy,Combined rate = 1/18 + 1/9 = (27)/162. Time = 162/27 = 6 days.
-A car travels at 51 km/h for 5 hours. What distance does it cover?,306,204,357,255,255,Quantitative,Easy,Distance = Speed × Time = 51 × 5 = 255 km.
-Rs 136 is divided between A and B in the ratio 4:4. How much does A get?,60,68,76,84,68,Quantitative,Medium,A's share = (4/8) × 136 = 68.
-"The average of 5 numbers is 34. Four numbers are 30, 32, 35, 37. Find the fifth number.",34,38,40,36,36,Quantitative,Medium,Total of 5 numbers = 34 × 5 = 170. Fifth number = 170 - 134 = 36.
-What is 50% of 240?,124,116,120,128,120,Quantitative,Hard,50% of 240 = (50/100) × 240 = 120.
-An item is bought for Rs 400 and sold at a profit of 15%. What is the selling price?,470,450,480,460,460,Quantitative,Medium,Selling price = Cost price × (1 + 15/100) = 460.
-A can finish a task in 20 days and B in 10 days. In how many days will they finish it together?,7.666666666666667,8.666666666666668,6.666666666666667,5.666666666666667,6.666666666666667,Quantitative,Hard,Combined rate = 1/20 + 1/10 = (30)/200. Time = 200/30 = 6.666666666666667 days.
-A car travels at 54 km/h for 2 hours. What distance does it cover?,108,216,162,54,108,Quantitative,Easy,Distance = Speed × Time = 54 × 2 = 108 km.
-Rs 180 is divided between A and B in the ratio 5:5. How much does A get?,100,110,90,80,90,Quantitative,Medium,A's share = (5/10) × 180 = 90.
-"The average of 5 numbers is 36. Four numbers are 32, 34, 37, 39. Find the fifth number.",38,40,42,36,38,Quantitative,Hard,Total of 5 numbers = 36 × 5 = 180. Fifth number = 180 - 142 = 38.
-What is 55% of 260?,143,147,139,151,143,Quantitative,Medium,55% of 260 = (55/100) × 260 = 143.
-An item is bought for Rs 425 and sold at a loss of 20%. What is the selling price?,340,360,350,330,340,Quantitative,Hard,Selling price = Cost price × (1 - 20/100) = 340.
-A can finish a task in 21 days and B in 14 days. In how many days will they finish it together?,9.4,7.4,10.4,8.4,8.4,Quantitative,Medium,Combined rate = 1/21 + 1/14 = (35)/294. Time = 294/35 = 8.4 days.
-A car travels at 57 km/h for 3 hours. What distance does it cover?,285,171,114,228,171,Quantitative,Easy,Distance = Speed × Time = 57 × 3 = 171 km.
-Rs 228 is divided between A and B in the ratio 6:6. How much does A get?,126,138,102,114,114,Quantitative,Easy,A's share = (6/12) × 228 = 114.
-"The average of 5 numbers is 38. Four numbers are 34, 36, 39, 41. Find the fifth number.",40,42,44,38,40,Quantitative,Medium,Total of 5 numbers = 38 × 5 = 190. Fifth number = 190 - 150 = 40.
-What is 60% of 280?,164,168,172,176,168,Quantitative,Medium,60% of 280 = (60/100) × 280 = 168.
-An item is bought for Rs 450 and sold at a profit of 25%. What is the selling price?,572.5,582.5,552.5,562.5,562.5,Quantitative,Medium,Selling price = Cost price × (1 + 25/100) = 562.5.
-A can finish a task in 24 days and B in 12 days. In how many days will they finish it together?,10,9,7,8,8,Quantitative,Easy,Combined rate = 1/24 + 1/12 = (36)/288. Time = 288/36 = 8 days.
-A car travels at 60 km/h for 4 hours. What distance does it cover?,360,300,180,240,240,Quantitative,Easy,Distance = Speed × Time = 60 × 4 = 240 km.
-Rs 180 is divided between A and B in the ratio 2:7. How much does A get?,49,58,40,31,40,Quantitative,Easy,A's share = (2/9) × 180 = 40.
-"The average of 5 numbers is 40. Four numbers are 36, 38, 41, 43. Find the fifth number.",44,40,46,42,42,Quantitative,Easy,Total of 5 numbers = 40 × 5 = 200. Fifth number = 200 - 158 = 42.
-"Find the next number in the series: 3, 5, 7, 9, ?",13,12,11,9,11,Logical Reasoning,Hard,It is an arithmetic progression with common difference 2.
-"Find the next number in the series: 3, 6, 12, 24, ?",45,51,48,50,48,Logical Reasoning,Medium,Each term is multiplied by 2.
-"Find the next number in the series: 3, 4, 7, 11, 18, ?",29,28,30,32,29,Logical Reasoning,Easy,"From the third term onward, each term follows additive growth; next = 11 + 18 = 29."
-"Find the next number in the series: 6, 11, 16, 21, ?",31,28,21,26,26,Logical Reasoning,Hard,It is an arithmetic progression with common difference 5.
-"Find the next number in the series: 2, 4, 8, 16, ?",32,30,34,33,32,Logical Reasoning,Hard,Each term is multiplied by 2.
-"Find the next number in the series: 1, 3, 4, 7, 11, ?",17,21,19,18,18,Logical Reasoning,Medium,"From the third term onward, each term follows additive growth; next = 7 + 11 = 18."
-"Find the next number in the series: 9, 12, 15, 18, ?",18,23,21,24,21,Logical Reasoning,Easy,It is an arithmetic progression with common difference 3.
-"Find the next number in the series: 5, 10, 20, 40, ?",75,82,85,80,80,Logical Reasoning,Medium,Each term is multiplied by 2.
-"Find the next number in the series: 4, 2, 6, 8, 14, ?",21,22,23,25,22,Logical Reasoning,Hard,"From the third term onward, each term follows additive growth; next = 8 + 14 = 22."
-"Find the next number in the series: 12, 18, 24, 30, ?",38,36,42,30,36,Logical Reasoning,Easy,It is an arithmetic progression with common difference 6.
-"Find the next number in the series: 4, 8, 16, 32, ?",68,66,64,60,64,Logical Reasoning,Hard,Each term is multiplied by 2.
-"Find the next number in the series: 2, 5, 7, 12, 19, ?",32,31,30,34,31,Logical Reasoning,Easy,"From the third term onward, each term follows additive growth; next = 12 + 19 = 31."
-"Find the next number in the series: 15, 19, 23, 27, ?",27,31,33,35,31,Logical Reasoning,Easy,It is an arithmetic progression with common difference 4.
-"If each letter in TEAM is shifted 1 place(s) forward in the alphabet, what is the code?",FBNU,MAET,UFBN,VGCO,UFBN,Logical Reasoning,Hard,Shift every letter of TEAM by 1: UFBN.
-"If each letter in MIND is shifted 2 place(s) forward in the alphabet, what is the code?",DNIM,KPFO,PLQG,OKPF,OKPF,Logical Reasoning,Easy,Shift every letter of MIND by 2: OKPF.
-"If each letter in CODE is shifted 1 place(s) forward in the alphabet, what is the code?",EDOC,DPEF,EQFG,PEFD,DPEF,Logical Reasoning,Easy,Shift every letter of CODE by 1: DPEF.
-"If each letter in LOGIC is shifted 2 place(s) forward in the alphabet, what is the code?",QIKEN,CIGOL,NQIKE,ORJLF,NQIKE,Logical Reasoning,Hard,Shift every letter of LOGIC by 2: NQIKE.
-"If each letter in BRIGHT is shifted 1 place(s) forward in the alphabet, what is the code?",SJHIUC,DTKIJV,CSJHIU,THGIRB,CSJHIU,Logical Reasoning,Medium,Shift every letter of BRIGHT by 1: CSJHIU.
-"If each letter in SKILL is shifted 2 place(s) forward in the alphabet, what is the code?",VNLOO,LLIKS,MKNNU,UMKNN,UMKNN,Logical Reasoning,Easy,Shift every letter of SKILL by 2: UMKNN.
-"If each letter in LEARN is shifted 1 place(s) forward in the alphabet, what is the code?",FBSOM,NRAEL,NGCTP,MFBSO,MFBSO,Logical Reasoning,Easy,Shift every letter of LEARN by 1: MFBSO.
-"If each letter in RATIO is shifted 2 place(s) forward in the alphabet, what is the code?",OITAR,TCVKQ,UDWLR,CVKQT,TCVKQ,Logical Reasoning,Medium,Shift every letter of RATIO by 2: TCVKQ.
-"If each letter in SPEED is shifted 1 place(s) forward in the alphabet, what is the code?",QFFET,TQFFE,URGGF,DEEPS,TQFFE,Logical Reasoning,Hard,Shift every letter of SPEED by 1: TQFFE.
-"If each letter in WORK is shifted 2 place(s) forward in the alphabet, what is the code?",KROW,QTMY,YQTM,ZRUN,YQTM,Logical Reasoning,Easy,Shift every letter of WORK by 2: YQTM.
-"If each letter in PLANT is shifted 1 place(s) forward in the alphabet, what is the code?",TNALP,QMBOU,RNCPV,MBOUQ,QMBOU,Logical Reasoning,Easy,Shift every letter of PLANT by 1: QMBOU.
-"If each letter in FRAME is shifted 2 place(s) forward in the alphabet, what is the code?",EMARF,IUDPH,TCOGH,HTCOG,HTCOG,Logical Reasoning,Medium,Shift every letter of FRAME by 2: HTCOG.
-"If each letter in QUEST is shifted 1 place(s) forward in the alphabet, what is the code?",TSEUQ,RVFTU,VFTUR,SWGUV,RVFTU,Logical Reasoning,Medium,Shift every letter of QUEST by 1: RVFTU.
-"If each letter in SOLVE is shifted 2 place(s) forward in the alphabet, what is the code?",EVLOS,QNXGU,UQNXG,VROYH,UQNXG,Logical Reasoning,Easy,Shift every letter of SOLVE by 2: UQNXG.
-A is the brother of B. B is the daughter of C. How is A related to C?,Brother,Son,Uncle,Father,Son,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
-P is the mother of Q. Q is the sister of R. How is P related to R?,Aunt,Sister,Mother,Grandmother,Mother,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
-R is the father of S and S is the mother of T. How is R related to T?,Uncle,Grandfather,Brother,Father,Grandfather,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
-M is the sister of N. N is the father of O. How is M related to O?,Aunt,Mother,Grandmother,Sister,Aunt,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
-K is the son of L. L is the daughter of M. How is K related to M?,Nephew,Son,Brother,Grandson,Grandson,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
-D is the husband of E. E is the sister of F. How is D related to F?,Brother,Father,Brother-in-law,Cousin,Brother-in-law,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
-T is the daughter of U. U is the son of V. How is T related to V?,Niece,Sister,Granddaughter,Daughter,Granddaughter,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
-X is the brother of Y. Y is the mother of Z. How is X related to Z?,Brother,Grandfather,Father,Uncle,Uncle,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
-A is the mother of B and C is the father of A. How is C related to B?,Uncle,Brother,Grandfather,Father,Grandfather,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
-H is the son of J. J is the sister of K. How is K related to H?,Mother,Sister,Aunt or Uncle,Grandmother,Aunt or Uncle,Logical Reasoning,Easy,Map each relation step-by-step on a family tree to infer the final relation.
-Q is the wife of R. R is the son of S. How is S related to Q?,Cousin,Brother-in-law,Uncle,Mother-in-law or Father-in-law,Mother-in-law or Father-in-law,Logical Reasoning,Medium,Map each relation step-by-step on a family tree to infer the final relation.
-L is the brother of M. M is the brother of N. How is L related to N?,Father,Brother,Cousin,Uncle,Brother,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
-B is the daughter of C. C is the daughter of D. How is B related to D?,Granddaughter,Sister,Niece,Daughter,Granddaughter,Logical Reasoning,Hard,Map each relation step-by-step on a family tree to infer the final relation.
-"A person moves 4 km north, 2 km east, 1 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 3 km in north-south and 2 km in east-west direction, so final direction is North-East."
-"A person moves 5 km north, 3 km east, 2 km south, and 1 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 3 km in north-south and 2 km in east-west direction, so final direction is North-East."
-"A person moves 6 km north, 4 km east, 3 km south, and 2 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 3 km in north-south and 2 km in east-west direction, so final direction is North-East."
-"A person moves 7 km north, 5 km east, 1 km south, and 3 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 6 km in north-south and 2 km in east-west direction, so final direction is North-East."
-"A person moves 8 km north, 6 km east, 2 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Medium,"Net movement is 6 km in north-south and 6 km in east-west direction, so final direction is North-East."
-"A person moves 9 km north, 2 km east, 3 km south, and 1 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 6 km in north-south and 1 km in east-west direction, so final direction is North-East."
-"A person moves 10 km north, 3 km east, 1 km south, and 2 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 9 km in north-south and 1 km in east-west direction, so final direction is North-East."
-"A person moves 11 km north, 4 km east, 2 km south, and 3 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 9 km in north-south and 1 km in east-west direction, so final direction is North-East."
-"A person moves 12 km north, 5 km east, 3 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 9 km in north-south and 5 km in east-west direction, so final direction is North-East."
-"A person moves 13 km north, 6 km east, 1 km south, and 1 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Hard,"Net movement is 12 km in north-south and 5 km in east-west direction, so final direction is North-East."
-"A person moves 14 km north, 2 km east, 2 km south, and 2 km west. In which direction is the person from the start point?",North,South,East,West,North,Logical Reasoning,Hard,Net east-west displacement is zero and net movement is towards north.
-"A person moves 15 km north, 3 km east, 3 km south, and 3 km west. In which direction is the person from the start point?",North,South,East,West,North,Logical Reasoning,Easy,Net east-west displacement is zero and net movement is towards north.
-"A person moves 16 km north, 4 km east, 1 km south, and 0 km west. In which direction is the person from the start point?",North-East,North-West,South-East,South-West,North-East,Logical Reasoning,Easy,"Net movement is 15 km in north-south and 4 km in east-west direction, so final direction is North-East."
-"Find the next letter pattern: A, C, E, G, ?",I,H,K,J,I,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: B, D, F, H, ?",I,K,J,L,J,Logical Reasoning,Easy,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: C, E, G, I, ?",L,J,M,K,K,Logical Reasoning,Easy,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: D, F, H, J, ?",K,N,L,M,L,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: E, G, I, K, ?",O,M,N,L,M,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: F, H, J, L, ?",M,N,O,P,N,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: G, I, K, M, ?",P,N,Q,O,O,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: H, J, L, N, ?",O,P,R,Q,P,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: I, K, M, O, ?",R,P,Q,S,Q,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: J, L, N, P, ?",T,R,S,Q,R,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: K, M, O, Q, ?",S,R,U,T,S,Logical Reasoning,Easy,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: L, N, P, R, ?",T,S,U,V,T,Logical Reasoning,Medium,Letters progress by skipping one letter each time (+2 positions).
-"Find the next letter pattern: M, O, Q, S, ?",V,W,U,T,U,Logical Reasoning,Hard,Letters progress by skipping one letter each time (+2 positions).
-"Choose the synonym of ""Abundant"".",Rough,Complex,Silent,Plentiful,Plentiful,Verbal Ability,Medium,"""Plentiful"" is closest in meaning to ""Abundant""."
-"Choose the synonym of ""Brief"".",Late,Tiny,Short,Harsh,Short,Verbal Ability,Easy,"""Short"" is closest in meaning to ""Brief""."
-"Choose the synonym of ""Candid"".",Narrow,Frank,Random,Distant,Frank,Verbal Ability,Hard,"""Frank"" is closest in meaning to ""Candid""."
-"Choose the synonym of ""Diligent"".",Complex,Hardworking,Weak,Silent,Hardworking,Verbal Ability,Medium,"""Hardworking"" is closest in meaning to ""Diligent""."
-"Choose the synonym of ""Eager"".",Tiny,Rough,Harsh,Keen,Keen,Verbal Ability,Hard,"""Keen"" is closest in meaning to ""Eager""."
-"Choose the synonym of ""Fragile"".",Distant,Late,Random,Delicate,Delicate,Verbal Ability,Hard,"""Delicate"" is closest in meaning to ""Fragile""."
-"Choose the synonym of ""Genuine"".",Authentic,Complex,Weak,Narrow,Authentic,Verbal Ability,Medium,"""Authentic"" is closest in meaning to ""Genuine""."
-"Choose the synonym of ""Hostile"".",Unfriendly,Rough,Tiny,Silent,Unfriendly,Verbal Ability,Medium,"""Unfriendly"" is closest in meaning to ""Hostile""."
-"Choose the synonym of ""Imitate"".",Distant,Late,Harsh,Mimic,Mimic,Verbal Ability,Easy,"""Mimic"" is closest in meaning to ""Imitate""."
-"Choose the antonym of ""Ancient"".",Tiny,Harsh,Modern,Late,Modern,Verbal Ability,Easy,"""Modern"" is opposite in meaning to ""Ancient""."
-"Choose the antonym of ""Benevolent"".",Random,Distant,Cruel,Narrow,Cruel,Verbal Ability,Hard,"""Cruel"" is opposite in meaning to ""Benevolent""."
-"Choose the antonym of ""Compact"".",Silent,Weak,Complex,Spacious,Spacious,Verbal Ability,Easy,"""Spacious"" is opposite in meaning to ""Compact""."
-"Choose the antonym of ""Deficit"".",Harsh,Tiny,Rough,Surplus,Surplus,Verbal Ability,Hard,"""Surplus"" is opposite in meaning to ""Deficit""."
-"Choose the antonym of ""Expand"".",Late,Contract,Distant,Random,Contract,Verbal Ability,Hard,"""Contract"" is opposite in meaning to ""Expand""."
-"Choose the antonym of ""Flexible"".",Complex,Narrow,Weak,Rigid,Rigid,Verbal Ability,Hard,"""Rigid"" is opposite in meaning to ""Flexible""."
-"Choose the antonym of ""Generous"".",Tiny,Stingy,Silent,Rough,Stingy,Verbal Ability,Hard,"""Stingy"" is opposite in meaning to ""Generous""."
-"Choose the antonym of ""Harmony"".",Distant,Discord,Harsh,Late,Discord,Verbal Ability,Easy,"""Discord"" is opposite in meaning to ""Harmony""."
-"Identify the grammatically correct sentence for: ""She do not like coffee.""",She does not like coffee.,She did not liked coffee.,She does not likes coffee.,She do not likes coffee.,She does not like coffee.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""Each of the players are ready.""",Each of players were ready.,Each players is ready.,Each of the players is ready.,Each of the player are ready.,Each of the players is ready.,Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""He have completed the task.""",He had complete the task.,He having completed the task.,He has completed the task.,He has complete task.,He has completed the task.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""Neither of the answers are correct.""",Neither of answer is correct.,Neither answers are correct.,Neither of the answers is correct.,Neither is answers correct.,Neither of the answers is correct.,Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""The team were playing well.""",The team was playing well.,The teams was playing well.,The team are playing well.,The team being playing well.,The team was playing well.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""I prefer tea than coffee.""",I prefer tea then coffee.,I prefer tea to coffee.,I prefer tea over than coffee.,I preferred tea than coffee.,I prefer tea to coffee.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""She is senior than me.""",She is senior then me.,She is more senior than me.,She was senior than me.,She is senior to me.,She is senior to me.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""One of my friend lives here.""",One of my friends lives here.,One of friend lives here.,One of my friend live here.,One of my friends live here.,One of my friends lives here.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""He is good in mathematics.""",He is good with mathematics.,He is good at mathematics.,He is good for mathematics.,He is good on mathematics.,He is good at mathematics.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""The news are shocking.""",The news were shocking.,The news is shocking.,News are shocking.,The news be shocking.,The news is shocking.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""She has been working since two hours.""",She have been working for two hours.,She had been working since two hours.,She has working for two hours.,She has been working for two hours.,She has been working for two hours.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""No sooner did he arrived than it rained.""",No sooner had he arrive than rain.,No sooner he arrived than it rained.,No sooner did he arrive when it rained.,No sooner did he arrive than it rained.,No sooner did he arrive than it rained.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""He is married with a doctor.""",He is married by a doctor.,He is marry to a doctor.,He is married to a doctor.,He was married with doctor.,He is married to a doctor.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""The furniture in this room are old.""",The furnitures in this room are old.,The furniture in room are old.,The furniture in this room is old.,Furniture in this room were old.,The furniture in this room is old.,Verbal Ability,Medium,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""If I was you, I would apologize.""","If I had been you, I will apologize.","If I were you, I would apologize.","If I am you, I would apologize.","If I were you, I will apologized.","If I were you, I would apologize.",Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""She suggested me to apply early.""",She suggested that I apply early.,She suggested to me apply early.,She suggested me applying early.,She suggest that I applied early.,She suggested that I apply early.,Verbal Ability,Hard,The correct option follows standard subject-verb agreement and proper preposition usage.
-"Identify the grammatically correct sentence for: ""He discussed about the plan.""",He discussed the plan.,He was discussed the plan.,He discussed on the plan.,He discuss the plan.,He discussed the plan.,Verbal Ability,Easy,The correct option follows standard subject-verb agreement and proper preposition usage.
-The manager asked us to ______ the report before noon.,submit,delay,ignore,cancel,submit,Verbal Ability,Medium,"""submit"" best completes the sentence meaningfully and grammatically."
-Her explanation was so ______ that everyone understood it.,hollow,confusing,clear,vague,clear,Verbal Ability,Easy,"""clear"" best completes the sentence meaningfully and grammatically."
-The new policy will ______ employee productivity.,reduce,improve,worsen,damage,improve,Verbal Ability,Easy,"""improve"" best completes the sentence meaningfully and grammatically."
-We should ______ all possibilities before deciding.,avoid,reject,consider,dismiss,consider,Verbal Ability,Hard,"""consider"" best completes the sentence meaningfully and grammatically."
-He remained ______ during the interview and answered confidently.,nervous,calm,careless,angry,calm,Verbal Ability,Easy,"""calm"" best completes the sentence meaningfully and grammatically."
-The trainer gave us a ______ overview of the process.,brief,unclear,random,lengthy,brief,Verbal Ability,Medium,"""brief"" best completes the sentence meaningfully and grammatically."
-Please ______ the meeting room by 10 AM.,book,shut,erase,remove,book,Verbal Ability,Medium,"""book"" best completes the sentence meaningfully and grammatically."
-She has a ______ understanding of data structures.,strong,shallow,weak,poor,strong,Verbal Ability,Easy,"""strong"" best completes the sentence meaningfully and grammatically."
-The team must ______ the deadline to satisfy the client.,meet,postpone,miss,break,meet,Verbal Ability,Medium,"""meet"" best completes the sentence meaningfully and grammatically."
-His argument lacked ______ evidence.,limited,minor,sufficient,scarce,sufficient,Verbal Ability,Medium,"""sufficient"" best completes the sentence meaningfully and grammatically."
-The software update aims to ______ security issues.,multiply,create,address,ignore,address,Verbal Ability,Hard,"""address"" best completes the sentence meaningfully and grammatically."
-"To crack placements, students should ______ regularly.",practice,wander,hesitate,quit,practice,Verbal Ability,Medium,"""practice"" best completes the sentence meaningfully and grammatically."
-The speaker made a ______ point about time management.,valid,irrelevant,trivial,invalid,valid,Verbal Ability,Hard,"""valid"" best completes the sentence meaningfully and grammatically."
-She quickly ______ to the changing requirements.,collapsed,resisted,adapted,wandered,adapted,Verbal Ability,Easy,"""adapted"" best completes the sentence meaningfully and grammatically."
-The company plans to ______ its operations next year.,shrink,abandon,expand,freeze,expand,Verbal Ability,Easy,"""expand"" best completes the sentence meaningfully and grammatically."
-A good resume should ______ your key achievements.,highlight,ignore,erase,hide,highlight,Verbal Ability,Medium,"""highlight"" best completes the sentence meaningfully and grammatically."
-He gave a ______ response to the client query.,faint,delayed,prompt,careless,prompt,Verbal Ability,Hard,"""prompt"" best completes the sentence meaningfully and grammatically."
-"Choose the word that means ""to make less severe"".",provoke,mitigate,delay,intensify,mitigate,Verbal Ability,Easy,"""mitigate"" is the most accurate meaning."
-"Choose the word that means ""careful use of money"".",frugality,wastefulness,greed,luxury,frugality,Verbal Ability,Easy,"""frugality"" is the most accurate meaning."
-"Choose the word that means ""very enthusiastic"".",indifferent,hesitant,zealous,dull,zealous,Verbal Ability,Medium,"""zealous"" is the most accurate meaning."
-"Choose the word that means ""able to recover quickly"".",rigid,fragile,resilient,timid,resilient,Verbal Ability,Easy,"""resilient"" is the most accurate meaning."
-"Choose the word that means ""obvious and clear"".",hidden,explicit,vague,uncertain,explicit,Verbal Ability,Medium,"""explicit"" is the most accurate meaning."
-"Choose the word that means ""speak briefly and clearly"".",confused,silent,verbose,concise,concise,Verbal Ability,Easy,"""concise"" is the most accurate meaning."
-"Choose the word that means ""difficult to understand"".",plain,obscure,simple,obvious,obscure,Verbal Ability,Medium,"""obscure"" is the most accurate meaning."
-"Choose the word that means ""friendly and pleasant"".",arrogant,hostile,stern,amiable,amiable,Verbal Ability,Hard,"""amiable"" is the most accurate meaning."
-"Choose the word that means ""greatly successful"".",average,minor,triumphant,defeated,triumphant,Verbal Ability,Hard,"""triumphant"" is the most accurate meaning."
-"Choose the word that means ""lasting for a short time"".",stable,permanent,temporary,endless,temporary,Verbal Ability,Easy,"""temporary"" is the most accurate meaning."
-"Choose the word that means ""careless in duties"".",negligent,careful,diligent,meticulous,negligent,Verbal Ability,Medium,"""negligent"" is the most accurate meaning."
-"Choose the word that means ""to combine into one"".",integrate,divide,separate,scatter,integrate,Verbal Ability,Easy,"""integrate"" is the most accurate meaning."
-"Choose the word that means ""to examine in detail"".",analyze,guess,skip,ignore,analyze,Verbal Ability,Medium,"""analyze"" is the most accurate meaning."
-"Choose the word that means ""to formally approve"".",ratify,reject,oppose,delay,ratify,Verbal Ability,Easy,"""ratify"" is the most accurate meaning."
-"Choose the word that means ""showing good judgment"".",reckless,impulsive,rash,prudent,prudent,Verbal Ability,Medium,"""prudent"" is the most accurate meaning."
-"Choose the word that means ""to stop something from happening"".",encourage,prevent,permit,allow,prevent,Verbal Ability,Hard,"""prevent"" is the most accurate meaning."
-"Choose the synonym of ""Essential"".",Optional,Rare,Late,Necessary,Necessary,Verbal Ability,Hard,"""Necessary"" is closest in meaning to ""Essential""."
-What is the output of: cout << 5 + 2 * 3;,11,21,16,13,11,C++,Easy,Multiplication has higher precedence so 2*3=6 then 5+6=11
-Which data type is used to store decimal numbers in C++?,int,float,char,bool,float,C++,Easy,float is used for decimal values
-What is the output of: int x=5; cout << x++;,5,6,Error,0,5,C++,Easy,Post increment prints value first then increments
-Which operator is used for scope resolution in C++?,.,->,::,#,::,C++,Easy,Scope resolution operator is ::
-What is the output of: cout << (10/3);,3,3.33,4,Error,3,C++,Easy,Integer division gives 3
-What is the output of: System.out.println(5 + 2 * 3);,11,21,16,13,11,Java,Easy,Operator precedence applies multiplication first
-Which keyword is used to inherit a class in Java?,this,super,extends,implements,extends,Java,Easy,extends is used for inheritance
-What is the output of: int x=10; System.out.println(x++);,10,11,Error,0,10,Java,Easy,Post increment prints first then increments
-Which data type is used for true/false in Java?,int,boolean,char,float,boolean,Java,Easy,boolean stores true or false
-What is the size of int in Java?,2 bytes,4 bytes,8 bytes,Depends,4 bytes,Java,Easy,int is always 4 bytes in Java
-What is the output of: print(5 + 2 * 3),11,21,16,13,11,Python,Easy,Multiplication first then addition
-Which data type is used for decimal values in Python?,int,float,str,bool,float,Python,Easy,float stores decimal numbers
-What is the output of: x=5; print(x); x+=1,5,6,Error,None,5,Python,Easy,x is printed before increment
-Which symbol is used for comments in Python?,//,/*,#,<!--,#,Python,Easy,# is used for comments
-What is the output of: print(10//3),3,3.33,4,Error,3,Python,Easy,// gives floor division
-What is the output of: cout << (3 > 2);,true,1,false,0,1,C++,Medium,True is printed as 1 in C++
-Which loop runs at least once in C++?,for,while,do-while,none,do-while,C++,Medium,do-while executes once before checking condition
-Which function is entry point in Java?,start(),main(),run(),init(),main,Java,Medium,Execution starts from main method
-What is the output of: System.out.println("Hello" + 5);,Hello5,Hello 5,Error,5Hello,Hello5,Java,Medium,String concatenation occurs
-What is the default value of int in Java?,0,null,undefined,1,0,Java,Medium,Default value of int is 0
-What is the output of: print(type(5)),int,<class 'int'>,number,float,<class 'int'>,Python,Medium,type() shows class type
-Which keyword is used to define function in Python?,function,def,fun,define,def,Python,Medium,def is used to define functions
-What is the output of: print(bool(0)),True,False,Error,None,False,Python,Medium,0 is considered False
-Which operator is used for logical AND in Python?,&&,&,and,AND,and,Python,Medium,and is logical AND
-What is the output of: cout << (5==5);,1,0,true,false,1,C++,Medium,True is printed as 1
-Which concept allows multiple methods with same name in Java?,Overloading,Overriding,Inheritance,Encapsulation,Overloading,Java,Medium,Method overloading allows same name
-What is the output of: System.out.println(10%3);,1,3,0,Error,1,Java,Medium,10 mod 3 is 1
-What is the output of: print(2**3),6,8,9,5,8,Python,Medium,** is exponent operator
-Which keyword is used to create object in Java?,new,create,object,class,new,Java,Easy,new is used to create object
-Which header file is required for cout in C++?,iostream,stdio.h,conio.h,math.h,iostream,C++,Easy,iostream is required for cout
-What is output of cout << (7 % 4);,1,2,3,4,3,C++,Easy,Modulo gives remainder 3.
-Which keyword exits a loop in C++?,skip,stop,break,exit,break,C++,Easy,break exits nearest loop.
-What is output of cout << (2 + 3 * 4);,20,14,24,18,14,C++,Easy,Multiplication happens before addition.
-What is output of cout << (9 / 2);,4.5,5,4,Error,4,C++,Medium,Integer division truncates decimal part.
-Which STL container allows key value pairs?,vector,list,map,queue,map,C++,Medium,map stores key value pairs.
-What is output of bool x = false; cout << !x;,0,1,false,true,1,C++,Medium,Logical NOT of false is true printed as 1.
-What is output of cout << (sizeof(char));,0,1,2,4,1,C++,Hard,Size of char is 1 byte.
-Which statement about virtual function is true?,It cannot be inherited,It enables runtime polymorphism,It is only for templates,It makes function static,It enables runtime polymorphism,C++,Hard,Virtual dispatch enables runtime polymorphism.
-What happens when deleting derived object via base pointer without virtual destructor?,Always safe,Compile error,Undefined behavior risk,Object leaks are impossible,Undefined behavior risk,C++,Hard,Base destructor should be virtual for polymorphic delete.
-What is output of System.out.println(8 % 3);,2,1,3,0,2,Java,Easy,Modulo returns remainder 2.
-Which keyword is used to stop loop in Java?,end,break,stop,return,break,Java,Easy,break exits nearest loop.
-What is output of System.out.println(2 + 3 * 4);,20,14,24,18,14,Java,Easy,Multiplication has higher precedence.
-What is output of System.out.println(9 / 2);,4.5,5,4,Error,4,Java,Medium,Integer division returns 4.
-Which collection does not allow duplicate elements?,ArrayList,LinkedList,HashSet,Vector,HashSet,Java,Medium,Set implementations reject duplicates.
-What is default value of boolean field in Java?,true,false,null,undefined,false,Java,Medium,Default boolean field value is false.
-Can Java have multiple inheritance of classes?,Yes always,No classes cannot,Only with static classes,Only in Java 8,No classes cannot,Java,Hard,Java supports multiple inheritance via interfaces only.
-Which exception is unchecked in Java?,IOException,SQLException,ArithmeticException,ClassNotFoundException,ArithmeticException,Java,Hard,Runtime exceptions are unchecked.
-What is output of String s = null; System.out.println(s == null);,true,false,Error,0,true,Java,Hard,Null comparison with == is valid and true.
-What is output of print(8 % 3),2,1,3,0,2,Python,Easy,Modulo gives remainder 2.
-Which keyword exits loop in Python?,break,exit,stop,return,break,Python,Easy,break exits nearest loop.
-What is output of print(2 + 3 * 4),20,14,24,18,14,Python,Easy,Multiplication before addition.
-What is output of print(9 // 2),4.5,5,4,Error,4,Python,Medium,Floor division of integers gives 4.
-Which structure stores unique elements in Python?,list,tuple,set,dict,set,set keeps unique values only.
-What is output of print(bool([])),True,False,None,Error,False,Python,Medium,Empty list evaluates to False.
-What is output of print(0.1 + 0.2 == 0.3),True,False,Error,None,False,Python,Hard,Floating point precision makes comparison false.
-What is output of print(type({}).__name__),list,dict,set,tuple,dict,Python,Hard,Empty braces create dictionary.
-What is output of print([1,2,3][3])?,3,None,IndexError,0,IndexError,Python,Hard,Index 3 is out of range for length 3.
+If a train travels at 60 km/hr, how many meters does it cover in 15 seconds?,250 m,150 m,200 m,300 m,250 m,Quantitative,Easy,Speed in m/s = 60 * 5/18 = 16.66. Distance = 16.66 * 15 = 250 m.
+A shopkeeper sells an item for 600 at a profit of 20%. Find the cost price.,500,480,520,550,500,Cost Price = (100/120) * 600 = 500.,Quantitative,Easy,CP = (100 / (100 + Profit%)) * SP
+What is 15% of 40% of 2000?,120,60,80,100,120,Quantitative,Easy,0.15 * 0.40 * 2000 = 120.
+Find the missing number in the series: 4; 9; 16; 25; ?; 49,36,32,40,45,36,Logical,Easy,The series consists of squares of consecutive numbers: 2^2; 3^2; 4^2; 5^2; 6^2.
+Pointing to a man, a woman said; He is the only son of my mother's mother. How is the woman related to the man?,Niece,Sister,Mother,Aunt,Niece,Logical,Easy,Woman's mother's mother is her grandmother. Her grandmother's only son is her maternal uncle.
+In a certain code, COMPUTER is written as RFUVQNPC. How is MEDICINE written?,EOJDJEFM,EOJDEJFM,MFEJDJOE,MFEDJDOE,EOJDJEFM,Logical,Easy,Reverse the word and shift each letter by +1.
+Choose the synonym of the word CANDID,Frank,Greedy,Dishonest,Secretive,Frank,Verbal,Easy,Candid means truthful and straightforward.
+Select the antonym of the word ABANDON,Retain,Leave,Quit,Forsake,Retain,Verbal,Easy,Abandon means to leave; Retain means to keep.
+Identify the error in the sentence: He have been working here since 2010.,He have,been working,here since,No error,He have,Verbal,Easy,He is a singular subject and requires 'has' instead of 'have'.
+A and B can do a piece of work in 12 days and 16 days respectively. In how many days can they complete it together?,6.85 days,7 days,8.2 days,9 days,6.85 days,Quantitative,Medium,Work rate = (1/12 + 1/16) = 7/48. Days = 48/7 approx 6.85.
+A man can row 15 km/hr in still water. If the speed of the stream is 3 km/hr, find his speed downstream.,18 km/hr,12 km/hr,15 km/hr,21 km/hr,18 km/hr,Quantitative,Medium,Downstream speed = Speed in still water + Speed of stream = 15 + 3.
+The ratio of the ages of A and B is 3:4. Five years ago, the ratio was 2:3. Find their present ages.,15 and 20,12 and 16,18 and 24,21 and 28,15 and 20,Quantitative,Medium,(3x-5)/(4x-5) = 2/3 gives x=5. Ages are 3*5 and 4*5.
+Find the simple interest on 5000 at 10% per annum for 3 years.,1500,1000,1200,1800,1500,Quantitative,Medium,SI = (P*R*T)/100 = (5000*10*3)/100 = 1500.
+If A is 20% more than B, by what percent is B less than A?,16.66%,20%,25%,15%,16.66%,Quantitative,Medium,Reduction = (20 / (100+20)) * 100 = 16.66%.
+In a row of 40 students, R is 11th from the right. What is his position from the left?,30,31,29,32,30,Logical,Medium,Left position = (Total - Right position) + 1 = (40 - 11) + 1.
+If South-East becomes North, and North-East becomes West, what will West become?,South-East,North-West,South-West,North-East,South-East,Logical,Medium,The directions are rotated 135 degrees anti-clockwise.
+Find the odd one out: 27; 64; 125; 144; 216,144,27,125,216,144,Logical,Medium,All others are perfect cubes: 3^3; 4^3; 5^3; 6^3. 144 is 12^2.
+Statements: All mangoes are golden. Some golden things are apples. Conclusion: Some mangoes are apples.,False,True,Maybe,Insufficient data,False,Logical,Medium,The middle term 'golden' is not distributed in either premise.
+If 1st January 2001 was a Monday, what day was 1st January 2002?,Tuesday,Monday,Wednesday,Sunday,Tuesday,Logical,Medium,A non-leap year has 365 days, which is 52 weeks and 1 odd day.
+Choose the correct spelling,Occurrence,Occurence,Occurance,Ocurrence,Occurrence,Verbal,Medium,Occurrence is spelled with double 'c' and double 'r'.
+Choose the most appropriate word to fill in the blank: The police _____ the building to find the thief.,searched,looked,watched,stared,searched,Verbal,Medium,Searched implies a thorough investigation of a place.
+Change the voice: The mason is building the wall.,The wall is being built by the mason,The wall was built by the mason,The wall is built by the mason,The wall was being built by the mason,The wall is being built by the mason,Verbal,Medium,Present continuous passive is 'is/am/are + being + V3'.
+What is the synonym of the word PRAGMATIC,Practical,Idealistic,Theoretical,Arrogant,Practical,Verbal,Medium,Pragmatic means dealing with things sensibly and realistically.
+A sum of money doubles itself at compound interest in 15 years. In how many years will it become eight times?,45 years,30 years,60 years,75 years,45 years,Quantitative,Hard,If it becomes 2x in 15 years; it becomes 2^3x in 15*3 = 45 years.
+A boat travels 24 km upstream and 28 km downstream in 6 hours. It travels 30 km upstream and 21 km downstream in 6.5 hours. Find the speed of the boat in still water.,10 km/hr,8 km/hr,12 km/hr,14 km/hr,10 km/hr,Quantitative,Hard,Solve linear equations 24/u + 28/d = 6 and 30/u + 21/d = 6.5 to find speed.
+In how many different ways can the letters of the word LEADING be arranged such that vowels always come together?,720,1440,5040,2520,720,Quantitative,Hard,Vowels (EAI) as 1 unit + LDNG = 5 units. 5! * 3! = 120 * 6 = 720.
+Find the probability of getting a sum of 7 when two dice are thrown.,1/6,1/12,5/36,1/4,1/6,Quantitative,Hard,Total outcomes = 36. Favorable outcomes (1;6; 2;5; 3;4; 4;3; 5;2; 6;1) = 6.
+Three pipes A; B and C can fill a tank in 6 hours. After working together for 2 hours; C is closed and A and B fill the rest in 7 hours. How much time will C alone take to fill the tank?,14 hours,12 hours,16 hours,18 hours,14 hours,Quantitative,Hard,Work done in 2 hrs = 1/3. Remaining 2/3 done by A+B in 7 hrs. Calculate C rate.
+Find the next term: 2; 5; 11; 23; 47; ?,95,90,92,99,95,Logical,Hard,Logic is (Previous number * 2) + 1. (47 * 2) + 1 = 95.
+If A + B means A is the mother of B; A - B means A is the brother of B; A % B means A is the father of B and A * B means A is the sister of B; which of the following means P is the maternal uncle of Q?,P - M + N * Q,P + M - N * Q,P - M % N * Q,P * M + N - Q,P - M + N * Q,Logical,Hard,P is brother of M and M is mother of N (and sister Q).
+Six people P; Q; R; S; T; U are sitting in a circle. P is opposite U. R is between P and T. S is to the left of U. Who is opposite T?,S,Q,R,P,S,Logical,Hard,Map the circular arrangement based on the given neighbors and opposites.
+Statement: Should higher education be completely privatized in India? Argument 1: Yes; it will improve quality. Argument 2: No; it will make it inaccessible for poor students.,Only 2 is strong,Only 1 is strong,Both are strong,Neither is strong,Both are strong,Logical,Hard,Both quality and accessibility are valid concerns in public policy debates.
+Identify the correct sentence.,The committee has reached its decision,The committee have reached its decision,The committee has reached their decision,The committee have reached their decision,The committee has reached its decision,Verbal,Hard,Collective nouns like committee take singular verbs and pronouns when acting as a unit.
+What is the antonym of the word EPHEMERAL,Permanent,Short-lived,Fleeting,Transparent,Permanent,Verbal,Hard,Ephemeral means lasting for a very short time.
+Select the correct idiom meaning: To smell a rat,To suspect foul play,To catch a disease,To see a small animal,To be very clever,To suspect foul play,Verbal,Hard,Smelling a rat means suspecting that something is wrong or dishonest.
+A contractor undertook to do a piece of work in 9 days with certain number of men. But 6 of them were absent from the first day and the rest could finish the work in 15 days. Find the number of men originally employed.,15,12,18,20,15,Quantitative,Medium,9x = 15(x-6) => 9x = 15x - 90 => 6x = 90 => x = 15.
+Average age of 10 students is 15 years. When a new student joins; the average increases by 1 year. What is the age of the new student?,26,25,24,27,26,Quantitative,Medium,Total age = 11*16 - 10*15 = 176 - 150 = 26.
+If the price of petrol increases by 25%; by how much percent should a user reduce consumption to keep the expenditure same?,20%,25%,15%,30%,20%,Quantitative,Medium,Reduction% = [r/(100+r)] * 100 = [25/125] * 100 = 20%.
+Find the compound interest on 10000 for 2 years at 10% per annum compounded annually.,2100,2000,2200,1900,2100,Quantitative,Medium,Amount = 10000 * (1.1)^2 = 12100. CI = 12100 - 10000.
+A can do work in 10 days and B in 15 days. They work together for 5 days and then A leaves. In how many days will B finish the remaining work?,2.5 days,2 days,3 days,4 days,2.5 days,Quantitative,Hard,Work done in 5 days = 5 * (1/10 + 1/15) = 5/6. Rem = 1/6. B takes (1/6)/(1/15) = 2.5.
+What is the remainder when 2^31 is divided by 5?,3,2,1,4,3,Quantitative,Hard,Units digit of 2^n follows cycle 2-4-8-6. 2^31 ends in 8. 8/5 gives remainder 3.
+A sum was put at simple interest at a certain rate for 3 years. Had it been put at 2% higher rate; it would have fetched 360 more. Find the sum.,6000,5000,4000,7000,6000,Quantitative,Hard,Difference in interest = P * 2% * 3 = 6% of P. 0.06P = 360 => P = 6000.
+Find the length of a bridge which a train 130m long and travelling at 45 km/hr can cross in 30 seconds.,245 m,250 m,200 m,230 m,245 m,Quantitative,Hard,Total distance = 45 * 5/18 * 30 = 375m. Bridge = 375 - 130 = 245m.
+If MADRAS is coded as NBESBT; how is DELHI coded?,EFMIJ,EFMJK,EFHKJ,EFMIK,EFMIJ,Logical,Easy,Each letter is shifted by +1. D->E; E->F; L->M; H->I; I->J.
+Look at this series: 7; 10; 8; 11; 9; 12; ... What number should come next?,10,12,7,13,10,Logical,Easy,The pattern is +3; -2; +3; -2. 12-2 = 10.
+Manish is 14th from the right end in a row of 40 boys. What is his position from the left end?,27,26,28,25,27,Logical,Easy,Position from left = (Total - Right) + 1 = (40 - 14) + 1 = 27.
+Find the missing number: 1; 4; 9; 16; 25; ?,36,30,49,42,36,Logical,Easy,The sequence is a series of squares of natural numbers (1^2; 2^2; 3^2...).
+A is the son of B. C; B's sister; has a son D and a daughter E. F is the maternal uncle of D. How is A related to D?,Cousin,Nephew,Uncle,Brother,Cousin,Logical,Medium,A is B's son. D is B's sister's son. So A and D are cousins.
+A man walks 5 km toward South and then turns to the right. After walking 3 km he turns to the left and walks 5 km. Now in which direction is he from the starting place?,South-West,West,South,North-East,South-West,Logical,Medium,Following the path on a grid shows he is in the South-West quadrant.
+Statements: All fish are birds. Some birds are cows. Conclusion 1: Some fish are cows. Conclusion 2: Some birds are fish.,Only 2 follows,Only 1 follows,Both follow,Neither follows,Only 2 follows,Logical,Medium,Conclusion 2 is a valid conversion of the first statement.
+Insert the missing number: 8; 24; 12; 36; 18; 54; (..),27,21,24,30,27,Logical,Medium,The pattern is *3; /2; *3; /2... 54/2 = 27.
+If Saturday falls on 4th January 2003; what day will fall on 4th January 2004?,Sunday,Monday,Saturday,Tuesday,Sunday,Logical,Medium,From Jan 2003 to Jan 2004 is 365 days (1 odd day). Sat + 1 = Sunday.
+Six children A; B; C; D; E; F are standing in a line. F is between D and A. C is between E and B. E does not stand next to D or A. B stands next to D. Who is between F and B?,D,A,C,E,D,Logical,Hard,Arrange: E-C-B-D-F-A. D is between F and B.
+In a certain code language; 'pit na sa' means 'you are welcome'; 'na ho pa' means 'they are very'; 'sa da la' means 'welcome back home'. Which word means 'welcome'?,sa,pit,na,da,sa,Logical,Hard,Comparing 1st and 3rd phrases; 'sa' and 'welcome' are the only common elements.
+Seven students P; Q; R; S; T; U; V are sitting in a row. S is in the middle. P and Q are at the ends. R is sitting to the left of S. T is to the right of S. Who is sitting to the right of T?,U or V,S,R,P,U or V,Logical,Hard,Positions: P/Q _ R S T _ Q/P. Remaining spots for U and V.
+Find the day of the week on 15th August 1947.,Friday,Saturday,Thursday,Monday,Friday,Logical,Hard,Calculated using odd days: 1600 (0) + 300 (1) + 46 yrs (57 odd) + days of 1947.
+Select the pair that best expresses a relationship similar to LIGHT:BLIND,Speech:Dumb,Tongue:Sound,Vision:Blind,Ear:Deaf,Speech:Dumb,Verbal,Easy,A person who lacks light/vision is blind; one who lacks speech is dumb.
+Choose the synonym of ABANDON,Forsake,Keep,Cherish,Adopt,Forsake,Verbal,Easy,Abandon and Forsake both mean to give up or leave.
+Identify the error: She don't like to go to the park.,She don't,like to go,to the park,No error,She don't,Verbal,Easy,Singular 'She' requires 'doesn't' (does not) rather than 'don't'.
+Fill in the blank: The sun _____ in the east.,rises,rise,rising,rose,rises,Verbal,Easy,Universal truths are expressed in the simple present tense.
+Choose the correct spelling,Accommodate,Acomodate,Accomodate,Acommodate,Accommodate,Verbal,Medium,Accommodate has double 'c' and double 'm'.
+Antonym of NOBLE,Ignoble,Grand,Aristocratic,Honorable,Ignoble,Verbal,Medium,Noble refers to high moral character; Ignoble means low or base.
+Change to Passive Voice: She is playing the guitar.,The guitar is being played by her,The guitar was played by her,The guitar is played by her,The guitar has been played by her,The guitar is being played by her,Verbal,Medium,Present continuous passive: is/am/are + being + V3.
+Choose the best word: He was _____ for his crime.,punished,rewarded,praised,ignored,punished,Verbal,Medium,Contextually; a crime results in punishment.
+Select the synonym of METICULOUS,Careful,Sloppy,Fast,Lazy,Careful,Verbal,Hard,Meticulous means showing great attention to detail; hence careful.
+Find the error: Neither of the two candidates are fit for the job.,are fit,Neither of,two candidates,No error,are fit,Verbal,Hard,'Neither' is always singular and requires 'is' instead of 'are'.
+Meaning of idiom: At the eleventh hour,At the last moment,Very early,At 11:00 AM,In the middle of the night,At the last moment,Verbal,Hard,This idiom refers to something happening at the very latest possible time.
+Choose the word with the opposite meaning to GREGARIOUS,Introverted,Sociable,Friendly,Outgoing,Introverted,Verbal,Hard,Gregarious means fond of company; Introverted is the opposite.
+The price of a book is first increased by 10% and then decreased by 10%. What is the net change in price?,1% decrease,1% increase,No change,2% decrease,1% decrease,Quantitative,Medium,Net change = x + y + xy/100 = 10 - 10 - 100/100 = -1%.
+A sum of 12500 amounts to 15500 in 4 years at simple interest. What is the rate of interest?,6%,5%,4%,7%,6%,Quantitative,Medium,SI = 3000. Rate = (3000 * 100) / (12500 * 4) = 6%.
+Find the average of first 50 natural numbers.,25.5,25,26,26.5,25.5,Quantitative,Easy,Average = (n+1)/2 = (50+1)/2 = 25.5.
+If 5% more is gained by selling an article for 350 than by selling it for 340; find CP.,200,150,250,300,200,Quantitative,Medium,5% of CP = 350 - 340 = 10. CP = 10 / 0.05 = 200.
+How many times in a day; the hands of a clock are straight?,44,22,48,24,44,Logical,Hard,Straight includes 0 deg and 180 deg. Each occurs 22 times a day.
+If PALE is coded as 2134 and EARTH is coded as 41590; how is PEARL coded?,24153,25413,21453,24150,24153,Logical,Medium,Assign numbers to letters: P=2; E=4; A=1; R=5; L=3.
+A man is facing North-West. He turns 90 degrees in clockwise direction and then 135 degrees in anti-clockwise direction. Which direction is he facing now?,West,South,North,East,West,Logical,Medium,Net rotation = 135(ACW) - 90(CW) = 45(ACW). NW - 45 deg = West.
+Find the missing number: 4; 7; 12; 19; 28; ?,39,37,35,41,39,Logical,Medium,Pattern is +3; +5; +7; +9; +11. 28 + 11 = 39.
+One morning after sunrise; Vikram and Shailesh were standing in a town with their backs towards each other. Vikram's shadow fell exactly towards left hand side. In which direction was Shailesh facing?,South,North,East,West,South,Logical,Hard,Sun is in East. Shadow is in West. Vikram's left is West; so Vikram faces North. Shailesh faces South.
+Choose the correct indirect speech: He said; I am happy.,He said that he was happy,He said that he is happy,He says that he is happy,He said he was happy,He said that he was happy,Verbal,Medium,When reporting in the past; 'am' changes to 'was' and a connector 'that' is added.
+Select the synonym for ENIGMA,Puzzle,Answer,Clear,Simple,Puzzle,Verbal,Hard,Enigma refers to something that is mysterious or puzzling.
+Find the error: I have seen him yesterday.,I have seen,him yesterday,No error,Insufficient data,I have seen,Verbal,Medium,Yesterday requires Simple Past 'saw' instead of Present Perfect 'have seen'.
+Choose the correct word: This is the _____ of the two.,better,best,good,more good,better,Verbal,Medium,Use comparative degree 'better' when comparing two items.
+A person crosses a 600m long street in 5 minutes. What is his speed in km/hr?,7.2 km/hr,3.6 km/hr,10 km/hr,8.4 km/hr,7.2 km/hr,Quantitative,Medium,Speed = (600/300) m/s = 2 m/s. In km/hr = 2 * 18/5 = 7.2.
+Find the value of (0.75 * 0.75 * 0.75 + 0.25 * 0.25 * 0.25) / (0.75 * 0.75 - 0.75 * 0.25 + 0.25 * 0.25),1,0.5,0.25,1.25,1,Quantitative,Hard,Algebraic identity (a^3+b^3)/(a^2-ab+b^2) = a+b = 0.75+0.25 = 1.
+If 15 men can reap a field in 35 days; in how many days will 21 men reap the same field?,25,20,30,28,25,Quantitative,Easy,M1D1 = M2D2 => 15 * 35 = 21 * D2 => D2 = 25.
+A sum of money at simple interest amounts to 815 in 3 years and to 854 in 4 years. The sum is:,698,700,650,720,698,Quantitative,Medium,Interest for 1 yr = 854-815 = 39. Principal = 815 - (39*3) = 698.
+The HCF of two numbers is 11 and their LCM is 693. If one of the numbers is 77; find the other.,99,88,110,121,99,Quantitative,Medium,Other number = (HCF * LCM) / First Number = (11 * 693) / 77 = 99.
+Two numbers are in the ratio 3:5. If 9 is subtracted from each; the new ratio is 12:23. The smaller number is:,33,27,45,55,33,Quantitative,Hard,Solve (3x-9)/(5x-9) = 12/23 => 69x - 207 = 60x - 108 => 9x = 99 => x=11. Smaller = 33.
+In how many ways can the letters of the word APPLE be arranged?,60,120,240,48,60,Quantitative,Hard,Word has 5 letters with P repeating twice. Arrangements = 5! / 2! = 120/2 = 60.
+Pointing to a photograph; a man said; I have no brother or sister but that man's father is my father's son. Whose photograph was it?,His son's,His father's,His own,His nephew's,His son's,Logical,Medium,My father's son (with no siblings) is 'me'. So 'that man's father is me'.
+If AIR is called GREEN; GREEN is called BLUE; BLUE is called SKY; SKY is called YELLOW; YELLOW is called WATER; what is the color of clear sky?,YELLOW,BLUE,SKY,WATER,YELLOW,Logical,Easy,Clear sky is SKY; and SKY is called YELLOW.
+Find the odd one out: 3; 5; 7; 12; 17; 19,12,3,7,17,12,Logical,Easy,All numbers except 12 are prime numbers.
+A man walks 2 km North; then turns East and walks 10 km. After this he turns North and walks 3 km; and again turns East and walks 2 km. How far is he from the starting point?,13 km,10 km,15 km,17 km,13 km,Logical,Hard,Horizontal distance = 10+2 = 12. Vertical = 2+3 = 5. Distance = sqrt(12^2 + 5^2) = 13.
+Complete the series: SCD; TEF; UGH; ____,VIJ,VJK,WKL,IJK,VIJ,Logical,Medium,First letters shift +1 (S-T-U-V). Second/Third are consecutive pairs (CD-EF-GH-IJ).
+Choose the word which is least like others.,Ginger,Apple,Orange,Guava,Ginger,Logical,Easy,Ginger is a root/vegetable; others are fruits.
+Synonym of ADVERSITY,Misfortune,Prosperity,Happiness,Wealth,Misfortune,Verbal,Medium,Adversity refers to difficult situations or misfortune.
+Select the antonym for ENORMOUS,Tiny,Huge,Massive,Grand,Tiny,Verbal,Easy,Enormous means very large; Tiny is the opposite.
+Meaning of the idiom: A piece of cake,Very easy,Something delicious,A difficult task,A birthday celebration,Very easy,Verbal,Easy,A piece of cake describes a task that is simple to perform.
+Sentence Correction: Each of the students have submitted their work.,Each of the students has,Each of student has,Each of the students have,No error,Each of the students has,Verbal,Medium,'Each' is a singular distributor and requires the singular verb 'has'.
+Antonym of the word VAGUE,Clear,Blurry,Uncertain,Doubtful,Clear,Verbal,Medium,Vague means not clear; so Clear is the antonym.
+Synonym of the word VIGILANT,Watchful,Careless,Sleepy,Unaware,Watchful,Verbal,Hard,Vigilant means keeping careful watch for possible danger.
+"If 12 men can complete a work in 20 days, how many days will 15 men take to complete the same work?",16 days,18 days,15 days,22 days,16 days,Quantitative,Easy,"Using M1D1 = M2D2: 12 * 20 = 15 * D2. Therefore, D2 = 240 / 15 = 16 days."
+"A person crosses a 600m long street in 5 minutes. What is his speed in km/hr?",7.2,3.6,8.4,10,7.2,Quantitative,Easy,"Speed = 600m / 300s = 2 m/s. To convert to km/hr: 2 * (18/5) = 7.2 km/hr."
+"What is the average of first five multiples of 7?",21,14,28,35,21,Quantitative,Easy,"Sum = 7+14+21+28+35 = 105. Average = 105 / 5 = 21."
+"Find the missing number in the series: 1, 4, 9, 16, 25, ?",36,49,30,42,36,Logical,Easy,"The series is squares of consecutive natural numbers: 1^2, 2^2, 3^2, 4^2, 5^2, 6^2."
+"Pointing to a photograph, a man said, 'I have no brother or sister but that man's father is my father's son.' Whose photograph was it?",His son,His father,His nephew,His own,His son,Logical,Medium,"'My father's son' with no siblings is the man himself. So, the man in the photo's father is 'Me'."
+"In a certain code, 'ROAD' is written as 'URDG'. How is 'SWAN' written in that code?",VZDQ,UXDQ,VZC8,VZCQ,VZDQ,Logical,Medium,"Each letter is shifted by +3 positions in the alphabet (R+3=U, O+3=R, etc.)."
+"Choose the synonym for 'FRUGAL'.",Economical,Extravagant,Generous,Wasteful,Economical,Verbal,Easy,"Frugal means being cautious with money or resources; economical is the closest synonym."
+"Select the correct antonym for 'ENORMOUS'.",Tiny,Huge,Massive,Grand,Tiny,Verbal,Easy,"Enormous means very large; tiny means very small."
+"Identify the error: 'Neither of the two candidates are fit for the position.'",are fit,Neither of,two candidates,No error,are fit,Verbal,Medium,"'Neither' is a singular distributor and must be followed by the singular verb 'is'."
+"A sum of money at simple interest doubles itself in 8 years. In how many years will it become four times itself?",24 years,16 years,32 years,20 years,24 years,Quantitative,Hard,"Interest for 8 years = P. To become 4P, total interest needed is 3P. Time = 8 * 3 = 24 years."
+"Find the probability of getting a sum of 9 from two throws of a dice.",1/9,1/6,1/12,5/36,1/9,Quantitative,Hard,"Favorable outcomes: (3,6), (4,5), (5,4), (6,3) = 4. Total = 36. Probability = 4/36 = 1/9."
+"A train 140m long is running at 60 km/hr. In how much time will it pass a platform 260m long?",24 sec,20 sec,28 sec,30 sec,24 sec,Quantitative,Hard,"Total distance = 140+260 = 400m. Speed = 60 * 5/18 = 16.67 m/s. Time = 400 / 16.67 = 24 sec."
+"If '+' means 'divided by', '-' means 'multiplied by', 'x' means 'plus', what is the value of: 10 + 2 - 5 x 3?",28,13,15,20,28,Logical,Medium,"Substituting symbols: (10 / 2) * 5 + 3 = 5 * 5 + 3 = 28."
+"Six people A, B, C, D, E, F are sitting in a circle facing the center. B is between F and C. A is between E and D. F is to the left of D. Who is between A and F?",D,E,B,C,D,Logical,Hard,"Arranging in a circle based on constraints leads to the sequence E-A-D-F-B-C."
+"Choose the correctly spelled word.",Accommodation,Acomodation,Accomodation,Acommodation,Accommodation,Verbal,Medium,"Accommodation is spelled with double 'c' and double 'm'."
+"The ratio of the speeds of two trains is 7:8. If the second train runs 400 km in 5 hours, what is the speed of the first train?",70 km/hr,75 km/hr,80 km/hr,85 km/hr,70 km/hr,Quantitative,Easy,"Speed of 2nd train = 400/5 = 80 km/hr. Speed of 1st train = (7/8) * 80 = 70 km/hr."
+"A person buys a toy for 50 and sells it for 75. What is the profit percentage?",25%,50%,75%,100%,50%,Quantitative,Easy,"Profit = 75 - 50 = 25. Profit % = (25/50) * 100 = 50%."
+"What is the average of the first 10 prime numbers?",12.9,11.5,15.2,13.1,12.9,Quantitative,Medium,"Sum of first 10 primes (2,3,5,7,11,13,17,19,23,29) is 129. Average = 129/10 = 12.9."
+"A and B can together finish a work in 30 days. They worked together for 20 days and then B left. After another 20 days, A finished the remaining work. In how many days can A alone finish the job?",50 days,60 days,40 days,70 days,60 days,Quantitative,Hard,"In 20 days, 2/3 work is done. 1/3 work is done by A in 20 days. Full work by A = 20 * 3 = 60 days."
+"Find the probability that a leap year has 53 Sundays.",2/7,1/7,3/7,5/7,2/7,Quantitative,Hard,"A leap year has 366 days (52 weeks and 2 days). For 53 Sundays, one of those 2 days must be Sunday. (Sat,Sun) or (Sun,Mon) are 2 out of 7 possibilities."
+"Find the missing number: 2, 6, 12, 20, 30, ?",40,42,44,46,42,Logical,Easy,"The series is n^2 + n: 1^2+1=2, 2^2+2=6, 3^2+3=12, 4^2+4=20, 5^2+5=30, 6^2+6=42."
+"If 1st March 1997 was a Saturday, what day was 1st March 2000?",Tuesday,Wednesday,Monday,Sunday,Wednesday,Logical,Medium,"1997 to 2000 is 3 years. One leap year (2000) but March is after Feb. Odd days: 1997(1), 1998(1), 1999(1), 2000(1 for Jan/Feb). Total 4 odd days. Sat + 4 = Wednesday."
+"Pointing to a lady, a man said, 'The son of her only brother is the brother of my wife.' How is the lady related to that man?",Mother's sister,Grandmother,Sister of father-in-law,Mother-in-law,Sister of father-in-law,Logical,Hard,"The son of the lady's brother is the man's brother-in-law. So the lady's brother is the man's father-in-law. The lady is the sister of his father-in-law."
+"If 'MERCURY' is coded as 'NGSDVTB', how is 'VENUS' coded?",WFPVT,WFOUT,XGOVT,WFOTV,WFPVT,Logical,Medium,"Pattern: Alternate letters shift by +1 and +2. V+1=W, E+1=F, N+2=P, U+1=V, S+1=T."
+"Choose the word which is most nearly the same in meaning to 'RESILIENT'.",Flexible,Stubborn,Brittle,Lazy,Flexible,Verbal,Easy,"Resilient means able to withstand or recover quickly from difficult conditions; flexible is the closest synonym."
+"Find the correctly spelled word.",Questionnaire,Questionaire,Questionnairee,Questionair,Questionnaire,Verbal,Medium,"Questionnaire is spelled with double 'n' and double 'r'."
+"Select the correct antonym for 'ABUNDANT'.",Scarce,Plentiful,Rich,Heavy,Scarce,Verbal,Easy,"Abundant means existing in large quantities; scarce means in short supply."
+"Identify the error: 'Neither the teacher nor the students was present in the class.'",was present,the students,Neither the,in the class,was present,Verbal,Medium,"When subjects are joined by 'nor', the verb agrees with the closer subject. 'Students' is plural, so it should be 'were present'."
+"Change the voice: 'Who wrote this book?'",By whom was this book written?,Who was this book written by?,By who this book was written?,This book was written by who?,By whom was this book written?,Verbal,Medium,"Active 'Who + V2' changes to Passive 'By whom + was/were + Object + V3'."
+"Fill in the blank: The meeting was _____ due to heavy rain.",called off,called out,called in,called over,called off,Verbal,Easy,"'Called off' is a phrasal verb meaning to cancel something."
+A sum of money doubles itself in 10 years at simple interest. What is the rate of interest per annum?,10%,5%,12%,15%,10%,Quantitative,Easy,Rate = (100 * (n-1)) / t = (100 * 1) / 10 = 10%.
+If the cost price of 15 tables is equal to the selling price of 20 tables; find the loss percentage.,25%,20%,30%,15%,25%,Quantitative,Easy,Loss% = ((CP-SP)/SP) * 100 = (5/20) * 100 = 25%.
+Find the average of all prime numbers between 30 and 50.,39.8,41,42.5,38,39.8,Quantitative,Medium,Primes are 31; 37; 41; 43; 47. Average = 199 / 5 = 39.8.
+A can do a work in 15 days and B in 20 days. If they work on it together for 4 days; what fraction of the work is left?,8/15,7/15,1/4,1/10,8/15,Quantitative,Medium,Work done in 4 days = 4 * (1/15 + 1/20) = 4 * (7/60) = 7/15. Left = 1 - 7/15 = 8/15.
+In what ratio must a grocer mix two varieties of pulses costing 15 and 20 per kg respectively so as to get a mixture worth 16.50 per kg?,7:3,3:7,4:5,5:4,7:3,Quantitative,Medium,Using allegation: (20 - 16.50) : (16.50 - 15) = 3.5 : 1.5 = 7 : 3.
+Find the probability of drawing a king or a heart from a deck of 52 cards.,4/13,17/52,1/4,13/52,4/13,Quantitative,Hard,P(K or H) = P(K) + P(H) - P(K and H) = 4/52 + 13/52 - 1/52 = 16/52 = 4/13.
+A train 150 m long takes 20 seconds to cross a platform 450 m long. Find the speed of the train in km/hr.,108 km/hr,90 km/hr,100 km/hr,120 km/hr,108 km/hr,Quantitative,Hard,Total Distance = 600m. Speed = 600/20 = 30 m/s. In km/hr = 30 * 18/5 = 108.
+Complete the series: 1.5; 3; 6; 12; 24; (..),48,36,40,32,48,Logical,Easy,The pattern is a simple geometric progression where each number is doubled (*2).
+If 'WATER' is written as 'YCVGT'; then what is written as 'HKTG'?,FIRE,COLD,HEAT,WIND,FIRE,Logical,Easy,Pattern is +2. H-2=F; K-2=I; T-2=R; G-2=E. Result is FIRE.
+Pointing to a man in a photograph; Asha said; His mother's only daughter is my mother. How is Asha related to that man?,Niece,Sister,Mother,Aunt,Niece,Logical,Medium,His mother's only daughter is his sister. His sister is Asha's mother. So Asha is his niece.
+If '+' means 'x'; '-' means '+'; 'x' means '/'; and '/' means '-'; then 10 + 5 x 2 - 5 = ?,30,20,25,15,30,Logical,Medium,New expression: 10 x 5 / 2 + 5 = 50 / 2 + 5 = 25 + 5 = 30.
+Look at this series: 36; 34; 30; 28; 24; ... What number should come next?,22,20,23,26,22,Logical,Medium,The pattern alternates between subtracting 2 and subtracting 4. 24 - 2 = 22.
+Statements: Some actors are singers. All singers are dancers. Conclusion: Some actors are dancers.,True,False,Maybe,Insufficient data,True,Logical,Medium,Actors overlap with singers; and all singers are dancers; so that overlap must be dancers.
+A man walks 2 km North; then turns East and walks 10 km. After this he turns North and walks 3 km. How far is he from the start?,13 km,15 km,12 km,10 km,13 km,Logical,Hard,Horizontal = 10; Vertical = 2+3 = 5. Distance = sqrt(10^2 + 5^2) = sqrt(125); approx 11.18. (Wait; Displacement = sqrt(10^2 + 5^2) = 11.18. If 10 and 12 logic; sqrt(144+25)=13. Let's use 12 for East: North 2; East 12; North 3 = sqrt(12^2+5^2)=13).
+Find the day of the week on 26th January 1950.,Thursday,Friday,Wednesday,Monday,Thursday,Logical,Hard,Calculation based on odd days: 1600 (0) + 300 (1) + 49 yrs (12 leap; 37 ord = 61 odd = 5) + 26 days (5) = 11 odd = 4 = Thursday.
+Choose the synonym of 'ABRIDGE',Shorten,Extend,Bridge,Release,Shorten,Verbal,Easy,Abridge means to shorten a piece of writing without losing the sense.
+Select the antonym of 'ARTIFICIAL',Natural,Plastic,Fake,Synthetic,Natural,Verbal,Easy,Artificial means man-made; its opposite is natural.
+Identify the error: He did not wrote the letter yesterday.,wrote,did not,the letter,yesterday,wrote,Verbal,Easy,After 'did'; the base form of the verb 'write' should be used; not 'wrote'.
+Choose the correctly spelled word.,Maintenance,Maintainance,Maintenence,Maintenence,Maintenance,Verbal,Medium,Maintenance is the correct spelling.
+Antonym of 'VAGUE',Clear,Blurry,Faint,Doubtful,Clear,Verbal,Medium,Vague means uncertain or unclear; clear is the direct opposite.
+Meaning of idiom: 'To cry wolf',To give false alarm,To shout loudly,To be very brave,To hunt animals,To give false alarm,Verbal,Medium,To cry wolf means to raise a false alarm repeatedly.
+Change the voice: The police caught the thief.,The thief was caught by the police,The thief is caught by the police,The thief has been caught by the police,The thief was being caught by the police,The thief was caught by the police,Verbal,Medium,Past simple passive is 'was/were + V3'.
+Choose the word which is least like others.,Tulip,Rose,Bud,Daisy,Bud,Verbal,Medium,Tulip; Rose; and Daisy are specific flowers; whereas Bud is a stage of a flower.
+Synonym of 'CANDID',Frank,Deceptive,Arrogant,Quiet,Frank,Verbal,Hard,Candid means truthful and straightforward; frank is the best synonym.
+Select the correct sentence.,He has been ill since Monday,He is ill from Monday,He has been ill from Monday,He is ill since Monday,He has been ill since Monday,Verbal,Hard,'Since' is used for a point of time in perfect tenses.

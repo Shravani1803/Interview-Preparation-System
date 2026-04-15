@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './ResultPage.css';
 
@@ -6,6 +6,9 @@ function CodingResultPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const result = location.state;
+  
+  // Track which question is expanded (only one at a time)
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   const safeAccuracy = result?.accuracy ?? 0;
 
@@ -16,146 +19,137 @@ function CodingResultPage() {
   }, [safeAccuracy]);
 
   const bannerContent = useMemo(() => {
-    if (performanceMeta === 'excellent') {
-      return {
-        title: 'Excellent',
-        icon: '🏆',
-        subtitle: 'Outstanding focus and accuracy.',
-      };
-    }
-
-    if (performanceMeta === 'good') {
-      return {
-        title: 'Good',
-        icon: '📊',
-        subtitle: 'Solid result with room to improve.',
-      };
-    }
-
-    return {
-      title: 'Needs Improvement',
-      icon: '📉',
-      subtitle: 'Keep practicing and try another attempt.',
+    const config = {
+      excellent: { title: 'Excellent - Keep it up!', icon: '🏆' },
+      good: { title: 'Good - Keep pushing!', icon: '📊' },
+      'needs-work': { title: 'Needs Improvement - Keep Practicing!', icon: '📉' }
     };
-  }, [performanceMeta]);
-
-  const scorePercentage = useMemo(() => {
-    if (!result?.totalQuestions) return 0;
-    return Math.round(((result?.score || 0) / result.totalQuestions) * 100);
-  }, [result?.score, result?.totalQuestions]);
+    return {
+      ...config[performanceMeta],
+      subtitle: result?.feedback || 'Review your coding logic below.'
+    };
+  }, [performanceMeta, result?.feedback]);
 
   const review = useMemo(() => result?.review || [], [result?.review]);
 
-  const bannerLine = useMemo(() => {
-    if (performanceMeta === 'excellent') return 'Excellent - Keep it up!';
-    if (performanceMeta === 'good') return 'Good - Keep pushing!';
-    return 'Needs Improvement - Keep Practicing!';
-  }, [performanceMeta]);
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   if (!result) {
     return (
       <div className="result-page-shell">
-        <div className="result-page-card">
-          <p>No result found. Please take a quiz first.</p>
-          <button type="button" className="result-action-button" onClick={() => navigate('/coding-quiz')}>
-            Go To Quiz Setup
+        <div className="result-page-card no-result">
+          <p>No result found. Please take the coding quiz first.</p>
+          <button className="result-action-button primary" onClick={() => navigate('/coding-quiz')}>
+            Go To Quiz
           </button>
         </div>
       </div>
     );
   }
 
-  const {
-    score = 0,
-    accuracy = 0,
-    totalQuestions = 0,
-    correctAnswers = 0,
-    feedback,
-  } = result;
-
-  const statusMessage = feedback || (accuracy < 50 ? 'Needs Improvement' : 'Good Performance');
-  const statCards = [
-    { label: 'Score', value: `${score} / ${totalQuestions}`, icon: '🏁' },
-    { label: 'Accuracy', value: `${accuracy}%`, icon: '🎯' },
-    { label: 'Correct', value: correctAnswers, icon: '✅' },
-    { label: 'Completion', value: `${scorePercentage}%`, icon: '⚡' },
-  ];
-
   return (
     <div className="result-page-shell">
       <div className="result-page-card">
+        
+        {/* Banner Section */}
         <div className={`result-banner ${performanceMeta}`}>
-          <div className="result-banner-icon" aria-hidden="true">{bannerContent.icon}</div>
+          <div className="result-banner-icon">{bannerContent.icon}</div>
           <div className="result-banner-copy">
             <p className="result-banner-overline">Performance Summary</p>
-            <h2>{bannerLine}</h2>
-            <p>{statusMessage || bannerContent.subtitle}</p>
+            <h2>{bannerContent.title}</h2>
+            <p>{bannerContent.subtitle}</p>
           </div>
         </div>
 
+        {/* Header Section */}
         <header className="result-page-header">
           <div>
             <h1>Coding MCQs Results</h1>
-            <p className="result-header-subtitle">Mode: Coding | Detailed insights from your latest coding MCQ attempt</p>
+            <p className="result-header-subtitle">Mode: Coding | Detailed insights</p>
           </div>
-          <button type="button" className="result-action-button primary" onClick={() => navigate('/coding-quiz')}>
-            Retake Quiz
-          </button>
         </header>
 
+        {/* Stats Section */}
         <section className="result-summary-grid">
-          {statCards.map((card) => (
-            <article key={card.label} className="result-summary-item">
-              <span className="result-stat-icon" aria-hidden="true">{card.icon}</span>
-              <span className="result-stat-label">{card.label}</span>
-              <strong>{card.value}</strong>
-            </article>
-          ))}
+          <div className="result-summary-item">
+            <span className="result-stat-label">Score</span>
+            <strong>{result.score} / {result.totalQuestions}</strong>
+          </div>
+          <div className="result-summary-item">
+            <span className="result-stat-label">Accuracy</span>
+            <strong>{result.accuracy}%</strong>
+          </div>
+          <div className="result-summary-item">
+            <span className="result-stat-label">Correct</span>
+            <strong>{result.correctAnswers}</strong>
+          </div>
         </section>
 
+        {/* Accordion Review Section */}
         <section className="result-review-section">
           <div className="result-review-header">
             <h2>Detailed Review</h2>
-            <p className="result-review-count">{review.length} questions reviewed</p>
+            <p className="result-review-count">{review.length} questions</p>
           </div>
 
           <div className="result-review-list">
             {review.map((item, index) => {
-              const statusClass = item.isCorrect ? 'correct' : 'wrong';
+              const isExpanded = expandedIndex === index;
+              const isNotAnswered = !item.userAnswer || item.userAnswer === "";
+              const statusClass = isNotAnswered ? 'unanswered' : (item.isCorrect ? 'correct' : 'wrong');
+              
               return (
-                <article key={`${item.questionId}-${index}`} className={`result-review-card ${statusClass}`}>
-                  <p className="review-question-index">Question {index + 1}</p>
-                  <h3 className="review-question-title">{item.question}</h3>
-                  <p className="review-answer-row">
-                    <span className="answer-label">Your Answer: </span>
-                    <span className={`answer-value ${statusClass}`}>{item.userAnswer || 'Not Answered'}</span>
-                  </p>
-                  <p className="review-answer-row">
-                    <span className="answer-label">Correct Answer: </span>
-                    <span className="answer-value correct">{item.correctAnswer}</span>
-                  </p>
-                  <p className="review-answer-row review-explanation">
-                    <span className="answer-label">Explanation: </span>
-                    <span className="answer-value">{item.explanation || 'No explanation available.'}</span>
-                  </p>
+                <article key={index} className={`result-review-card ${statusClass}`}>
+                  {/* Summary: Always Visible */}
+                  <div className="review-card-summary" onClick={() => toggleExpand(index)}>
+                    <div className="summary-left">
+                      <span className="review-question-index">Q{index + 1}.</span>
+                      <h3 className="review-question-title">{item.question}</h3>
+                    </div>
+                    <div className="summary-right">
+                      <span className={`status-badge ${statusClass}`}>
+                        {item.isCorrect ? '✔ Correct' : isNotAnswered ? '○ Skipped' : '✖ Wrong'}
+                      </span>
+                      <button className="view-details-btn">
+                        {isExpanded ? 'Hide ▲' : 'View ▼'}
+                      </button>
+                    </div>
+                  </div>
+                  
+                  {/* Details: Expands on Click */}
+                  <div className={`review-card-details ${isExpanded ? 'show' : ''}`}>
+                    <div className="details-content">
+                      <div className="review-answer-row">
+                        <span className="answer-label">Your Answer:</span>
+                        <span className={`answer-value ${statusClass}`}>{item.userAnswer || 'Not Answered'}</span>
+                      </div>
+                      <div className="review-answer-row">
+                        <span className="answer-label">Correct Answer:</span>
+                        <span className="answer-value correct">{item.correctAnswer}</span>
+                      </div>
+                      {item.explanation && (
+                        <div className="review-explanation">
+                          <span className="answer-label">Explanation:</span>
+                          <p>{item.explanation}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </article>
               );
             })}
-
-            {review.length === 0 && (
-              <article className="review-empty-state">
-                <p>No questions found for this filter.</p>
-              </article>
-            )}
           </div>
         </section>
 
+        {/* Footer Actions */}
         <div className="result-actions">
-          <button type="button" className="result-action-button primary" onClick={() => navigate('/coding-quiz')}>
-            Retake Quiz
-          </button>
-          <button type="button" className="result-action-button secondary" onClick={() => navigate('/home')}>
+          <button className="result-action-button secondary" onClick={() => navigate('/home')}>
             Back To Dashboard
+          </button>
+          <button className="result-action-button primary" onClick={() => navigate('/coding-quiz')}>
+            Retake Quiz
           </button>
         </div>
       </div>

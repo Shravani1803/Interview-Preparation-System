@@ -4,15 +4,46 @@ const csv = require('csv-parser');
 const AptitudeQuestion = require('../Models/AptitudeQuestion');
 const QuizAttempt = require('../Models/QuizAttempt');
 
-const escapeRegex = (value = '') => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const CSV_FILE_PATH = path.join(__dirname, '..', 'questions.csv');
+const APTITUDE_CSV_FILE_PATH = path.join(__dirname, '..', 'questions.csv');
+const CODING_CSV_FILE_PATH = path.join(__dirname, '..', 'coding_questions.csv');
+const VALID_MODULE_KEYS = new Set(['aptitude', 'coding']);
+const CODING_CATEGORY_KEYS = new Set(['c++', 'java', 'python']);
+const VALID_DIFFICULTY_KEYS = new Set(['easy', 'medium', 'hard']);
 
-let csvQuestionCache = [];
-let csvQuestionMap = new Map();
-let csvLoadPromise = null;
-let csvCacheMeta = {
-    mtimeMs: 0,
-    size: 0,
+const csvCacheStore = new Map();
+
+const getCacheEntry = (filePath) => {
+    if (!csvCacheStore.has(filePath)) {
+        csvCacheStore.set(filePath, {
+            list: [],
+            map: new Map(),
+            loadPromise: null,
+            meta: {
+                mtimeMs: 0,
+                size: 0,
+            },
+        });
+    }
+
+    return csvCacheStore.get(filePath);
+};
+
+const resolveCsvFilePath = (moduleKey = 'aptitude') => {
+    return moduleKey === 'coding' ? CODING_CSV_FILE_PATH : APTITUDE_CSV_FILE_PATH;
+};
+
+const normalizeModule = (value = '') => {
+    const normalized = String(value).trim().toLowerCase();
+    return VALID_MODULE_KEYS.has(normalized) ? normalized : '';
+};
+
+const resolveRequestedModule = (moduleValue = '', categoryValue = '') => {
+    const normalizedModule = normalizeModule(moduleValue);
+    if (normalizedModule) return normalizedModule;
+
+    const categoryKey = String(categoryValue).trim().toLowerCase();
+    if (CODING_CATEGORY_KEYS.has(categoryKey)) return 'coding';
+    return 'aptitude';
 };
 
 const normalizeCategory = (value = '') => {
@@ -34,36 +65,6 @@ const normalizeDifficulty = (value = '') => {
     if (normalized === 'medium') return 'Medium';
     if (normalized === 'hard') return 'Hard';
     return String(value).trim();
-};
-
-const buildCategoryRegex = (value = '') => {
-    const normalized = normalizeCategory(value);
-
-    if (normalized === 'Quantitative') {
-        return /^(Quantitative|Quantitative Aptitude)$/i;
-    }
-
-    if (normalized === 'Logical') {
-        return /^(Logical|Logical Reasoning)$/i;
-    }
-
-    if (normalized === 'Verbal') {
-        return /^(Verbal|Verbal Ability)$/i;
-    }
-
-    if (normalized === 'C++') {
-        return /^(C\+\+|CPP|C Plus Plus)$/i;
-    }
-
-    if (normalized === 'Java') {
-        return /^Java$/i;
-    }
-
-    if (normalized === 'Python') {
-        return /^Python$/i;
-    }
-
-    return new RegExp(`^${escapeRegex(normalized)}$`, 'i');
 };
 
 const getQuestionSignature = (question = '') => {
@@ -111,33 +112,35 @@ const pickDiverseQuestions = (items, count, usedSignatures = new Set()) => {
     return selected;
 };
 
-const loadCsvQuestions = async () => {
+const loadCsvQuestions = async (filePath) => {
+    const cacheEntry = getCacheEntry(filePath);
     let fileStats;
     try {
-        fileStats = await fs.promises.stat(CSV_FILE_PATH);
+        fileStats = await fs.promises.stat(filePath);
     } catch (error) {
-        throw new Error(`Unable to read CSV file at ${CSV_FILE_PATH}`);
+        throw new Error(`Unable to read CSV file at ${filePath}`);
     }
 
     const isCacheFresh =
-        csvQuestionCache.length > 0 &&
-        csvCacheMeta.mtimeMs === fileStats.mtimeMs &&
-        csvCacheMeta.size === fileStats.size;
+        cacheEntry.list.length > 0 &&
+        cacheEntry.meta.mtimeMs === fileStats.mtimeMs &&
+        cacheEntry.meta.size === fileStats.size;
 
     if (isCacheFresh) {
-        return { list: csvQuestionCache, map: csvQuestionMap };
+        return { list: cacheEntry.list, map: cacheEntry.map };
     }
 
-    if (csvLoadPromise) {
-        return csvLoadPromise;
+    if (cacheEntry.loadPromise) {
+        return cacheEntry.loadPromise;
     }
 
-    csvLoadPromise = new Promise((resolve, reject) => {
+    cacheEntry.loadPromise = new Promise((resolve, reject) => {
         const rows = [];
         const rowMap = new Map();
         let index = 0;
+        const isCodingFile = filePath === CODING_CSV_FILE_PATH;
 
-        fs.createReadStream(CSV_FILE_PATH)
+        fs.createReadStream(filePath)
             .pipe(csv())
             .on('data', (row) => {
                 const question = String(row.question || '').trim();
@@ -146,12 +149,22 @@ const loadCsvQuestions = async () => {
                 const optionC = String(row.optionC || '').trim();
                 const optionD = String(row.optionD || '').trim();
                 const correctAnswer = String(row.correctAnswer || '').trim();
-                const category = normalizeCategory(row.category || '');
-                const difficulty = normalizeDifficulty(row.difficulty || '');
+                const category = String(row.category || '').trim();
+                const difficulty = String(row.difficulty || '').trim();
+                const categoryKey = category.toLowerCase();
+                const difficultyKey = difficulty.toLowerCase();
                 const explanation = String(row.explanation || '').trim();
                 const options = [optionA, optionB, optionC, optionD];
 
                 if (!question || !optionA || !optionB || !optionC || !optionD || !correctAnswer || !category || !difficulty || !explanation) {
+                    return;
+                }
+
+                if (isCodingFile && !CODING_CATEGORY_KEYS.has(categoryKey)) {
+                    return;
+                }
+
+                if (!VALID_DIFFICULTY_KEYS.has(difficultyKey)) {
                     return;
                 }
 
@@ -169,6 +182,8 @@ const loadCsvQuestions = async () => {
                     correctAnswer,
                     category,
                     difficulty,
+                    categoryKey,
+                    difficultyKey,
                     explanation,
                 };
 
@@ -176,22 +191,22 @@ const loadCsvQuestions = async () => {
                 rowMap.set(csvId, item);
             })
             .on('end', () => {
-                csvQuestionCache = rows;
-                csvQuestionMap = rowMap;
-                csvCacheMeta = {
+                cacheEntry.list = rows;
+                cacheEntry.map = rowMap;
+                cacheEntry.meta = {
                     mtimeMs: fileStats.mtimeMs,
                     size: fileStats.size,
                 };
-                csvLoadPromise = null;
-                resolve({ list: csvQuestionCache, map: csvQuestionMap });
+                cacheEntry.loadPromise = null;
+                resolve({ list: cacheEntry.list, map: cacheEntry.map });
             })
             .on('error', (error) => {
-                csvLoadPromise = null;
+                cacheEntry.loadPromise = null;
                 reject(error);
             });
     });
 
-    return csvLoadPromise;
+    return cacheEntry.loadPromise;
 };
 
 const filterCsvQuestions = (questions, category, difficulty) => {
@@ -199,31 +214,26 @@ const filterCsvQuestions = (questions, category, difficulty) => {
     const requestedDifficulty = String(difficulty || '').trim().toLowerCase();
 
     return questions.filter((item) => {
-        const categoryMatch = requestedCategory ? item.category.toLowerCase() === requestedCategory : true;
-        const difficultyMatch = requestedDifficulty ? item.difficulty.toLowerCase() === requestedDifficulty : true;
+        const itemCategory = String(item.categoryKey || item.category || '').trim().toLowerCase();
+        const itemDifficulty = String(item.difficultyKey || item.difficulty || '').trim().toLowerCase();
+
+        const categoryMatch = requestedCategory ? itemCategory === requestedCategory : true;
+        const difficultyMatch = requestedDifficulty ? itemDifficulty === requestedDifficulty : true;
         return categoryMatch && difficultyMatch;
     });
 };
 
-const buildCaseInsensitiveFieldFilter = (value = '') => {
-    const normalized = String(value).trim();
-    if (!normalized) return null;
-
-    return {
-        $regex: `^${escapeRegex(normalized)}$`,
-        $options: 'i',
-    };
-};
-
 const buildFilter = ({ category, difficulty }) => {
     const filter = {};
+    const requestedCategory = String(category || '').trim();
+    const requestedDifficulty = String(difficulty || '').trim();
 
-    if (category) {
-        filter.category = buildCaseInsensitiveFieldFilter(category);
+    if (requestedCategory) {
+        filter.category = requestedCategory;
     }
 
-    if (difficulty) {
-        filter.difficulty = buildCaseInsensitiveFieldFilter(difficulty);
+    if (requestedDifficulty) {
+        filter.difficulty = requestedDifficulty;
     }
 
     return filter;
@@ -231,39 +241,30 @@ const buildFilter = ({ category, difficulty }) => {
 
 const getQuestionsCount = async (req, res) => {
     try {
-        const category = req.query.category;
-        const difficulty = req.query.difficulty;
+        const categoryInput = String(req.query.category || '').trim();
+        const difficultyInput = String(req.query.difficulty || '').trim();
+        const normalizedCategory = normalizeCategory(categoryInput);
+        const normalizedDifficulty = normalizeDifficulty(difficultyInput);
+        const module = resolveRequestedModule(req.query.module, categoryInput);
 
-        const filter = buildFilter({ category, difficulty });
-
-        console.log('Count request values:', category, difficulty);
-
-        const dbQuestionDocs = await AptitudeQuestion.find(filter, { question: 1, _id: 0 }).lean();
-        const { list } = await loadCsvQuestions();
-        const csvFiltered = filterCsvQuestions(list, category, difficulty);
-
-        const uniqueQuestionSet = new Set();
-
-        dbQuestionDocs.forEach((item) => {
-            const key = String(item.question || '').trim().toLowerCase();
-            if (key) uniqueQuestionSet.add(key);
+        const matchFilter = buildFilter({
+            category: normalizedCategory,
+            difficulty: normalizedDifficulty,
         });
+        matchFilter.module = module;
 
-        csvFiltered.forEach((item) => {
-            const key = String(item.question || '').trim().toLowerCase();
-            if (key) uniqueQuestionSet.add(key);
-        });
+        const [countResult] = await AptitudeQuestion.aggregate([
+            { $match: matchFilter },
+            { $group: { _id: '$questionKey' } },
+            { $count: 'count' },
+        ]);
 
-        const dbCount = dbQuestionDocs.length;
-        const csvCount = csvFiltered.length;
-        const finalCount = uniqueQuestionSet.size;
-
-        console.log('Count result from DB:', dbCount, 'CSV:', csvCount, 'Final:', finalCount);
+        const count = Number(countResult?.count || 0);
 
         res.status(200).json({
             success: true,
-            count: finalCount,
-            source: dbCount >= csvCount ? 'db' : 'csv',
+            count,
+            module,
         });
     } catch (err) {
         res.status(500).json({ success: false, message: 'Error fetching question count', error: err.message });
@@ -273,9 +274,11 @@ const getQuestionsCount = async (req, res) => {
 // GET all questions or filtered by category/difficulty
 const getQuestions = async (req, res) => {
     try {
-        console.log('Requested:', req.query);
-        const category = req.query.category;
-        const difficulty = req.query.difficulty;
+        const categoryInput = String(req.query.category || '').trim();
+        const difficultyInput = String(req.query.difficulty || '').trim();
+        const normalizedCategory = normalizeCategory(categoryInput);
+        const normalizedDifficulty = normalizeDifficulty(difficultyInput);
+        const module = resolveRequestedModule(req.query.module, categoryInput);
         const limit = Number.parseInt(req.query.limit, 10) || 15;
 
         const parsedLimit = limit;
@@ -283,87 +286,53 @@ const getQuestions = async (req, res) => {
             return res.status(400).json({ success: false, message: 'Limit must be between 1 and 100' });
         }
 
-        const filter = buildFilter({ category, difficulty });
+        const matchFilter = buildFilter({
+            category: normalizedCategory,
+            difficulty: normalizedDifficulty,
+        });
+        matchFilter.module = module;
 
-        console.log('Query values:', category, difficulty);
+        const [totalResult] = await AptitudeQuestion.aggregate([
+            { $match: matchFilter },
+            { $group: { _id: '$questionKey' } },
+            { $count: 'count' },
+        ]);
+        const totalAvailable = Number(totalResult?.count || 0);
 
-        const dbCount = await AptitudeQuestion.countDocuments(filter);
-        const { list } = await loadCsvQuestions();
-        const filteredCsv = filterCsvQuestions(list, category, difficulty);
-        const csvCount = filteredCsv.length;
-
-        const dbSampleSize = dbCount > 0 ? Math.min(parsedLimit, dbCount) : 0;
-        const dbCandidates = dbSampleSize > 0
-            ? await AptitudeQuestion.aggregate([
-                { $match: filter },
-                { $sample: { size: dbSampleSize } },
-                {
-                    $project: {
-                        question: 1,
-                        options: 1,
-                        category: 1,
-                        difficulty: 1,
-                    },
-                },
-            ])
-            : [];
-
-        const usedSignatures = new Set();
-        const dbQuestions = pickDiverseQuestions(dbCandidates, Math.min(parsedLimit, dbCandidates.length), usedSignatures);
-
-        let questions = [...dbQuestions];
-        const requiredFromCsv = Math.max(parsedLimit - questions.length, 0);
-
-        if (requiredFromCsv > 0 && csvCount > 0) {
-            const dbQuestionTextSet = new Set(dbQuestions.map((item) => String(item.question || '').trim().toLowerCase()));
-            const csvCandidates = filteredCsv
-                .filter((item) => !dbQuestionTextSet.has(String(item.question || '').trim().toLowerCase()))
-                .sort(() => Math.random() - 0.5)
-                .map((item) => ({
-                    _id: item._id,
-                    question: item.question,
-                    options: item.options,
-                    category: item.category,
-                    difficulty: item.difficulty,
-                }));
-
-            const csvQuestions = pickDiverseQuestions(csvCandidates, requiredFromCsv, usedSignatures);
-
-            questions = [...dbQuestions, ...csvQuestions];
+        if (totalAvailable === 0) {
+            return res.status(200).json({
+                success: true,
+                questions: [],
+                totalAvailable: 0,
+                requestedLimit: parsedLimit,
+                actualCount: 0,
+            });
         }
 
-        const dbQuestionDocs = await AptitudeQuestion.find(filter, { question: 1, _id: 0 }).lean();
-        const uniqueQuestionSet = new Set();
+        const sampleSize = totalAvailable < parsedLimit ? totalAvailable : parsedLimit;
 
-        dbQuestionDocs.forEach((item) => {
-            const key = String(item.question || '').trim().toLowerCase();
-            if (key) uniqueQuestionSet.add(key);
-        });
+        const questions = await AptitudeQuestion.aggregate([
+            { $match: matchFilter },
+            { $group: { _id: '$questionKey', doc: { $first: '$$ROOT' } } },
+            { $replaceRoot: { newRoot: '$doc' } },
+            { $sample: { size: sampleSize } },
+            {
+                $project: {
+                    questionKey: 0,
+                    __v: 0,
+                },
+            },
+        ]);
 
-        filteredCsv.forEach((item) => {
-            const key = String(item.question || '').trim().toLowerCase();
-            if (key) uniqueQuestionSet.add(key);
-        });
-
-        const totalAvailable = uniqueQuestionSet.size;
-        const finalLimit = Math.min(parsedLimit, totalAvailable);
-        const source = dbQuestions.length > 0 && questions.length > dbQuestions.length
-            ? 'db+csv'
-            : dbQuestions.length > 0
-                ? 'db'
-                : 'csv';
-
-        console.log('Limit received:', parsedLimit);
-        console.log('Found questions:', questions.length, 'Requested:', parsedLimit, 'Available(DB):', dbCount, 'Available(CSV):', csvCount, 'Source:', source);
+        console.log('Requested:', parsedLimit);
+        console.log('Returned:', questions.length);
 
         res.status(200).json({
             success: true,
             questions,
-            requestedLimit: parsedLimit,
-            finalLimit,
             totalAvailable,
+            requestedLimit: parsedLimit,
             actualCount: questions.length,
-            source,
         });
     } catch (err) {
         res.status(500).json({ success: false, message: 'Error fetching questions', error: err.message });
@@ -373,22 +342,53 @@ const getQuestions = async (req, res) => {
 // POST submit quiz answers — evaluate and save performance
 const submitQuiz = async (req, res) => {
     try {
-        const { answers, questionIds, category, difficulty } = req.body;
+        const { answers, questionIds, category, difficulty, totalQuestions } = req.body;
         const userId = req.user._id;
 
-        if (!answers || typeof answers !== 'object' || Array.isArray(answers)) {
-            return res.status(400).json({ success: false, message: 'Answers must be an object of questionId to selected option' });
+        if (!answers) {
+            return res.status(400).json({ success: false, message: 'Answers are required' });
         }
 
-        if (!Array.isArray(questionIds) || questionIds.length === 0) {
+        const isArrayAnswerPayload = Array.isArray(answers);
+        const normalizedAnswerEntries = isArrayAnswerPayload
+            ? answers
+                .map((answer) => ({
+                    questionId: String(answer?.questionId || '').trim(),
+                    selectedOption: String(answer?.selectedOption || '').trim(),
+                }))
+                .filter((answer) => answer.questionId)
+            : Object.entries(answers)
+                .map(([questionId, selectedOption]) => ({
+                    questionId: String(questionId || '').trim(),
+                    selectedOption: String(selectedOption || '').trim(),
+                }))
+                .filter((answer) => answer.questionId);
+
+        const explicitQuestionIds = Array.isArray(questionIds)
+            ? questionIds.map((id) => String(id || '').trim()).filter(Boolean)
+            : [];
+
+        const mergedQuestionIds = [...new Set([
+            ...explicitQuestionIds,
+            ...normalizedAnswerEntries.map((entry) => entry.questionId),
+        ])];
+
+        if (mergedQuestionIds.length === 0) {
             return res.status(400).json({ success: false, message: 'Question IDs are required' });
         }
 
-        const { map: csvMap } = await loadCsvQuestions();
+        const answerLookup = normalizedAnswerEntries.reduce((acc, entry) => {
+            acc[entry.questionId] = entry.selectedOption;
+            return acc;
+        }, {});
+
+        const module = resolveRequestedModule(req.body?.module, category || '');
+        const csvFilePath = resolveCsvFilePath(module);
+        const { map: csvMap } = await loadCsvQuestions(csvFilePath);
         const questionMap = new Map();
         const dbQuestionIds = [];
 
-        for (const questionId of questionIds) {
+        for (const questionId of mergedQuestionIds) {
             const normalizedQuestionId = String(questionId);
             if (csvMap.has(normalizedQuestionId)) {
                 questionMap.set(normalizedQuestionId, csvMap.get(normalizedQuestionId));
@@ -409,12 +409,12 @@ const submitQuiz = async (req, res) => {
         const normalizedAnswers = {};
         const persistedQuestionIds = [];
 
-        for (const questionId of questionIds) {
+        for (const questionId of mergedQuestionIds) {
             const normalizedQuestionId = String(questionId);
             const question = questionMap.get(normalizedQuestionId);
             if (!question) continue;
 
-            const userAnswer = answers[normalizedQuestionId] || '';
+            const userAnswer = answerLookup[normalizedQuestionId] || '';
             normalizedAnswers[normalizedQuestionId] = userAnswer;
 
             const isCorrect = userAnswer === question.correctAnswer;
@@ -435,24 +435,38 @@ const submitQuiz = async (req, res) => {
             }
         }
 
-        const totalQuestions = review.length;
-        const accuracy = totalQuestions > 0 ? Number(((score / totalQuestions) * 100).toFixed(2)) : 0;
+        const attemptedTotal = Number(totalQuestions) > 0 ? Number(totalQuestions) : review.length;
+        const safeTotal = attemptedTotal > 0 ? attemptedTotal : review.length;
+        const correctAnswers = score;
+        const accuracy = safeTotal > 0 ? Number(((correctAnswers / safeTotal) * 100).toFixed(2)) : 0;
 
         await QuizAttempt.create({
             userId,
+            module,
             answers: normalizedAnswers,
-            score,
+            score: correctAnswers,
+            totalQuestions: safeTotal,
+            correctAnswers,
             accuracy,
             category: normalizeCategory(category || 'Quantitative'),
             difficulty: normalizeDifficulty(difficulty || 'Medium'),
             questionIds: persistedQuestionIds,
         });
 
+        const result = {
+            score: correctAnswers,
+            total: safeTotal,
+            totalQuestions: safeTotal,
+            correctAnswers,
+            accuracy,
+        };
+
         res.status(200).json({
             success: true,
-            score,
-            totalQuestions,
-            correctAnswers: score,
+            result,
+            score: correctAnswers,
+            totalQuestions: safeTotal,
+            correctAnswers,
             accuracy,
             feedback: accuracy < 50 ? 'Needs Improvement' : 'Good Performance',
             review,
