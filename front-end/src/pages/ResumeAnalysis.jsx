@@ -1,227 +1,144 @@
-import React, { useState } from "react";
-import * as pdfjsLib from "pdfjs-dist";
-import mammoth from "mammoth";
-import "./ResumeAnalysis.css";
+import React, { useState } from 'react';
+import * as pdfjsLib from 'pdfjs-dist';
+import mammoth from 'mammoth';
+import './ResumeAnalysis.css';
 
-// WORKER (CRA SAFE)
-import { GlobalWorkerOptions, getDocument } from "pdfjs-dist";
+// Set up the worker for PDF parsing
+pdfjsLib.GlobalWorkerOptions.workerSrc = `//://cloudflare.com{pdfjsLib.version}/pdf.worker.min.js`;
 
-GlobalWorkerOptions.workerSrc =
-  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+const ResumeAnalysis = () => {
+  const [fileData, setFileData] = useState(null);
+  const [analysis, setAnalysis] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-function ResumeAnalysis() {
-  const [resumeText, setResumeText] = useState("");
-  const [jobDesc, setJobDesc] = useState("");
-  const [score, setScore] = useState(null);
-  const [missingSkills, setMissingSkills] = useState([]);
-  const [foundSkills, setFoundSkills] = useState([]);
-  const [suggestions, setSuggestions] = useState([]);
+  // Example skill database - you can expand this
+  const targetSkills = ['React', 'JavaScript', 'Node.js', 'TypeScript', 'CSS', 'HTML', 'Python', 'SQL', 'Git', 'AWS'];
 
-  // 📄 PDF Extract (FIXED)
-  const extractPDF = async (file) => {
-    const reader = new FileReader();
-
-    reader.onload = async () => {
-      try {
-        const typedArray = new Uint8Array(reader.result);
-
-        const pdf = await getDocument({ data: typedArray }).promise;
-
-        let text = "";
-
-        for (let i = 1; i <= pdf.numPages; i++) {
-          const page = await pdf.getPage(i);
-          const content = await page.getTextContent();
-
-          text += content.items.map((item) => item.str).join(" ") + " ";
-        }
-
-        setResumeText(text);
-      } catch (err) {
-        console.error(err);
-        alert("Error reading PDF file");
-      }
-    };
-
-    reader.readAsArrayBuffer(file);
-  };
-
-  // 📄 DOCX Extract
-  const extractDOCX = async (file) => {
-    const reader = new FileReader();
-
-    reader.onload = async () => {
-      try {
-        const result = await mammoth.extractRawText({
-          arrayBuffer: reader.result,
-        });
-
-        setResumeText(result.value);
-      } catch (err) {
-        console.error(err);
-        alert("Error reading DOCX file");
-      }
-    };
-
-    reader.readAsArrayBuffer(file);
-  };
-
-  // 📂 File Handler
-  const handleFile = (e) => {
+  const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    if (file.type === "application/pdf") {
-      extractPDF(file);
-    } else if (
-      file.type ===
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    ) {
-      extractDOCX(file);
-    } else {
-      alert("Only PDF or DOCX allowed");
+    const url = URL.createObjectURL(file);
+    setFileData({ name: file.name, type: file.type, url });
+    setLoading(true);
+
+    try {
+      let extractedText = "";
+      if (file.type === "application/pdf") {
+        extractedText = await parsePDF(file);
+      } else if (file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
+        extractedText = await parseDocx(file);
+      } else {
+        alert("Please upload a PDF or DOCX file.");
+        return;
+      }
+      runAnalysis(extractedText);
+    } catch (error) {
+      console.error("Error processing file:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  // 🧠 ANALYSIS
-  const analyzeResume = () => {
-    const resume = resumeText.toLowerCase();
-    const jd = jobDesc.toLowerCase();
-
-    const skills = [
-      "javascript",
-      "react",
-      "node",
-      "mongodb",
-      "express",
-      "sql",
-      "html",
-      "css",
-      "c++",
-      "java",
-      "python",
-    ];
-
-    let scoreVal = 0;
-
-    const found = skills.filter((s) => resume.includes(s));
-    const missing = skills.filter((s) => !resume.includes(s));
-
-    setFoundSkills(found);
-    setMissingSkills(missing);
-
-    scoreVal += (found.length / skills.length) * 40;
-
-    let jdWords = jd.split(" ").filter((w) => w.length > 3);
-    let matchCount = jdWords.filter((w) => resume.includes(w)).length;
-
-    if (jdWords.length > 0) {
-      scoreVal += (matchCount / jdWords.length) * 25;
+  const parsePDF = async (file) => {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    let text = "";
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      text += content.items.map(s => s.str).join(" ");
     }
+    return text;
+  };
 
-    if (resume.includes("education")) scoreVal += 5;
-    if (resume.includes("experience")) scoreVal += 5;
-    if (resume.includes("projects")) scoreVal += 5;
-    if (resume.includes("skills")) scoreVal += 5;
+  const parseDocx = async (file) => {
+    const arrayBuffer = await file.arrayBuffer();
+    const result = await mammoth.extractRawText({ arrayBuffer });
+    return result.value;
+  };
 
-    const actionWords = [
-      "developed",
-      "built",
-      "designed",
-      "implemented",
-      "created",
-      "optimized",
-    ];
+  const runAnalysis = (text) => {
+    const normalizedText = text.toLowerCase();
+    const found = targetSkills.filter(skill => normalizedText.includes(skill.toLowerCase()));
+    const missing = targetSkills.filter(skill => !found.includes(skill));
+    
+    // Scoring logic
+    let score = (found.length / targetSkills.length) * 70; // 70% based on skills
+    if (text.length > 1200) score += 15; // 15% for detail/length
+    if (normalizedText.includes("experience") || normalizedText.includes("projects")) score += 15;
 
-    let actionCount = actionWords.filter((w) => resume.includes(w)).length;
-    scoreVal += Math.min(actionCount * 2, 10);
+    const suggestions = [];
+    if (missing.length > 2) suggestions.push(`Add technical keywords: ${missing.slice(0, 3).join(", ")}.`);
+    if (text.length < 800) suggestions.push("Your resume seems brief. Expand on your project impact.");
+    if (!normalizedText.includes("education")) suggestions.push("Ensure your 'Education' section is clearly labeled.");
 
-    setScore(Math.round(scoreVal));
-
-    // 💡 Suggestions
-    let sugg = [];
-
-    if (!resume.includes("projects"))
-      sugg.push("Add Projects section");
-
-    if (!resume.includes("experience"))
-      sugg.push("Add Experience section");
-
-    if (!resume.match(/\d/))
-      sugg.push("Add measurable achievements");
-
-    if (missing.length > 0)
-      sugg.push("Add missing technical skills");
-
-    if (resume.length < 300)
-      sugg.push("Expand resume content");
-
-    if (!resume.includes("github"))
-      sugg.push("Add GitHub/portfolio link");
-
-    setSuggestions(sugg);
+    setAnalysis({
+      score: Math.round(score),
+      found,
+      missing,
+      suggestions
+    });
   };
 
   return (
-    <div className="ra-container">
-      <div className="ra-inner">
-        <h2 className="ra-title">📄 Resume Analyzer</h2>
+    <div className="resume-container">
+      <header className="header">
+        <h1>ATS Optimizer</h1>
+        <p>Upload your resume to see how it performs</p>
+      </header>
 
-        <div className="ra-card">
-          <input type="file" accept=".pdf,.docx" onChange={handleFile} />
-
-          <textarea
-            placeholder="Paste Job Description..."
-            onChange={(e) => setJobDesc(e.target.value)}
-          />
-
-          <button onClick={analyzeResume}>Analyze Resume</button>
-        </div>
-
-        {score !== null && (
-          <div className="ra-card">
-            <h3>ATS Score: {score}%</h3>
-            <div className="ra-bar">
-              <div style={{ width: `${score}%` }}></div>
-            </div>
-          </div>
-        )}
-
-        {foundSkills.length > 0 && (
-          <div className="ra-card">
-            <h3>Found Skills</h3>
-            <div className="ra-tags good">
-              {foundSkills.map((s, i) => (
-                <span key={i}>{s}</span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {missingSkills.length > 0 && (
-          <div className="ra-card">
-            <h3>Missing Skills</h3>
-            <div className="ra-tags bad">
-              {missingSkills.map((s, i) => (
-                <span key={i}>{s}</span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {suggestions.length > 0 && (
-          <div className="ra-card">
-            <h3>Suggestions</h3>
-            <ul>
-              {suggestions.map((s, i) => (
-                <li key={i}>{s}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+      <div className="upload-box">
+        <input type="file" accept=".pdf,.docx" onChange={handleFileChange} id="fileInput" hidden />
+        <label htmlFor="fileInput" className="upload-label">
+          {fileData ? `Selected: ${fileData.name}` : "Click to upload PDF or DOCX"}
+        </label>
       </div>
+
+      {loading && <div className="loader">Analyzing your profile...</div>}
+
+      {fileData && !loading && (
+        <div className="main-layout">
+          <section className="preview-pane">
+            <div className="pane-header">Document Preview</div>
+            <iframe src={fileData.url} title="Resume Preview" className="viewer" />
+          </section>
+
+          <section className="analysis-pane">
+            {analysis && (
+              <>
+                <div className="score-card">
+                  <h3>ATS Match Score</h3>
+                  <div className="score-circle">{analysis.score}%</div>
+                  <div className="progress-bg">
+                    <div className="progress-fill" style={{ width: `${analysis.score}%`, backgroundColor: analysis.score > 70 ? '#10b981' : '#f59e0b' }}></div>
+                  </div>
+                </div>
+
+                <div className="skills-grid">
+                  <div className="skill-box">
+                    <h4>Identified Skills</h4>
+                    {analysis.found.map(s => <span key={s} className="tag tag-found">{s}</span>)}
+                  </div>
+                  <div className="skill-box">
+                    <h4>Missing Skills</h4>
+                    {analysis.missing.map(s => <span key={s} className="tag tag-missing">{s}</span>)}
+                  </div>
+                </div>
+
+                <div className="suggestions">
+                  <h4>Key Suggestions</h4>
+                  <ul>
+                    {analysis.suggestions.map((s, i) => <li key={i}>{s}</li>)}
+                  </ul>
+                </div>
+              </>
+            )}
+          </section>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default ResumeAnalysis;
