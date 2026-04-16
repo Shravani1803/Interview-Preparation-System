@@ -4,9 +4,9 @@ import mammoth from "mammoth";
 import { renderAsync } from "docx-preview";
 import "./ResumeAnalysis.css";
 
-// ✅ Correct worker
+// ✅ Stable worker (use fixed version)
 pdfjsLib.GlobalWorkerOptions.workerSrc =
-  `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 const ResumeAnalysis = () => {
   const [fileData, setFileData] = useState(null);
@@ -31,23 +31,17 @@ const ResumeAnalysis = () => {
     try {
       let text = "";
 
-      // ✅ PDF
       if (file.type === "application/pdf") {
         text = await parsePDF(file);
-      }
-
-      // ✅ DOCX (preview + text)
-      else if (
+      } else if (
         file.type ===
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
       ) {
         const buffer = await file.arrayBuffer();
 
-        // extract text
         const result = await mammoth.extractRawText({ arrayBuffer: buffer });
         text = result.value;
 
-        // render preview
         if (docxRef.current) {
           docxRef.current.innerHTML = "";
           await renderAsync(buffer, docxRef.current);
@@ -59,8 +53,8 @@ const ResumeAnalysis = () => {
 
       runAnalysis(text);
 
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
       alert("Error reading file");
     } finally {
       setLoading(false);
@@ -77,8 +71,7 @@ const ResumeAnalysis = () => {
       const page = await pdf.getPage(i);
       const content = await page.getTextContent();
 
-      const pageText = content.items.map(item => item.str).join(" ");
-      text += pageText + "\n";
+      text += content.items.map(item => item.str).join(" ") + "\n";
     }
 
     if (!text || text.length < 20) {
@@ -102,18 +95,22 @@ const ResumeAnalysis = () => {
     if (text.length > 800) score += 15;
     if (normalized.includes("experience")) score += 15;
 
-    const suggestions = [];
+    let suggestions = [];
 
     if (missing.length > 2) {
       suggestions.push(`Add skills: ${missing.slice(0, 3).join(", ")}`);
     }
 
     if (!normalized.includes("education")) {
-      suggestions.push("Add Education section");
+      suggestions.push("Add a clear Education section");
     }
 
     if (text.length < 800) {
-      suggestions.push("Increase resume content");
+      suggestions.push("Increase resume content and include measurable achievements");
+    }
+
+    if (suggestions.length === 0) {
+      suggestions.push("Your resume looks strong. Tailor it for specific job roles.");
     }
 
     setAnalysis({
@@ -125,9 +122,12 @@ const ResumeAnalysis = () => {
   };
 
   return (
-    <div className="ra-container">
+    <div className="ats-container">
 
-      <h1 className="ra-title">ATS Resume Analyzer</h1>
+      <header className="ats-header">
+        <h1>🚀 ATS Resume Analyzer</h1>
+        <p>Upload your resume and get instant feedback like real job portals</p>
+      </header>
 
       <div className="upload-box">
         <input
@@ -142,21 +142,17 @@ const ResumeAnalysis = () => {
         </label>
       </div>
 
-      {loading && <p className="loader">Analyzing...</p>}
+      {loading && <div className="loader">Analyzing Resume...</div>}
 
       {fileData && (
-        <div className="main-layout">
+        <div className="layout">
 
           {/* Preview */}
-          <div className="preview-pane">
-            <h3>Preview</h3>
+          <div className="preview">
+            <h3>📄 Resume Preview</h3>
 
             {fileData.type === "application/pdf" ? (
-              <iframe
-                src={fileData.url}
-                className="viewer"
-                title="pdf"
-              />
+              <iframe src={fileData.url} title="pdf" />
             ) : (
               <div ref={docxRef} className="docx-preview"></div>
             )}
@@ -164,33 +160,36 @@ const ResumeAnalysis = () => {
 
           {/* Analysis */}
           {analysis && (
-            <div className="analysis-pane">
+            <div className="analysis">
 
-              <div className="card">
-                <h3>ATS Score: {analysis.score}%</h3>
-                <div className="bar">
+              <div className="card score">
+                <h2>{analysis.score}%</h2>
+                <p>ATS Match Score</p>
+                <div className="progress">
                   <div style={{ width: `${analysis.score}%` }}></div>
                 </div>
               </div>
 
               <div className="card">
-                <h4>Skills Found</h4>
+                <h3>✅ Skills Found</h3>
                 <div className="tags">
                   {analysis.found.map(s => <span key={s}>{s}</span>)}
                 </div>
               </div>
 
               <div className="card">
-                <h4>Missing Skills</h4>
+                <h3>❌ Missing Skills</h3>
                 <div className="tags missing">
                   {analysis.missing.map(s => <span key={s}>{s}</span>)}
                 </div>
               </div>
 
               <div className="card">
-                <h4>Suggestions</h4>
+                <h3>💡 Suggestions</h3>
                 <ul>
-                  {analysis.suggestions.map((s, i) => <li key={i}>{s}</li>)}
+                  {analysis.suggestions.map((s, i) => (
+                    <li key={i}>{s}</li>
+                  ))}
                 </ul>
               </div>
 
@@ -199,6 +198,7 @@ const ResumeAnalysis = () => {
 
         </div>
       )}
+
     </div>
   );
 };

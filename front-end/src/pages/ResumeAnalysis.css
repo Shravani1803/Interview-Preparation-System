@@ -1,76 +1,109 @@
-.ra-container {
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f1f5f9;
+}
+
+/* Container */
+.ats-container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
-  font-family: Arial;
 }
 
-.ra-title {
+/* Header */
+.ats-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
+.ats-header h1 {
+  font-size: 32px;
+  color: #1e293b;
+}
+
+.ats-header p {
+  color: #64748b;
+}
+
+/* Upload */
 .upload-box {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .upload-btn {
-  background: #2563eb;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.main-layout {
+/* Layout */
+.layout {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 20px;
 }
 
-.preview-pane {
+/* Preview */
+.preview {
   background: white;
-  padding: 10px;
-  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 12px;
 }
 
-.viewer {
+.preview iframe {
   width: 100%;
   height: 600px;
+  border: none;
 }
 
 .docx-preview {
   height: 600px;
   overflow-y: auto;
-  border: 1px solid #ccc;
-  padding: 10px;
 }
 
-.analysis-pane {
+/* Analysis */
+.analysis {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+/* Cards */
 .card {
-  background: #f8fafc;
+  background: white;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-.bar {
+/* Score */
+.score {
+  text-align: center;
+}
+
+.score h2 {
+  font-size: 40px;
+  margin: 0;
+  color: #2563eb;
+}
+
+.progress {
   height: 10px;
-  background: #ddd;
+  background: #e2e8f0;
   border-radius: 10px;
   margin-top: 10px;
 }
 
-.bar div {
+.progress div {
   height: 100%;
-  background: #22c55e;
+  background: linear-gradient(90deg, #22c55e, #2563eb);
 }
 
+/* Tags */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -79,7 +112,7 @@
 
 .tags span {
   background: #dcfce7;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 20px;
 }
 
@@ -87,6 +120,13 @@
   background: #fee2e2;
 }
 
+/* Suggestions */
+ul {
+  padding-left: 20px;
+}
+
+/* Loader */
 .loader {
   text-align: center;
+  font-weight: bold;
 }
