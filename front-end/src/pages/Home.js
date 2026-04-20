@@ -4,6 +4,7 @@ import axios from 'axios';
 import { handleSuccess } from '../utils';
 import { ToastContainer } from 'react-toastify';
 import './Dashboard.css';
+import Chatbot from './Chatbot';
 
 const API_BASE_URL = 'http://localhost:8080';
 
@@ -38,15 +39,14 @@ function Home() {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const data = res?.data || {};
-
                 setStats({
-                    totalQuizzes: data.totalQuizzes || 0,
-                    codingSolved: data.codingSolved || 0,
-                    accuracy: data.accuracy || 0,
-                    totalCorrect: data.totalCorrect || 0,
-                    totalQuestions: data.totalQuestions || 0,
-                    totalCodingQuestions: data.totalCodingQuestions || 0,
-                    streak: data.streak || 0,
+                    totalQuizzes:         data.totalQuizzes          || 0,
+                    codingSolved:         data.codingSolved           || 0,
+                    accuracy:             data.accuracy               || 0,
+                    totalCorrect:         data.totalCorrect           || 0,
+                    totalQuestions:       data.totalQuestions         || 0,
+                    totalCodingQuestions: data.totalCodingQuestions   || 0,
+                    streak:               data.streak                 || 0,
                 });
             } catch (err) {}
         };
@@ -72,10 +72,10 @@ function Home() {
     };
 
     const statCards = [
-        { label: 'Quizzes Taken',    value: stats.totalQuizzes,      icon: '📝', color: '#3b82f6', bg: '#eff6ff' },
-        { label: 'Problems Solved',  value: stats.codingSolved,      icon: '✅', color: '#10b981', bg: '#ecfdf5' },
-        { label: 'Avg Score',        value: `${stats.accuracy}%`,    icon: '🎯', color: '#f59e0b', bg: '#fffbeb' },
-        { label: 'Day Streak',       value: stats.streak,            icon: '🔥', color: '#ef4444', bg: '#fef2f2' },
+        { label: 'Quizzes Taken',   value: stats.totalQuizzes, icon: '📝', color: '#3b82f6', bg: '#eff6ff' },
+        { label: 'Problems Solved', value: stats.codingSolved,  icon: '✅', color: '#10b981', bg: '#ecfdf5' },
+        { label: 'Avg Score',       value: `${stats.accuracy}%`, icon: '🎯', color: '#f59e0b', bg: '#fffbeb' },
+        { label: 'Day Streak',      value: stats.streak,         icon: '🔥', color: '#ef4444', bg: '#fef2f2' },
     ];
 
     const modules = [
@@ -83,7 +83,7 @@ function Home() {
             id: 'aptitude',
             icon: '🧠',
             title: 'Aptitude Quiz',
-            description: 'Test logical reasoning, quantitative skills and verbal ability with timed MCQ quizzes.',
+            description: 'Test your logical reasoning, quantitative skills and verbal ability with timed MCQ quizzes.',
             badge: 'MCQ · Timed',
             accent: '#3b82f6',
             accentBg: '#eff6ff',
@@ -115,7 +115,7 @@ function Home() {
     ];
 
     const tips = [
-        { icon: '📅', text: 'Practice atleast 5 aptitude questions daily to build consistency.' },
+        { icon: '📅', text: 'Practice at least 5 aptitude questions daily to build consistency.' },
         { icon: '⏱️', text: 'Always analyse time complexity before writing your final solution.' },
         { icon: '🔍', text: 'Review wrong answers carefully — they reveal your weak areas.' },
         { icon: '✨', text: 'Write clean, readable code. Interviewers value clarity over cleverness.' },
@@ -127,17 +127,17 @@ function Home() {
             {/* ── Sidebar ── */}
             <aside className="db-sidebar">
                 <div className="db-brand">
-                    <img src="/logo192.png" alt="React App Logo" className="db-brand-logo" />
+                    <img src="/logo192.png" alt="Logo" className="db-brand-logo" />
                     <span className="db-brand-name">React App</span>
                 </div>
 
                 <p className="db-nav-label">Main Menu</p>
                 <nav className="db-nav">
                     {[
-                        { icon: '▣', label: 'Dashboard',   path: '/home',        active: true  },
-                        { icon: '🧠', label: 'Aptitude',    path: '/aptitude',    active: false },
-                        { icon: '💻', label: 'Coding MCQs', path: '/coding-quiz', active: false },
-                        { icon: '📊', label: 'Resume Analysis', path: '/resume-analysis', active: false },
+                        { icon: '▣',  label: 'Dashboard',      path: '/home',            active: true  },
+                        { icon: '🧠', label: 'Aptitude',         path: '/aptitude',        active: false },
+                        { icon: '💻', label: 'Coding MCQs',      path: '/coding-quiz',     active: false },
+                        { icon: '📄', label: 'Resume Analysis',  path: '/resume-analysis', active: false },
                     ].map((item) => (
                         <button
                             key={item.label}
@@ -150,13 +150,7 @@ function Home() {
                     ))}
                 </nav>
 
-                <p className="db-nav-label" style={{ marginTop: '20px' }}>Account</p>
-                <nav className="db-nav">
-                    <button className="db-nav-item" onClick={() => navigate('/admin')}>
-                        <span className="db-nav-icon">⚙</span>
-                        <span>Admin Panel</span>
-                    </button>
-                </nav>
+                {/* Admin Panel button removed */}
 
                 <div className="db-sidebar-bottom">
                     <div className="db-user-card">
@@ -175,7 +169,7 @@ function Home() {
             {/* ── Main ── */}
             <main className="db-main">
 
-                {/* Welcome card */}
+                {/* Welcome banner */}
                 <section className="db-welcome">
                     <div className="db-welcome-text">
                         <span className="db-welcome-tag">{getGreeting()} 👋</span>
@@ -213,12 +207,11 @@ function Home() {
                                 <p className="db-stat-val">{s.value}</p>
                                 <p className="db-stat-lbl">{s.label}</p>
                             </div>
-                            <div className="db-stat-bar"></div>
                         </div>
                     ))}
                 </section>
 
-                {/* Modules */}
+                {/* Module cards */}
                 <section className="db-section">
                     <div className="db-section-head">
                         <h3 className="db-section-title">Practice Modules</h3>
@@ -247,15 +240,14 @@ function Home() {
                     </div>
                 </section>
 
-                {/* Progress + Tips row */}
+                {/* Progress + Tips */}
                 <div className="db-bottom-row">
-                    {/* Progress overview */}
                     <section className="db-progress-card">
                         <h3 className="db-section-title" style={{ marginBottom: '20px' }}>Overall Progress</h3>
                         {[
                             { label: 'Aptitude Accuracy', pct: stats.accuracy || 0,  color: '#3b82f6' },
-                            { label: 'Coding Solved',     pct: codingSolvedPct, color: '#10b981' },
-                            { label: 'Day Streak Goal',   pct: Math.min(stats.streak * 10, 100),         color: '#f59e0b' },
+                            { label: 'Coding Solved',     pct: codingSolvedPct,       color: '#10b981' },
+                            { label: 'Day Streak Goal',   pct: Math.min((stats.streak || 0) * 10, 100), color: '#f59e0b' },
                         ].map((item, i) => (
                             <div className="db-prog-row" key={i}>
                                 <div className="db-prog-meta">
@@ -263,16 +255,12 @@ function Home() {
                                     <span className="db-prog-pct" style={{ color: item.color }}>{item.pct}%</span>
                                 </div>
                                 <div className="db-prog-track">
-                                    <div
-                                        className="db-prog-fill"
-                                        style={{ width: `${item.pct}%`, background: item.color }}
-                                    ></div>
+                                    <div className="db-prog-fill" style={{ width: `${item.pct}%`, background: item.color }}></div>
                                 </div>
                             </div>
                         ))}
                     </section>
 
-                    {/* Tips */}
                     <section className="db-tips-card">
                         <h3 className="db-section-title" style={{ marginBottom: '16px' }}>Interview Tips</h3>
                         <div className="db-tips-list">
@@ -288,6 +276,7 @@ function Home() {
 
             </main>
 
+            <Chatbot />
             <ToastContainer />
         </div>
     );
