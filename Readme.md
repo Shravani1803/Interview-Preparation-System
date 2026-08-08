@@ -1,5 +1,5 @@
 # Completed Login and Sign up pages 
-How other group member will access project
+How other group members will access project
 
 git clone https://github.com/Shravani1803/Interview-Preparation-System.git
 
