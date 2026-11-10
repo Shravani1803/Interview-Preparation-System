@@ -70,7 +70,7 @@ function Chatbot() {
                     'Authorization': `Bearer ${GROQ_API_KEY}`
                 },
                 body: JSON.stringify({
-                    model: 'llama-3.1-8b-instant',   // Model on Groq
+                    model: 'openai/gpt-oss-20b',   // Model on Groq
                     messages: apiMessages,
                     max_tokens: 600,
                     temperature: 0.7,
